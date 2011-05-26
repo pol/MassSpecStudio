@@ -95,7 +95,7 @@ namespace Hydra.Core.Domain
 
 		public static IList<Result> OpenDirectory(Experiment experiment)
 		{
-			string[] resultFiles = Directory.GetFiles(Path.Combine(GetFullPath(experiment)));
+			string[] resultFiles = Directory.GetFiles(Path.Combine(GetFullPath(experiment)), "*.xml");
 			IList<Result> results = new List<Result>();
 			foreach (string resultFile in resultFiles)
 			{

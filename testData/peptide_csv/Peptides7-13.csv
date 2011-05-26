@@ -1,0 +1,8 @@
+ID,ProteinSource,AminoAcidStart,AminoAcidStop,Sequence,MonoIsotopicMass,Z,Period,RT,RTvariance,XicMass1,XicMass2,XicAdjustment,XicSelectionWidth,XicPeakPickerOption,MsThreshold,PeaksInCalculation,Notes
+7,tubulinA,103,113,YARGHYTIGKE,647.83,2,0,3.95,0.5,647.83,647.83,0,0.1,0,0,3,testnote7
+8,tubulinA,133,138,QGFLVF,710.4,1,0,9,0.5,710.4,710.4,0,0.1,0,1,3,testnote8
+9,tubulinA,135,149,FLVFHSFGGGTGSGF,758.86,2,0,8.55,0.5,758.86,758.86,0,0.1,0,0,4,testnote9
+10,tubulinA,136,149,LVFHSFGGGTGSGF,685.32,2,0,7.3,0.5,685.32,685.32,0,0.1,0,0,3,testnote10
+11,tubulinA,139,149,HSFGGGTGSGF,505.71,2,0,5,0.5,505.71,505.71,0,0.1,0,1,2,testnote11
+12,tubulinA,152,156,LLMER,331.19,2,0,4.9,0.5,331.19,331.19,0,0.1,0,1,2,testnote12
+13,tubulinA,158,169,SVDYGKKSKLEF,700.86,2,0,5.3,0.5,700.86,700.86,0,0.1,0,0,5,testnote13

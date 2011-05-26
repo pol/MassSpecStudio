@@ -25,7 +25,7 @@ namespace MassSpecStudio.DataProvider.Test.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\test\\mzxml\\file07 - run1 - apo-CaM 50%0025D2O trial1.wiff.mzXML")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\testData\\mzxml\\file07 - run1 - apo-CaM 50%0025D2O trial1.wiff.mzXML")]
         public string mzXMLTestFile1 {
             get {
                 return ((string)(this["mzXMLTestFile1"]));
@@ -34,19 +34,10 @@ namespace MassSpecStudio.DataProvider.Test.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\test\\mzxml\\file25 - 20l apo trial1-s1 (MSMS).mzXML")]
+        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\testData\\mzxml\\file25 - 20l apo trial1-s1 (MSMS).mzXML")]
         public string mzXMLTestFile2 {
             get {
                 return ((string)(this["mzXMLTestFile2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("..\\..\\..\\..\\test\\yafms\\test.yafms")]
-        public string yafmsTestFile1 {
-            get {
-                return ((string)(this["yafmsTestFile1"]));
             }
         }
     }

@@ -19,10 +19,10 @@
   <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
   <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
   <IgnoreGeneratedCode>True</IgnoreGeneratedCode>
+  <TargetFrameworkVersion>0.0</TargetFrameworkVersion>
  </ProjectOptions>
  <Targets>
   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/../Output/bin/DataProviders/YAFMS.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Composition.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.exe" Analyze="True" AnalyzeAllChildren="True" />
@@ -319,6 +319,15 @@
      </Message>
     </Messages>
    </Namespace>
+   <Namespace Name="XamlGeneratedNamespace">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-05-26 22:27:45Z">
+      <Issue>
+       <Item>XamlGeneratedNamespace</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
   </Namespaces>
   <Targets>
    <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll">
@@ -607,96 +616,6 @@
               </Messages>
              </Accessor>
             </Accessors>
-           </Member>
-          </Members>
-         </Type>
-        </Types>
-       </Namespace>
-      </Namespaces>
-     </Module>
-    </Modules>
-   </Target>
-   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/YAFMS.MassSpecStudio.DataProvider.dll">
-    <Modules>
-     <Module Name="yafms.massspecstudio.dataprovider.dll">
-      <Namespaces>
-       <Namespace Name="Yafms.MassSpecStudio.DataProvider">
-        <Types>
-         <Type Name="AveragedSpectrumExtractor">
-          <Members>
-           <Member Name="#GetMSMSSpectrum(System.Double,System.Double,System.Double,System.Double)">
-            <Messages>
-             <Message Id="MSMS" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-25 00:55:58Z">
-              <Issue Name="MemberShouldBeCompoundWord">
-               <Item>MSMS</Item>
-               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
-               <Item>MsMs</Item>
-              </Issue>
-             </Message>
-             <Message Id="MSMS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-05-25 00:55:58Z">
-              <Issue Name="Member">
-               <Item>MSMS</Item>
-               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
-               <Item>Msms</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-         <Type Name="ScanConverter">
-          <Members>
-           <Member Name="#Convert(System.Double,MassSpecStudio.Core.TimeUnit)">
-            <Messages>
-             <Message Id="timeUnits" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2011-05-25 00:55:58Z" FixCategory="DependsOnFix">
-              <Issue>
-               <Item>'timeUnits'</Item>
-               <Item>'ScanConverter.Convert(double, TimeUnit)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#ConvertRt(System.Double)">
-            <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
-              <Issue>
-               <Item>'ScanConverter.ConvertRt(double)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-         <Type Name="YafmsDataProvider">
-          <Members>
-           <Member Name="#eventAggregator">
-            <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
-              <Issue>
-               <Item>'YafmsDataProvider.eventAggregator'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#IsCorrectFileType(System.String,System.String)">
-            <Messages>
-             <Message Id="System.String.ToUpper" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2011-05-25 00:55:58Z">
-              <Issue>
-               <Item>'string.ToUpper()'</Item>
-               <Item>'YafmsDataProvider.IsCorrectFileType(string, string)'</Item>
-               <Item>'string.ToUpper(CultureInfo)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#scanConverter">
-            <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
-              <Issue>
-               <Item>'YafmsDataProvider.scanConverter'</Item>
-              </Issue>
-             </Message>
-            </Messages>
            </Member>
           </Members>
          </Type>

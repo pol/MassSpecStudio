@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  
+	<SolidColorBrush x:Key="MenuBarBackground">#FF3a3a3a</SolidColorBrush>
+	<SolidColorBrush x:Key="MenuBarForeground">#FFFFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="ToolBarPanelBackground">#FF444444</SolidColorBrush>
+	
+	<SolidColorBrush x:Key="ToolBarBackground">#FF595959</SolidColorBrush>
+	<SolidColorBrush x:Key="StatusBarBackground">#FF444444</SolidColorBrush>
+	<SolidColorBrush x:Key="StatusBarForeground">#FFFFFFFF</SolidColorBrush>
+	<SolidColorBrush x:Key="DialogDarkBackground" Color="{DynamicResource DarkColor}"></SolidColorBrush>
+	<SolidColorBrush x:Key="DialogLightBackground" Color="{DynamicResource LightColor}"></SolidColorBrush>
+
+	<Color x:Key="LightColor">#FFaaaaaa</Color>
+	<Color x:Key="DarkColor">#FF444444</Color>
+</ResourceDictionary>

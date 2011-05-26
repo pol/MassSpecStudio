@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DeconTools.MassSpecStudio.Processing.Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mzXMLTestFile1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\mzxml\file07 - run1 - apo-CaM 50%0025D2O trial1.wiff.mzXML</Value>
+    </Setting>
+    <Setting Name="mzXMLTestFile2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\mzxml\file25 - 20l apo trial1-s1 (MSMS).mzXML</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

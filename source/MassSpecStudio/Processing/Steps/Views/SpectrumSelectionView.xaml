@@ -1,0 +1,27 @@
+﻿<AvalonDock:DocumentContent x:Class="MassSpecStudio.Processing.Steps.Views.SpectrumSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+							xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+							xmlns:graph="clr-namespace:MassSpecStudio.UI.Controls;assembly=MassSpecStudio.UI.Controls"
+             mc:Ignorable="d">
+	<Grid Background="White">
+		<TabControl>
+			<TabItem Header="Graph">
+				<graph:GraphView Name="graphView"></graph:GraphView>
+			</TabItem>
+			<TabItem Header="List">
+				<ListView Name="listView">
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding XValue, StringFormat=F5}"></GridViewColumn>
+							<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding YValue, StringFormat=F5}"></GridViewColumn>
+							<GridViewColumn Header="N" DisplayMemberBinding="{Binding NumberOfDuplicates}"></GridViewColumn>
+						</GridView>
+					</ListView.View>
+				</ListView>
+			</TabItem>
+		</TabControl>
+	</Grid>
+	</AvalonDock:DocumentContent>

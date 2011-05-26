@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Hydra.Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mzXMLTestFile1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\mzxml\file07 - run1 - apo-CaM 50%0025D2O trial1.wiff.mzXML</Value>
+    </Setting>
+    <Setting Name="mzXMLTestFile2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\mzxml\file25 - 20l apo trial1-s1 (MSMS).mzXML</Value>
+    </Setting>
+    <Setting Name="TestProject1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects\TestProject1\testProject1.mssproj</Value>
+    </Setting>
+    <Setting Name="PeptideTestFile1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\peptide_csv\Peptides7-13.csv</Value>
+    </Setting>
+    <Setting Name="TestRunDataDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\mzxml</Value>
+    </Setting>
+    <Setting Name="TestProject2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects\TestProject2\testProject2.mssproj</Value>
+    </Setting>
+    <Setting Name="PeptideTestFile2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects\TestProject2\testExperiment2\Data\Peptides.xml</Value>
+    </Setting>
+    <Setting Name="TestExperiment1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects\TestProject1\testExperiment1\testExperiment1.mssexp</Value>
+    </Setting>
+    <Setting Name="XmlPeptideTestFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects\TestProject1\TestExperiment1\Data\peptides.xml</Value>
+    </Setting>
+    <Setting Name="ResultFile1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Results - 2011-02-10 05.46.05.xml</Value>
+    </Setting>
+    <Setting Name="ProjectRootDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\test\testProjects</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

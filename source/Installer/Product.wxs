@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="e709e7d3-1f05-4e8f-82aa-28c7442326e1" 
+					 Name="Mass Spec Studio" 
+					 Language="1033" 
+					 Version="1.0" 
+					 Manufacturer="Schriemer Lab" 
+					 UpgradeCode="ed73b537-7e56-46dd-8103-f0b48936d23b">
+		
+		<Package InstallerVersion="100" Compressed="yes" />
+
+		<Media Id="1" Cabinet="MassSpecStudio.cab" EmbedCab="yes" />
+		<Property Id='DiskPrompt' Value="Mass Spec Studio 1.0 Installation [1]" />
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLLOCATION" Name="Mass Spec Studio">
+
+					<Component Id='MainExecutable' Guid='482A3557-EC59-42C1-9098-A1B4964A6E10'>
+						<File Id='MassSpecStudioEXE' Name='MassSpecStudio.exe' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.exe' KeyPath='yes'>
+							<Shortcut Id="startmenuMassSpecStudio10" Directory="ProgramMenuDir" Name="Mass Spec Studio" WorkingDirectory='INSTALLDIR' Icon="MassSpecStudio.exe" IconIndex="0" Advertise="yes" />
+							<Shortcut Id="desktopMassSpecStudio10" Directory="DesktopFolder" Name="Mass Spec Studio" WorkingDirectory='INSTALLDIR' Icon="MassSpecStudio.exe" IconIndex="0" Advertise="yes" />
+						</File>
+						<File Id='MassSpecStudioEXEConfig' Name='MassSpecStudio.exe.config' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.exe.config' />
+					</Component>
+
+					<Component Id='MassSpecStudioLibrary' Guid='00D7709C-A6A6-4C29-9B4F-487829A5288E'>
+						<File Id='AvalonDockDLL' Name='AvalonDock.dll' DiskId='1' Source='..\..\Output\bin\AvalonDock.dll' />
+						<File Id='AvalonDockThemesDLL' Name='AvalonDock.Themes.dll' DiskId='1' Source='..\..\Output\bin\AvalonDock.Themes.dll'  />
+						<File Id='MicrosoftPracticesPrismDLL' Name='Microsoft.Practices.Prism.dll' DiskId='1' Source='..\..\Output\bin\Microsoft.Practices.Prism.dll'  />
+						<File Id='MicrosoftPracticesPrismMefExtensionsDLL' Name='Microsoft.Practices.Prism.MefExtensions.dll' DiskId='1' Source='..\..\Output\bin\Microsoft.Practices.Prism.MefExtensions.dll' />
+						<File Id='MicrosoftPracticesServiceLocationDLL' Name='Microsoft.Practices.ServiceLocation.dll' DiskId='1' Source='..\..\Output\bin\Microsoft.Practices.ServiceLocation.dll' />
+						<File Id='MassSpecStudio.CompositionDLL' Name='MassSpecStudio.Composition.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Composition.dll' />
+						<File Id='MassSpecStudioCoreDLL' Name='MassSpecStudio.Core.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Core.dll' />
+						<File Id='MassSpecStudioModulesExtensionManagerDLL' Name='MassSpecStudio.Modules.ExtensionManager.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Modules.ExtensionManager.dll' />
+						<File Id='MassSpecStudioModulesProjectDLL' Name='MassSpecStudio.Modules.Project.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Modules.Project.dll' />
+						<File Id='MassSpecStudioModulesPropertiesDLL' Name='MassSpecStudio.Modules.Properties.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Modules.Properties.dll' />
+						<File Id='MassSpecStudioModulesStatusBarDLL' Name='MassSpecStudio.Modules.StatusBar.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Modules.StatusBar.dll' />
+						<File Id='MassSpecStudioModulesOutputDLL' Name='MassSpecStudio.Modules.Output.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.Modules.Output.dll' />
+						<File Id='MassSpecStudioUIControlsDLL' Name='MassSpecStudio.UI.Controls.dll' DiskId='1' Source='..\..\Output\bin\MassSpecStudio.UI.Controls.dll' />
+						<File Id='WPGDLL' Name='WPG.dll' DiskId='1' Source='..\..\Output\bin\WPG.dll' />
+						<File Id='ZedGraphDLL' Name='ZedGraph.dll' DiskId='1' Source='..\..\Output\bin\ZedGraph.dll' />
+						<File Id='ValidationDLL' Name='Validation.dll' DiskId='1' Source='..\..\Output\bin\Validation.dll' />
+						<File Id='ValidationPresentationDLL' Name='Validation.Presentation.dll' DiskId='1' Source='..\..\Output\bin\Validation.Presentation.dll' />
+					</Component>
+
+					<Directory Id='Modules' Name='Modules'>
+						<Component Id='HydraModulesLibrary' Guid='9E4DBBAB-8D54-47B4-8410-A58B092DC171'>
+							<File Id='HydraModulesPeptidesDLL' Name='Hydra.Modules.Peptides.dll' DiskId='1' Source='..\..\Output\bin\Modules\Hydra.Modules.Peptides.dll'  />
+							<File Id='HydraModulesProjectDLL' Name='Hydra.Modules.Project.dll' DiskId='1' Source='..\..\Output\bin\Modules\Hydra.Modules.Project.dll'  />
+							<File Id='HydraModulesResultsDLL' Name='Hydra.Modules.Results.dll' DiskId='1' Source='..\..\Output\bin\Modules\Hydra.Modules.Results.dll' />
+							<File Id='HydraModulesValidationDLL' Name='Hydra.Modules.Validation.dll' DiskId='1' Source='..\..\Output\bin\Modules\Hydra.Modules.Validation.dll' />
+							<File Id='HydraModulesRunDLL' Name='Hydra.Modules.Run.dll' DiskId='1' Source='..\..\Output\bin\Modules\Hydra.Modules.Run.dll' />
+							<File Id='ProteinCalcDLL' Name='ProteinCalc.dll' DiskId='1' Source='..\..\Output\bin\Modules\ProteinCalc.dll' />
+						</Component>
+					</Directory>
+					
+					<Directory Id='Packages' Name="Packages">
+						<Component Id='HydraPackageLibrary' Guid='5388BC23-35ED-4194-8642-17B49CD84D2D'>
+							<File Id='HydraPackageCoreDLL' Name='Hydra.Core.dll' DiskId='1' Source='..\..\Output\bin\Packages\Hydra.Core.dll' />
+						</Component>
+					</Directory>
+
+					<Directory Id='Processing' Name="Processing">
+						<Component Id='MassSpecStudioProcessingLibrary' Guid='1CA3C0E3-050E-4D88-B373-2BED18C4A943'>
+							<File Id='MassSpecStudioProcessingDLL' Name='MassSpecStudio.Processing.dll' DiskId='1' Source='..\..\Output\bin\Processing\MassSpecStudio.Processing.dll' />
+						</Component>
+						
+						<Component Id='HydraProcessingLibrary' Guid='00FDDE10-00C3-4AC6-BB90-4D5DC05419B6'>
+							<File Id='HydraProcessingAlgorithmDLL' Name='Hydra.Processing.Algorithm.dll' DiskId='1' Source='..\..\Output\bin\Processing\Hydra.Processing.Algorithm.dll' />
+							<File Id='MwtWinDllDLL' Name='MwtWinDll.dll' DiskId='1' Source='..\..\Output\bin\Processing\MwtWinDll.dll' />
+							<File Id='MapackDLL' Name='Mapack.dll' DiskId='1' Source='..\..\Output\bin\Processing\Mapack.dll' />
+						</Component>
+
+						<Component Id='DeconToolsProcessingLibrary' Guid='98A8168A-8F7F-4ED4-AE95-FC3B316F0A07'>
+							<File Id='DeconToolsDLL' Name='DeconTools.MassSpecStudio.Processing.dll' DiskId='1' Source='..\..\Output\bin\Processing\DeconTools.MassSpecStudio.Processing.dll' />
+							<File Id='DeconEngineDLL' Name='DeconEngine.dll' DiskId='1' Source='..\..\Output\bin\Processing\DeconEngine.dll' />
+							<File Id='XercesC_2_7DLL' Name='xerces-c_2_7.dll' DiskId='1' Source='..\..\Output\bin\Processing\xerces-c_2_7.dll' />
+						</Component>
+					</Directory>
+
+					<Directory Id='DataProviders' Name="DataProviders">
+						<Component Id='HydraDataProvidersLibrary' Guid='69BA7B73-2D39-46ED-8A14-04ED58EA91E0'>
+							<File Id='HydraDataProviderDLL' Name='Hydra.DataProvider.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\Hydra.DataProvider.dll' />
+						</Component>
+
+						<Component Id='ProteoWizardDataProvidersLibrary' Guid='E284BA68-6BDC-420E-B2AD-74C0105E3F8F'>
+							<File Id='ProteoWizardMassSpecStudioDataProviderDLL' Name='ProteoWizard.MassSpecStudio.DataProvider.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\ProteoWizard.MassSpecStudio.DataProvider.dll' />
+							<File Id='agtsampleinforwDLL' Name='agtsampleinforw.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\agtsampleinforw.dll' />
+							<File Id='BaseCommonDLL' Name='BaseCommon.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BaseCommon.dll' />
+							<File Id='BaseDataAccessDLL' Name='BaseDataAccess.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BaseDataAccess.dll' />
+							<File Id='BaseErrorDLL' Name='BaseError.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BaseError.dll' />
+							<File Id='BaseTofDLL' Name='BaseTof.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BaseTof.dll' />
+							<File Id='BDalCXtLcDLL' Name='BDal.CXt.Lc.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BDal.CXt.Lc.dll' />
+							<File Id='BDalCXtLcFactoryDLL' Name='BDal.CXt.Lc.Factory.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BDal.CXt.Lc.Factory.dll' />
+							<File Id='BDalCXtLcInterfacesDLL' Name='BDal.CXt.Lc.Interfaces.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BDal.CXt.Lc.Interfaces.dll' />
+							<File Id='BDalCXtLcUntU2DLL' Name='BDal.CXt.Lc.UntU2.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\BDal.CXt.Lc.UntU2.dll' />
+							<File Id='InteropEDALDLL' Name='Interop.EDAL.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\Interop.EDAL.dll' />
+							<File Id='InteropEDALSxSmanifest' Name='Interop.EDAL.SxS.manifest' DiskId='1' Source='..\..\Output\bin\DataProviders\Interop.EDAL.SxS.manifest' />
+							<File Id='MassSpecDataReaderDLL' Name='MassSpecDataReader.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\MassSpecDataReader.dll' />
+							<File Id='pwiz_bindings_cliDLL' Name='pwiz_bindings_cli.dll' DiskId='1' Source='..\..\Output\bin\DataProviders\pwiz_bindings_cli.dll' />
+						</Component>
+					</Directory>
+				</Directory>
+			</Directory>
+		
+			<Directory Id="ProgramMenuFolder" Name="Programs">
+				<Directory Id="ProgramMenuDir" Name="Mass Spec Studio 1.0">
+					<Component Id="ProgramMenuDir" Guid="3DF21276-FCE3-4667-8CF6-A48045983BE3">
+						<RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+						<RegistryValue Root='HKCU' Key='Software\[ProductName]' Type='string' Value='' KeyPath='yes' />
+					</Component>
+				</Directory>
+			</Directory>
+
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+		
+		<Feature Id="Complete" Level="1" Title="Mass Spec Studio" Description="Mass Spec Studio" Display="expand" ConfigurableDirectory="INSTALLLOCATION" Absent="allow" AllowAdvertise="no" InstallDefault="local">
+			<Feature Id="Core" Level="1" Title="Studio Core" Description="Mass Spec Studio Core Components" Absent="disallow" AllowAdvertise="no" InstallDefault="local">
+				<ComponentRef Id="MainExecutable"/>
+				<ComponentRef Id="MassSpecStudioLibrary"/>
+				<ComponentRef Id="MassSpecStudioProcessingLibrary"/>
+				<ComponentRef Id='ProgramMenuDir' />
+
+				<!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
+				<ComponentGroupRef Id="Product.Generated" />
+			</Feature> 
+			<Feature Id="DataProviders" Level="1" Title="Data Providers" Description="Available Data Providers" Absent="allow" AllowAdvertise="no" InstallDefault="local">
+				<Feature Id="ProteoWizardDataProvider" Level="1" Title="ProteoWizard Data Provider" Description="ProteoWizard Data Provider" Absent="disallow" AllowAdvertise="no" InstallDefault="local">
+					<ComponentRef Id="ProteoWizardDataProvidersLibrary"/>
+				</Feature>
+			</Feature>
+			<Feature Id="Processing" Level="1" Title="Processing" Description="Available Processing Algorithms" Absent="allow" AllowAdvertise="no" InstallDefault="local">
+				<Feature Id="DeconToolsProcessing" Level="1" Title="DeconTools" Description="DeconTools Processing Algorithms" Absent="disallow" AllowAdvertise="no" InstallDefault="local">
+					<ComponentRef Id="DeconToolsProcessingLibrary"/>
+				</Feature>
+			</Feature>
+			<Feature Id="Packages" Level="1" Title="Packages" Description="Available Packages" Absent="allow" AllowAdvertise="no" InstallDefault="local">
+				<Feature Id="Hydra" Level="1" Title="Hydra" Description="HDX Analysis Package." Absent="allow" AllowAdvertise="no" InstallDefault="local">
+					<ComponentRef Id="HydraModulesLibrary"/>
+					<ComponentRef Id="HydraPackageLibrary"/>
+					<ComponentRef Id="HydraProcessingLibrary"/>
+					<ComponentRef Id="HydraDataProvidersLibrary"/>
+				</Feature>
+			</Feature>
+			
+		</Feature>
+
+		<UIRef Id="WixUI_FeatureTree" />
+		<UIRef Id="WixUI_ErrorProgressText" />
+		<WixVariable Id="WixUILicenseRtf" Value="..\License.rtf" />
+
+		<Icon Id="MassSpecStudio.exe" SourceFile="..\..\Output\bin\MassSpecStudio.exe"/>
+	</Product>
+</Wix>

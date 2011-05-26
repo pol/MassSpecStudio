@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D83892D3-14DD-42CB-9D9D-BA8B807A0858}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hydra.Test</RootNamespace>
+    <AssemblyName>Hydra.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Output\bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Output\bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonDock">
+      <HintPath>..\..\..\library\AvalonDock\AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\library\PRISM4\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\..\..\library\PRISM4\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\library\PRISM4\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\library\MOQ\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ProteinCalc">
+      <HintPath>..\..\..\library\Utilities\ProteinCalc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPG">
+      <HintPath>..\..\..\library\WPG-Modified\WPG.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DocumentCacheTest.cs" />
+    <Compile Include="Core\Domain\DeuterationResultTest.cs" />
+    <Compile Include="Core\Domain\ExperimentTest.cs" />
+    <Compile Include="Core\Domain\FragmentIonTest.cs" />
+    <Compile Include="Core\Domain\LabelingTest.cs" />
+    <Compile Include="Core\Domain\PeptidesTest.cs" />
+    <Compile Include="Core\Domain\PeptideTest.cs" />
+    <Compile Include="Core\Domain\ProteinStateTest.cs" />
+    <Compile Include="Core\Domain\ResultTest.cs" />
+    <Compile Include="Core\Domain\RunResultTest.cs" />
+    <Compile Include="Core\Domain\RunTest.cs" />
+    <Compile Include="DataProvider\CsvPeptideDataProviderTest.cs" />
+    <Compile Include="IntegrationTests\AlgorithmTestBase.cs" />
+    <Compile Include="IntegrationTests\MsMsFragmentAlgorithmTest.cs" />
+    <Compile Include="Modules\Peptides\Views\IonViewModelTest.cs" />
+    <Compile Include="Modules\Peptides\Views\PeptidesViewModelTest.cs" />
+    <Compile Include="Modules\Peptides\Views\PeptideViewModelTest.cs" />
+    <Compile Include="Modules\Project\CreateProjectHelperTest.cs" />
+    <Compile Include="Modules\Project\HydraProjectModuleTest.cs" />
+    <Compile Include="IntegrationTests\LabelAmountAlgorithmTest.cs" />
+    <Compile Include="Modules\Project\HydraExperimentTypeTest.cs" />
+    <Compile Include="Modules\Project\TemplatedHydraExperimentTypeTest.cs" />
+    <Compile Include="Modules\TestHelper.cs" />
+    <Compile Include="Modules\Project\Views\ExperimentViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\LabelingViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\PeptidesViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\PeptideViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ProjectExplorerViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ProjectPropertiesViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ProjectViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ProteinStateViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ResultsViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\ResultViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\RunViewModelTest.cs" />
+    <Compile Include="Modules\Project\Views\SamplesViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\DataProviderViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\HydraExperimentWizardControllerTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\ImportPeptidesViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\LabellingsViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\ProteinStatesViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\RunsViewModelTest.cs" />
+    <Compile Include="Modules\Project\WizardViews\SelectTemplateViewModelTest.cs" />
+    <Compile Include="Modules\Results\Views\ResultsViewModelTest.cs" />
+    <Compile Include="Modules\Runs\Views\RunViewModelTest.cs" />
+    <Compile Include="Modules\Runs\Views\SpectrumSelectionDialogViewModelTest.cs" />
+    <Compile Include="Modules\Runs\Views\XicSelectionDialogViewModelTest.cs" />
+    <Compile Include="Processing\Algorithm\MathUtilityTest.cs" />
+    <Compile Include="Processing\Algorithm\MSUtilityTest.cs" />
+    <Compile Include="Processing\Algorithm\PeptideUtilityTest.cs" />
+    <Compile Include="Processing\Algorithm\Steps\DeuterationResultGeneratorTest.cs" />
+    <Compile Include="Processing\Algorithm\Steps\IsotopicProfileFinderTest.cs" />
+    <Compile Include="Processing\Algorithm\Steps\LabelAmountCalculatorTest.cs" />
+    <Compile Include="Processing\Algorithm\Steps\MsMsFragmentAnalyzerTest.cs" />
+    <Compile Include="Processing\Algorithm\Steps\XicPeakPickerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TestHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataProviders\ProteoWizard\ProteoWizard.MassSpecStudio.DataProvider.csproj">
+      <Project>{90DAE4FC-F636-4FBE-98F9-62A88AA1FA46}</Project>
+      <Name>ProteoWizard.MassSpecStudio.DataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MassSpecStudio\Composition\MassSpecStudio.Composition.csproj">
+      <Project>{390D86C2-5C3F-43F1-A409-261D2079098A}</Project>
+      <Name>MassSpecStudio.Composition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MassSpecStudio\Controls\MassSpecStudio.UI.Controls.csproj">
+      <Project>{7ADE092A-D1D1-426A-90D3-C46C01E572E9}</Project>
+      <Name>MassSpecStudio.UI.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MassSpecStudio\Core\MassSpecStudio.Core.csproj">
+      <Project>{EAE0C351-7C47-48E3-A4AF-B8395293E171}</Project>
+      <Name>MassSpecStudio.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MassSpecStudio\Processing\MassSpecStudio.Processing.csproj">
+      <Project>{55DE94B6-F1F1-47D8-A324-8192E8AD5B8C}</Project>
+      <Name>MassSpecStudio.Processing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Processing\DeconTools\DeconTools.MassSpecStudio.Processing.csproj">
+      <Project>{32D87440-24ED-4960-A91F-039872B3CB5C}</Project>
+      <Name>DeconTools.MassSpecStudio.Processing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Algorithm\Hydra.Processing.Algorithm.csproj">
+      <Project>{4C5127A4-D354-4016-BD63-226C3957A813}</Project>
+      <Name>Hydra.Processing.Algorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Hydra.Core.csproj">
+      <Project>{ECD46A02-CE79-4BD8-8B94-D4105C3F53B9}</Project>
+      <Name>Hydra.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\Hydra.DataProvider.csproj">
+      <Project>{7DD2F03D-31F4-4B60-99F8-874C0BFE8872}</Project>
+      <Name>Hydra.DataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peptides\Hydra.Modules.Peptides.csproj">
+      <Project>{E5DECF06-AD03-44D9-8D82-F86A6E6297A4}</Project>
+      <Name>Hydra.Modules.Peptides</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project\Hydra.Modules.Project.csproj">
+      <Project>{5C4CB866-22BA-4866-9DBC-B1AA4ECC8FBE}</Project>
+      <Name>Hydra.Modules.Project</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Results\Hydra.Modules.Results.csproj">
+      <Project>{0DBCD443-E52C-4F09-80BA-76AE824F588B}</Project>
+      <Name>Hydra.Modules.Results</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Run\Hydra.Modules.Run.csproj">
+      <Project>{4DE8C3DF-0707-488E-8486-07B01F98A194}</Project>
+      <Name>Hydra.Modules.Run</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\tools\Microsoft StyleCop 4.4.0.14\Microsoft.StyleCop.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

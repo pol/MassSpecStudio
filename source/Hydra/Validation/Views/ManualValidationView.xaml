@@ -1,0 +1,30 @@
+﻿<AvalonDock:DocumentContent x:Class="Hydra.Modules.Validation.Views.ManualValidationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+			xmlns:ui="clr-namespace:Hydra.Modules.Validation.Controls"
+             mc:Ignorable="d" 
+							Title="Manual Validation"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="170"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+			<ListView Name="replicates" ItemsSource="{Binding CurrentRunResults}" SelectedItem="{Binding SelectedRunResult, Mode=TwoWay}" Margin="0,0,0,3">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Run" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+					<GridViewColumn Header="Sequence" DisplayMemberBinding="{Binding Peptide.Sequence}"></GridViewColumn>
+					<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding Peptide.MonoIsotopicMass, StringFormat=F5}"></GridViewColumn>
+					<GridViewColumn Header="Charge" DisplayMemberBinding="{Binding Peptide.ChargeState}"></GridViewColumn>
+					<GridViewColumn Header="RT" DisplayMemberBinding="{Binding RunResult.CachedXicPeak.Rt, StringFormat=F3}"></GridViewColumn>
+				</GridView>
+			</ListView.View>			
+		</ListView>
+		<GridSplitter Grid.Row="0" VerticalAlignment="Bottom" Height="3" HorizontalAlignment="Stretch"></GridSplitter>
+		<ui:XicSpectrumView x:Name="xicSpectrumView" Grid.Row="1" Margin="10" Result="{Binding SelectedItem, ElementName=replicates}"></ui:XicSpectrumView>
+    </Grid>
+</AvalonDock:DocumentContent>

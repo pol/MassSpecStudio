@@ -1,0 +1,3056 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="10.0" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">$(FxCopDir)\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>True</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/DataProviders/YAFMS.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Composition.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.ExtensionManager.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.Output.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.Project.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.Properties.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.StatusBar.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.UI.Controls.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Peptides.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Project.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Results.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Packages/Hydra.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Processing/DeconTools.MassSpecStudio.Processing.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Processing/Hydra.Processing.Algorithm.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../Output/bin/Processing/MassSpecStudio.Processing.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="False">
+    <Rule Name="AbstractTypesShouldNotHaveConstructors" Enabled="True" />
+    <Rule Name="AvoidEmptyInterfaces" Enabled="True" />
+    <Rule Name="AvoidExcessiveParametersOnGenericTypes" Enabled="True" />
+    <Rule Name="AvoidNamespacesWithFewTypes" Enabled="True" />
+    <Rule Name="AvoidOutParameters" Enabled="True" />
+    <Rule Name="CollectionsShouldImplementGenericInterface" Enabled="True" />
+    <Rule Name="ConsiderPassingBaseTypesAsParameters" Enabled="True" />
+    <Rule Name="DeclareEventHandlersCorrectly" Enabled="True" />
+    <Rule Name="DeclareTypesInNamespaces" Enabled="True" />
+    <Rule Name="DefaultParametersShouldNotBeUsed" Enabled="True" />
+    <Rule Name="DefineAccessorsForAttributeArguments" Enabled="True" />
+    <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareProtectedMembersInSealedTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareStaticMembersOnGenericTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareVisibleInstanceFields" Enabled="True" />
+    <Rule Name="DoNotExposeGenericLists" Enabled="True" />
+    <Rule Name="DoNotHideBaseClassMethods" Enabled="True" />
+    <Rule Name="DoNotNestGenericTypesInMemberSignatures" Enabled="True" />
+    <Rule Name="DoNotOverloadOperatorEqualsOnReferenceTypes" Enabled="True" />
+    <Rule Name="DoNotPassTypesByReference" Enabled="True" />
+    <Rule Name="DoNotRaiseExceptionsInUnexpectedLocations" Enabled="True" />
+    <Rule Name="EnumeratorsShouldBeStronglyTyped" Enabled="True" />
+    <Rule Name="EnumsShouldHaveZeroValue" Enabled="True" />
+    <Rule Name="EnumStorageShouldBeInt32" Enabled="True" />
+    <Rule Name="ExceptionsShouldBePublic" Enabled="True" />
+    <Rule Name="GenericMethodsShouldProvideTypeParameter" Enabled="True" />
+    <Rule Name="ICollectionImplementationsHaveStronglyTypedMembers" Enabled="True" />
+    <Rule Name="ImplementIDisposableCorrectly" Enabled="True" />
+    <Rule Name="ImplementStandardExceptionConstructors" Enabled="True" />
+    <Rule Name="IndexersShouldNotBeMultidimensional" Enabled="True" />
+    <Rule Name="InterfaceMethodsShouldBeCallableByChildTypes" Enabled="True" />
+    <Rule Name="ListsAreStronglyTyped" Enabled="True" />
+    <Rule Name="MarkAssembliesWithAssemblyVersion" Enabled="True" />
+    <Rule Name="MarkAssembliesWithClsCompliant" Enabled="True" />
+    <Rule Name="MarkAssembliesWithComVisible" Enabled="True" />
+    <Rule Name="MarkAttributesWithAttributeUsage" Enabled="True" />
+    <Rule Name="MarkEnumsWithFlags" Enabled="True" />
+    <Rule Name="MembersShouldNotExposeCertainConcreteTypes" Enabled="True" />
+    <Rule Name="MovePInvokesToNativeMethodsClass" Enabled="True" />
+    <Rule Name="NestedTypesShouldNotBeVisible" Enabled="True" />
+    <Rule Name="OverloadOperatorEqualsOnOverloadingAddAndSubtract" Enabled="True" />
+    <Rule Name="OverrideMethodsOnComparableTypes" Enabled="True" />
+    <Rule Name="PropertiesShouldNotBeWriteOnly" Enabled="True" />
+    <Rule Name="ProvideObsoleteAttributeMessage" Enabled="True" />
+    <Rule Name="ReplaceRepetitiveArgumentsWithParamsArray" Enabled="True" />
+    <Rule Name="StaticHolderTypesShouldBeSealed" Enabled="True" />
+    <Rule Name="StaticHolderTypesShouldNotHaveConstructors" Enabled="True" />
+    <Rule Name="StringUriOverloadsCallSystemUriOverloads" Enabled="True" />
+    <Rule Name="TypesShouldNotExtendCertainBaseTypes" Enabled="True" />
+    <Rule Name="TypesThatOwnDisposableFieldsShouldBeDisposable" Enabled="True" />
+    <Rule Name="TypesThatOwnNativeResourcesShouldBeDisposable" Enabled="True" />
+    <Rule Name="UriParametersShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UseEventsWhereAppropriate" Enabled="True" />
+    <Rule Name="UseGenericEventHandlerInstances" Enabled="True" />
+    <Rule Name="UseGenericsWhereAppropriate" Enabled="True" />
+    <Rule Name="UseIntegralOrStringArgumentForIndexers" Enabled="True" />
+    <Rule Name="UsePropertiesWhereAppropriate" Enabled="True" />
+   </RuleFile>
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityTransparencyRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="10.0">
+  <Namespaces>
+   <Namespace Name="DeconTools.MassSpecStudio.Processing">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-22 04:15:02Z">
+      <Issue>
+       <Item>DeconTools.MassSpecStudio.Processing</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="DeconTools.MassSpecStudio.Processing.Steps">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-09-14 05:46:12Z">
+      <Issue>
+       <Item>DeconTools.MassSpecStudio.Processing.Steps</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Hydra.Core.Provider">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-09-14 05:46:12Z">
+      <Issue>
+       <Item>Hydra.Core.Provider</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Hydra.Modules.Peptides">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-10-14 05:41:55Z">
+      <Issue>
+       <Item>Hydra.Modules.Peptides</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Hydra.Modules.Project">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-09-14 05:46:12Z">
+      <Issue>
+       <Item>Hydra.Modules.Project</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Hydra.Modules.Results">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-10-14 05:41:55Z">
+      <Issue>
+       <Item>Hydra.Modules.Results</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Composition">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
+      <Issue>
+       <Item>MassSpecStudio.Composition</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Composition.Adapter">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
+      <Issue>
+       <Item>MassSpecStudio.Composition.Adapter</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Composition.Regions">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
+      <Issue>
+       <Item>MassSpecStudio.Composition.Regions</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Core.DataProvider">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-22 04:15:02Z">
+      <Issue>
+       <Item>MassSpecStudio.Core.DataProvider</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Core.EventArg">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-05-20 02:28:44Z">
+      <Issue>
+       <Item>MassSpecStudio.Core.EventArg</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Core.Extensions">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-03-21 20:42:25Z">
+      <Issue>
+       <Item>MassSpecStudio.Core.Extensions</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Core.Validators">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-10-14 05:41:55Z">
+      <Issue>
+       <Item>MassSpecStudio.Core.Validators</Item>
+      </Issue>
+     </Message>
+     <Message Id="Validators" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-10-14 05:41:55Z">
+      <Issue Name="Namespace">
+       <Item>Validators</Item>
+       <Item>MassSpecStudio.Core.Validators</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Modules.ExtensionManager">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-09-14 05:46:12Z">
+      <Issue>
+       <Item>MassSpecStudio.Modules.ExtensionManager</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Modules.Output">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
+      <Issue>
+       <Item>MassSpecStudio.Modules.Output</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Modules.Project">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-10-14 05:41:55Z">
+      <Issue>
+       <Item>MassSpecStudio.Modules.Project</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Modules.Project.Converter">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-10-14 05:41:55Z">
+      <Issue>
+       <Item>MassSpecStudio.Modules.Project.Converter</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Modules.Properties">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2010-09-13 23:40:10Z">
+      <Issue>
+       <Item>MassSpecStudio.Modules.Properties</Item>
+      </Issue>
+      <Notes>
+       <User Name="Administrator">
+        <Note Id="0" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Processing">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-22 04:15:02Z">
+      <Issue>
+       <Item>MassSpecStudio.Processing</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="MassSpecStudio.Processing.Steps">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-09-14 05:46:12Z">
+      <Issue>
+       <Item>MassSpecStudio.Processing.Steps</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Microsoft.Practices.Prism.Regions">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
+      <Issue>
+       <Item>Microsoft.Practices.Prism.Regions</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll">
+    <Modules>
+     <Module Name="proteowizard.massspecstudio.dataprovider.dll">
+      <Namespaces>
+       <Namespace Name="ProteoWizard.MassSpecStudio.DataProvider">
+        <Types>
+         <Type Name="AveragedSpectrumExtractor">
+          <Members>
+           <Member Name="#ConvertXYPointsToSpectra(System.Collections.Generic.List`1&lt;System.Collections.Generic.List`1&lt;MassSpecStudio.Core.Domain.XYPoint&gt;&gt;)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'AveragedSpectrumExtractor.ConvertXYPointsToSpectra(List&lt;List&lt;XYPoint&gt;&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMSMSDataArraysFromMSScans(System.Collections.Generic.List`1&lt;System.Int32&gt;,System.Double,System.Double)">
+            <Messages>
+             <Message Id="msValuesList" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'AveragedSpectrumExtractor.GetMSMSDataArraysFromMSScans(List&lt;int&gt;, double, double)'</Item>
+               <Item>'msValuesList'</Item>
+               <Item>'List&lt;List&lt;XYPoint&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMSMSSpectrum(System.Double,System.Double,System.Double,System.Double)">
+            <Messages>
+             <Message Id="MSMS" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberShouldBeCompoundWord">
+               <Item>MSMS</Item>
+               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
+               <Item>MsMs</Item>
+              </Issue>
+             </Message>
+             <Message Id="MSMS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>MSMS</Item>
+               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
+               <Item>Msms</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#spectrumCache">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'AveragedSpectrumExtractor.spectrumCache'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BinarySpectrum">
+          <Members>
+           <Member Name="#.ctor(System.Double,pwiz.CLI.msdata.BinaryData,pwiz.CLI.msdata.BinaryData)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, BinaryData, BinaryData)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, BinaryData, BinaryData)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double,pwiz.CLI.msdata.BinaryData,pwiz.CLI.msdata.BinaryData)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, double, BinaryData, BinaryData)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, double, BinaryData, BinaryData)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double,pwiz.CLI.msdata.BinaryData,pwiz.CLI.msdata.BinaryData,System.Double,System.Double)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, double, BinaryData, BinaryData, double, double)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'BinarySpectrum.BinarySpectrum(double, double, BinaryData, BinaryData, double, double)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProteoWizardDataProvider">
+          <Members>
+           <Member Name="#GetFileType(System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ProteoWizardDataProvider.GetFileType(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsCorrectFileType(System.String,System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'ProteoWizardDataProvider.IsCorrectFileType(string, string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RtDoesNotExistException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-05-25 00:55:58Z">
+            <Issue Name="MissingConstructor">
+             <Item>'RtDoesNotExistException'</Item>
+             <Item>protected RtDoesNotExistException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'RtDoesNotExistException'</Item>
+             <Item>public RtDoesNotExistException(String)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'RtDoesNotExistException'</Item>
+             <Item>public RtDoesNotExistException(String, Exception)</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2011-05-25 00:55:58Z">
+            <Issue Certainty="95" Level="Error">
+             <Item>'RtDoesNotExistException'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="RtToTimePointConverter">
+          <Members>
+           <Member Name="#CalculateRT(pwiz.CLI.msdata.Spectrum,MassSpecStudio.Core.TimeUnit)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'RtToTimePointConverter.CalculateRT(Spectrum, TimeUnit)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ConvertForMSMS(System.Double,MassSpecStudio.Core.TimeUnit)">
+            <Messages>
+             <Message Id="MSMS" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberShouldBeCompoundWord">
+               <Item>MSMS</Item>
+               <Item>'RtToTimePointConverter.ConvertForMSMS(double, TimeUnit)'</Item>
+               <Item>MsMs</Item>
+              </Issue>
+             </Message>
+             <Message Id="MSMS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>MSMS</Item>
+               <Item>'RtToTimePointConverter.ConvertForMSMS(double, TimeUnit)'</Item>
+               <Item>Msms</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SpectrumExtractor">
+          <Members>
+           <Member Name="#FilterMassList(System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Double,System.Double)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'SpectrumExtractor.FilterMassList(IList&lt;double&gt;, IList&lt;double&gt;, double, double)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TicGenerator">
+          <Members>
+           <Member Name="#spectrumCache">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'TicGenerator.spectrumCache'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#spectrumExtractor">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'TicGenerator.spectrumExtractor'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SpectrumIsSurveryScan(MassSpecStudio.Core.Domain.Spectrum)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'TicGenerator.SpectrumIsSurveryScan(Spectrum)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'TicGenerator.SpectrumIsSurveryScan(Spectrum)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XYBinaryData">
+          <Members>
+           <Member Name="#.ctor(pwiz.CLI.msdata.BinaryData,pwiz.CLI.msdata.BinaryData)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYBinaryData.XYBinaryData(BinaryData, BinaryData)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYBinaryData.XYBinaryData(BinaryData, BinaryData)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#XValues">
+            <Accessors>
+             <Accessor Name="#set_XValues(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-25 00:55:58Z">
+                <Issue>
+                 <Item>'XYBinaryData.XValues.set(IList&lt;double&gt;)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#YValues">
+            <Accessors>
+             <Accessor Name="#set_YValues(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-25 00:55:58Z">
+                <Issue>
+                 <Item>'XYBinaryData.YValues.set(IList&lt;double&gt;)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/YAFMS.MassSpecStudio.DataProvider.dll">
+    <Modules>
+     <Module Name="yafms.massspecstudio.dataprovider.dll">
+      <Namespaces>
+       <Namespace Name="Yafms.MassSpecStudio.DataProvider">
+        <Types>
+         <Type Name="AveragedSpectrumExtractor">
+          <Members>
+           <Member Name="#GetMSMSSpectrum(System.Double,System.Double,System.Double,System.Double)">
+            <Messages>
+             <Message Id="MSMS" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberShouldBeCompoundWord">
+               <Item>MSMS</Item>
+               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
+               <Item>MsMs</Item>
+              </Issue>
+             </Message>
+             <Message Id="MSMS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>MSMS</Item>
+               <Item>'AveragedSpectrumExtractor.GetMSMSSpectrum(double, double, double, double)'</Item>
+               <Item>Msms</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ScanConverter">
+          <Members>
+           <Member Name="#Convert(System.Double,MassSpecStudio.Core.TimeUnit)">
+            <Messages>
+             <Message Id="timeUnits" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2011-05-25 00:55:58Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'timeUnits'</Item>
+               <Item>'ScanConverter.Convert(double, TimeUnit)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ConvertRt(System.Double)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ScanConverter.ConvertRt(double)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="YafmsDataProvider">
+          <Members>
+           <Member Name="#eventAggregator">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'YafmsDataProvider.eventAggregator'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsCorrectFileType(System.String,System.String)">
+            <Messages>
+             <Message Id="System.String.ToUpper" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'string.ToUpper()'</Item>
+               <Item>'YafmsDataProvider.IsCorrectFileType(string, string)'</Item>
+               <Item>'string.ToUpper(CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#scanConverter">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'YafmsDataProvider.scanConverter'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Composition.dll">
+    <Modules>
+     <Module Name="massspecstudio.composition.dll">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Composition">
+        <Types>
+         <Type Name="AvalonDockExtension">
+          <Members>
+           <Member Name="#InvalidateParents(AvalonDock.DockableContent)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'content'</Item>
+               <Item>'AvalonDockExtension.InvalidateParents(this DockableContent)'</Item>
+               <Item>'DockableContent'</Item>
+               <Item>'FrameworkElement'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InvalidateParents(AvalonDock.DocumentContent)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'content'</Item>
+               <Item>'AvalonDockExtension.InvalidateParents(this DocumentContent)'</Item>
+               <Item>'DocumentContent'</Item>
+               <Item>'FrameworkElement'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Core.dll">
+    <Modules>
+     <Module Name="massspecstudio.core.dll">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Core">
+        <Types>
+         <Type Name="DirectoryHelper">
+          <Members>
+           <Member Name="#GetRelativePath(System.String,System.String)">
+            <Messages>
+             <Message Id="System.String.Equals(System.String,System.StringComparison)" TypeName="UseOrdinalStringComparison" Category="Microsoft.Globalization" CheckId="CA1309" Created="2011-05-25 00:55:58Z">
+              <Issue Name="StringComparison">
+               <Item>'DirectoryHelper.GetRelativePath(string, string)'</Item>
+               <Item>StringComparison.InvariantCultureIgnoreCase</Item>
+               <Item>'string.Equals(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DocumentManager">
+          <Members>
+           <Member Name="#IsDirty">
+            <Accessors>
+             <Accessor Name="#get_IsDirty()">
+              <Messages>
+               <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Created="2011-05-25 00:55:58Z" FixCategory="Breaking">
+                <Issue Name="PropertyGetter" Level="Warning">
+                 <Item>'DocumentManager.IsDirty.get()'</Item>
+                 <Item>'NotImplementedException'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#SaveRecentProjectList(System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'DocumentManager.SaveRecentProjectList(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IDataProvider">
+          <Members>
+           <Member Name="#FileTypes">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'IDataProvider.FileTypes'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetSampleNames()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2011-05-25 00:55:58Z">
+              <Issue Certainty="50">
+               <Item>'IDataProvider.GetSampleNames()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IDocumentManager">
+          <Members>
+           <Member Name="#New">
+            <Messages>
+             <Message Id="New" TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>'IDocumentManager.New'</Item>
+               <Item>New</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Regions">
+          <Messages>
+           <Message TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717" Created="2011-05-25 00:55:58Z">
+            <Issue>
+             <Item>'Regions'</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Created="2011-05-25 00:55:58Z">
+            <Issue>
+             <Item>'Regions'</Item>
+             <Item>MassSpecStudio.Composition.Regions</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="MassSpecStudio.Core.DataProvider">
+        <Types>
+         <Type Name="SpectrumHelper">
+          <Members>
+           <Member Name="#CreateAveragedSpectrum(System.Collections.Generic.List`1&lt;MassSpecStudio.Core.Domain.ISpectrum&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;ISpectrum&gt;'</Item>
+               <Item>'SpectrumHelper.CreateAveragedSpectrum(List&lt;ISpectrum&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XicHelper">
+          <Members>
+           <Member Name="#FindIndexOfHighestIntensityWithinTolerance(System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Int32,System.Double,System.Double)">
+            <Messages>
+             <Message Id="d" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'XicHelper.FindIndexOfHighestIntensityWithinTolerance(IList&lt;double&gt;, IList&lt;double&gt;, int, double, double)'</Item>
+               <Item>'d'</Item>
+               <Item>'double'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIntensities(System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Double,System.Double,System.Double,System.Collections.Generic.List`1&lt;System.Double&gt;,System.Collections.Generic.List`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;double&gt;'</Item>
+               <Item>'XicHelper.GetIntensities(IList&lt;double&gt;, IList&lt;double&gt;, double, double, double, List&lt;double&gt;, List&lt;double&gt;)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'List&lt;double&gt;'</Item>
+               <Item>'XicHelper.GetIntensities(IList&lt;double&gt;, IList&lt;double&gt;, double, double, double, List&lt;double&gt;, List&lt;double&gt;)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Vals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XicHelper.GetIntensities(IList&lt;double&gt;, IList&lt;double&gt;, double, double, double, List&lt;double&gt;, List&lt;double&gt;)'</Item>
+               <Item>Vals</Item>
+               <Item>'msLevelXVals'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'XicHelper.GetIntensities(IList&lt;double&gt;, IList&lt;double&gt;, double, double, double, List&lt;double&gt;, List&lt;double&gt;)'</Item>
+               <Item>Vals</Item>
+               <Item>'msLevelYVals'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="MassSpecStudio.Core.Domain">
+        <Types>
+         <Type Name="Algorithm">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Created="2011-05-25 00:55:58Z">
+            <Issue>
+             <Item>'Algorithm'</Item>
+             <Item>Hydra.Processing.Algorithm</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#ProcessingSteps">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'Algorithm.ProcessingSteps'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;ProcessingStep&gt;'</Item>
+               <Item>'Algorithm.ProcessingSteps'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Type">
+            <Messages>
+             <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Created="2011-05-25 00:55:58Z">
+              <Issue Name="BaseType">
+               <Item>'Algorithm.Type'</Item>
+               <Item>'object.GetType()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IXYData">
+          <Members>
+           <Member Name="#GetYValue(System.Double)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameterMoreMeaningfulName">
+               <Item>'IXYData.GetYValue(double)'</Item>
+               <Item>'x'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProcessingStep">
+          <Members>
+           <Member Name="#Parameters">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'ProcessingStep.Parameters'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;ProcessingParameter&gt;'</Item>
+               <Item>'ProcessingStep.Parameters'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Type">
+            <Messages>
+             <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Created="2011-05-25 00:55:58Z">
+              <Issue Name="BaseType">
+               <Item>'ProcessingStep.Type'</Item>
+               <Item>'object.GetType()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProjectBase">
+          <Members>
+           <Member Name="#ExperimentReferences">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'ProjectBase.ExperimentReferences'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Experiments">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'ProjectBase.Experiments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Open(System.String)">
+            <Messages>
+             <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Created="2011-05-25 00:55:58Z">
+              <Issue Name="TooGeneric">
+               <Item>'ProjectBase.Open(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProjectBase+ExperimentReference">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-05-25 00:55:58Z">
+            <Issue>
+             <Item>'ProjectBase.ExperimentReference'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Sample">
+          <Members>
+           <Member Name="#GetTotalIonChromatogram()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2011-05-25 00:55:58Z">
+              <Issue Certainty="50">
+               <Item>'Sample.GetTotalIonChromatogram()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Spectrum">
+          <Members>
+           <Member Name="#.ctor(System.Double,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Collections.Generic.List`1&lt;MassSpecStudio.Core.Domain.XYPoint&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;XYPoint&gt;'</Item>
+               <Item>'Spectrum.Spectrum(double, List&lt;XYPoint&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double,System.Collections.Generic.List`1&lt;MassSpecStudio.Core.Domain.XYPoint&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;XYPoint&gt;'</Item>
+               <Item>'Spectrum.Spectrum(double, double, List&lt;XYPoint&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double,System.Double[],System.Double[])">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double, double[], double[])'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double, double[], double[])'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Double,System.Double[],System.Double[])">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double[], double[])'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Spectrum.Spectrum(double, double[], double[])'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XYData">
+          <Members>
+           <Member Name="#.ctor(System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYData.XYData(IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>x</Item>
+               <Item>'xValues'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYData.XYData(IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>y</Item>
+               <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.Collections.Generic.List`1&lt;MassSpecStudio.Core.Domain.XYPoint&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'List&lt;XYPoint&gt;'</Item>
+               <Item>'XYData.XYData(List&lt;XYPoint&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#XValues">
+            <Accessors>
+             <Accessor Name="#set_XValues(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-25 00:55:58Z">
+                <Issue>
+                 <Item>'XYData.XValues.set(IList&lt;double&gt;)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#YValues">
+            <Accessors>
+             <Accessor Name="#set_YValues(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-25 00:55:58Z">
+                <Issue>
+                 <Item>'XYData.YValues.set(IList&lt;double&gt;)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XYPoint">
+          <Members>
+           <Member Name="#.ctor(System.Double,System.Double)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYPoint.XYPoint(double, double)'</Item>
+               <Item>x</Item>
+               <Item>'xValue'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'XYPoint.XYPoint(double, double)'</Item>
+               <Item>y</Item>
+               <Item>'yValue'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="MassSpecStudio.Core.Validators">
+        <Types>
+         <Type Name="DirectoryDoesNotExistValidatorAttribute">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Created="2011-05-25 00:55:58Z">
+              <Issue Name="IncorrectParameterName">
+               <Item>'DirectoryDoesNotExistValidatorAttribute.DirectoryDoesNotExistValidatorAttribute(string)'</Item>
+               <Item>propertyToCompare</Item>
+               <Item>'paramName'</Item>
+               <Item>'ArgumentNullException'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.exe">
+    <Modules>
+     <Module Name="massspecstudio.exe">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio">
+        <Types>
+         <Type Name="AboutViewModel">
+          <Members>
+           <Member Name="#Version">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'AboutViewModel.Version'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Bootstrapper">
+          <Members>
+           <Member Name="#CreateProjectsDirectoryIfNecessary()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'Bootstrapper.CreateProjectsDirectoryIfNecessary()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ShellViewModel">
+          <Members>
+           <Member Name="#RecentProjects">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'ShellViewModel.RecentProjects'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.ExtensionManager.dll">
+    <Modules>
+     <Module Name="massspecstudio.modules.extensionmanager.dll">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Modules.ExtensionManager.Views">
+        <Types>
+         <Type Name="ExtensionManagerViewModel">
+          <Members>
+           <Member Name="#GetModules(System.String,System.String,System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ExtensionManagerViewModel.GetModules(string, string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.Output.dll">
+    <Modules>
+     <Module Name="massspecstudio.modules.output.dll">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2011-05-25 00:55:58Z">
+        <Issue>
+         <Item>'MassSpecStudio.Modules.Output.dll'</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Created="2011-05-25 00:55:58Z">
+        <Issue>
+         <Item>'MassSpecStudio.Modules.Output.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Modules.Output">
+        <Types>
+         <Type Name="Text">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Created="2011-05-25 00:55:58Z">
+            <Issue Name="System">
+             <Item>'Text'</Item>
+             <Item>System.Drawing.Text</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="MassSpecStudio.Modules.Output.Views">
+        <Types>
+         <Type Name="OutputViewModel">
+          <Members>
+           <Member Name="#_outputText">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'OutputViewModel._outputText'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OutputText">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'OutputViewModel.OutputText'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.Modules.Project.dll">
+    <Modules>
+     <Module Name="massspecstudio.modules.project.dll">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Modules.Project.Views">
+        <Types>
+         <Type Name="NewProjectViewModel">
+          <Members>
+           <Member Name="#_documentManager">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'NewProjectViewModel._documentManager'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetNextDirectoryName(System.String,System.String)">
+            <Messages>
+             <Message Id="directoryNames" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'NewProjectViewModel.GetNextDirectoryName(string, string)'</Item>
+               <Item>'directoryNames'</Item>
+               <Item>'string[]'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="StartPageViewModel">
+          <Members>
+           <Member Name="#Open(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'StartPageViewModel.Open(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/MassSpecStudio.UI.Controls.dll">
+    <Modules>
+     <Module Name="massspecstudio.ui.controls.dll">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Created="2011-05-25 00:55:58Z">
+        <Issue>
+         <Item>'MassSpecStudio.UI.Controls.dll'</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Created="2011-05-25 00:55:58Z">
+        <Issue>
+         <Item>'MassSpecStudio.UI.Controls.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.UI.Controls">
+        <Types>
+         <Type Name="Graph">
+          <Members>
+           <Member Name="#LoadGraph(System.String,System.String,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.LoadGraph(string, string, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>x</Item>
+               <Item>'xAxisTitle'</Item>
+              </Issue>
+             </Message>
+             <Message Id="xvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.LoadGraph(string, string, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>xvals</Item>
+               <Item>'xvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="yvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.LoadGraph(string, string, IList&lt;double&gt;, IList&lt;double&gt;)'</Item>
+               <Item>yvals</Item>
+               <Item>'yvals'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Refresh(System.String,System.Double[],System.Double[])">
+            <Messages>
+             <Message Id="xvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.Refresh(string, double[], double[])'</Item>
+               <Item>xvals</Item>
+               <Item>'xvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="yvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.Refresh(string, double[], double[])'</Item>
+               <Item>yvals</Item>
+               <Item>'yvals'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UpdateGraphControl(System.Double[],System.Double[])">
+            <Messages>
+             <Message Id="xvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.UpdateGraphControl(double[], double[])'</Item>
+               <Item>xvals</Item>
+               <Item>'xvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="yvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'Graph.UpdateGraphControl(double[], double[])'</Item>
+               <Item>yvals</Item>
+               <Item>'yvals'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ZedGraphControl">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'Graph.ZedGraphControl'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Peptides.dll">
+    <Modules>
+     <Module Name="hydra.modules.peptides.dll">
+      <Namespaces>
+       <Namespace Name="Hydra.Modules.Peptides">
+        <Types>
+         <Type Name="PeptideModule">
+          <Members>
+           <Member Name="#OnFileClicked(System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2010-12-15 06:02:45Z">
+              <Issue Name="Parameter">
+               <Item>'value'</Item>
+               <Item>'Peptide'</Item>
+               <Item>'PeptideModule.OnFileClicked(object)'</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Hydra.Modules.Peptides.Views">
+        <Types>
+         <Type Name="PeptidesViewModel">
+          <Members>
+           <Member Name="#.ctor(Hydra.Core.Domain.Run)">
+            <Messages>
+             <Message Id="run" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2010-10-14 05:41:55Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'run'</Item>
+               <Item>'PeptidesViewModel.PeptidesViewModel(Run)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Project.dll">
+    <Modules>
+     <Module Name="hydra.modules.project.dll">
+      <Namespaces>
+       <Namespace Name="Hydra.Modules.Project">
+        <Types>
+         <Type Name="HydraExperimentType">
+          <Members>
+           <Member Name="#CreateDirectory(System.String,System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2010-10-14 05:41:55Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'HydraExperimentType.CreateDirectory(string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateExperimentFile(MassSpecStudio.Core.Domain.ProjectBase,System.String)">
+            <Messages>
+             <Message Id="experimentDirectory" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'HydraExperimentType.CreateExperimentFile(ProjectBase, string)'</Item>
+               <Item>'experimentDirectory'</Item>
+               <Item>'string'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Open(System.String,MassSpecStudio.Core.Domain.ProjectBase)">
+            <Messages>
+             <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Created="2011-02-13 08:02:41Z">
+              <Issue Name="TooGeneric">
+               <Item>'HydraExperimentType.Open(string, ProjectBase)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'HydraExperimentType.Open(string, ProjectBase)'</Item>
+               <Item>'parentProject'</Item>
+               <Item>'project'</Item>
+               <Item>'IExperimentType.Open(string, ProjectBase)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Save(Hydra.Core.Domain.Experiment)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'experiment'</Item>
+               <Item>'HydraExperimentType.Save(Experiment)'</Item>
+               <Item>'Experiment'</Item>
+               <Item>'ExperimentBase'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2010-10-14 05:41:55Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'HydraExperimentType.Save(Experiment)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ServiceLocator">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2010-12-15 06:02:45Z">
+              <Issue>
+               <Item>'HydraExperimentType.ServiceLocator'</Item>
+               <Item>'IServiceLocator'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-12-15 06:02:45Z">
+              <Issue>
+               <Item>'HydraExperimentType.ServiceLocator'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Hydra.Modules.Project.Views">
+        <Types>
+         <Type Name="ExperimentViewModel">
+          <Members>
+           <Member Name="#Children">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2010-09-14 05:46:12Z">
+              <Issue>
+               <Item>'ExperimentViewModel.Children'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProjectExplorerViewModel">
+          <Members>
+           <Member Name="#_regionManager">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'ProjectExplorerViewModel._regionManager'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProjectPropertiesViewModel">
+          <Members>
+           <Member Name="#Files">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2010-09-14 05:46:12Z">
+              <Issue>
+               <Item>'ProjectPropertiesViewModel.Files'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ResultViewModel">
+          <Members>
+           <Member Name="#NumberOfResults">
+            <Accessors>
+             <Accessor Name="#get_NumberOfResults()">
+              <Messages>
+               <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-22 23:53:16Z">
+                <Issue Name="IFormatProviderAlternateString">
+                 <Item>'int.ToString()'</Item>
+                 <Item>'ResultViewModel.NumberOfResults.get()'</Item>
+                 <Item>'int.ToString(IFormatProvider)'</Item>
+                 <Item>'CultureInfo.CurrentCulture'</Item>
+                 <Item>'CultureInfo.InvariantCulture'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Hydra.Modules.Project.WizardViews">
+        <Types>
+         <Type Name="DataProviderViewModel">
+          <Members>
+           <Member Name="#_experimentViewModel">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-22 04:15:02Z">
+              <Issue>
+               <Item>'DataProviderViewModel._experimentViewModel'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#serviceLocator">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-22 04:15:02Z">
+              <Issue>
+               <Item>'DataProviderViewModel.serviceLocator'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HydraExperimentWizardController">
+          <Members>
+           <Member Name="#_experiment">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'HydraExperimentWizardController._experiment'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HydraTemplateWizardController">
+          <Members>
+           <Member Name="#_experiment">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'HydraTemplateWizardController._experiment'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ImportPeptidesViewModel">
+          <Members>
+           <Member Name="#RecentDataLocations">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'ImportPeptidesViewModel.RecentDataLocations'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LabellingsViewModel">
+          <Messages>
+           <Message Id="Labellings" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-10-14 05:41:55Z">
+            <Issue Name="Type">
+             <Item>Labellings</Item>
+             <Item>'LabellingsViewModel'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#_experimentViewModel">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'LabellingsViewModel._experimentViewModel'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProteinStatesViewModel">
+          <Members>
+           <Member Name="#_experimentViewModel">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'ProteinStatesViewModel._experimentViewModel'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RunsViewModel">
+          <Members>
+           <Member Name="#Files">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'RunsViewModel.Files'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FileTypes">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-05-20 02:28:44Z">
+              <Issue>
+               <Item>'RunsViewModel.FileTypes'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OnRemoveRunData(System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-13 08:02:41Z">
+              <Issue Name="Parameter">
+               <Item>'value'</Item>
+               <Item>'RunViewModel'</Item>
+               <Item>'RunsViewModel.OnRemoveRunData(object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'value'</Item>
+               <Item>'RunViewModel'</Item>
+               <Item>'RunsViewModel.OnRemoveRunData(object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RecentBrowseLocations">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'RunsViewModel.RecentBrowseLocations'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SelectTemplateViewModel">
+          <Members>
+           <Member Name="#RecentDataLocations">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'SelectTemplateViewModel.RecentDataLocations'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WizardStepViewModel">
+          <Messages>
+           <Message TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012" Created="2010-10-14 05:41:55Z">
+            <Issue>
+             <Item>'WizardStepViewModel'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WizardViewModel">
+          <Messages>
+           <Message TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012" Created="2010-10-14 05:41:55Z">
+            <Issue>
+             <Item>'WizardViewModel'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Modules/Hydra.Modules.Results.dll">
+    <Modules>
+     <Module Name="hydra.modules.results.dll">
+      <Namespaces>
+       <Namespace Name="Hydra.Modules.Results.Views">
+        <Types>
+         <Type Name="ResultsViewModel">
+          <Members>
+           <Member Name="#CreateReplicateResultHeader(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'ResultsViewModel.CreateReplicateResultHeader(string)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ResultsViewModel.CreateReplicateResultHeader(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateSummaryResultHeader(System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ResultsViewModel.CreateSummaryResultHeader(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveExcel(System.String)">
+            <Messages>
+             <Message Id="filename" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'ResultsViewModel.SaveExcel(string)'</Item>
+               <Item>filename</Item>
+               <Item>'filename'</Item>
+               <Item>fileName</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Packages/Hydra.Core.dll">
+    <Modules>
+     <Module Name="hydra.core.dll">
+      <Namespaces>
+       <Namespace Name="Hydra.Core.Domain">
+        <Types>
+         <Type Name="DeuterationResult">
+          <Members>
+           <Member Name="#CentroidMassValues">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-03-12 23:02:57Z">
+              <Issue>
+               <Item>'DeuterationResult.CentroidMassValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DeuterationDistributedDeuterationValues">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-03-12 23:02:57Z">
+              <Issue>
+               <Item>'DeuterationResult.DeuterationDistributedDeuterationValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DeuterationValues">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-03-12 23:02:57Z">
+              <Issue>
+               <Item>'DeuterationResult.DeuterationValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Labeling">
+            <Accessors>
+             <Accessor Name="#set_Labeling(Hydra.Core.Domain.Labeling)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-02-13 08:02:41Z">
+                <Issue>
+                 <Item>'DeuterationResult.Labeling.set(Labeling)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#Peptide">
+            <Accessors>
+             <Accessor Name="#set_Peptide(Hydra.Core.Domain.Peptide)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-02-13 08:02:41Z">
+                <Issue>
+                 <Item>'DeuterationResult.Peptide.set(Peptide)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#ProteinState">
+            <Accessors>
+             <Accessor Name="#set_ProteinState(Hydra.Core.Domain.ProteinState)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-03-12 23:02:57Z">
+                <Issue>
+                 <Item>'DeuterationResult.ProteinState.set(ProteinState)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Experiment">
+          <Members>
+           <Member Name="#GetRunResult(Hydra.Core.Domain.Result,Hydra.Core.Domain.Run,Hydra.Core.Domain.Peptide)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2010-12-15 06:02:45Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'Experiment.GetRunResult(Result, Run, Peptide)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Open(System.String,MassSpecStudio.Core.Domain.ProjectBase,Microsoft.Practices.ServiceLocation.IServiceLocator)">
+            <Messages>
+             <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Created="2011-02-22 04:15:02Z">
+              <Issue Name="TooGeneric">
+               <Item>'Experiment.Open(string, ProjectBase, IServiceLocator)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Labeling">
+          <Members>
+           <Member Name="#Equals(System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2010-10-14 05:41:55Z">
+              <Issue Name="Parameter">
+               <Item>'obj'</Item>
+               <Item>'Labeling'</Item>
+               <Item>'Labeling.Equals(object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'obj'</Item>
+               <Item>'Labeling'</Item>
+               <Item>'Labeling.Equals(object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Peptide">
+          <Members>
+           <Member Name="#FragmentIonList">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2010-10-14 05:41:55Z">
+              <Issue>
+               <Item>'Peptide.FragmentIonList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Peptides">
+          <Messages>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Created="2010-10-14 05:41:55Z">
+            <Issue>
+             <Item>'Peptides'</Item>
+             <Item>Hydra.Modules.Peptides</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="ProteinState">
+          <Members>
+           <Member Name="#Equals(System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2010-10-14 05:41:55Z">
+              <Issue Name="Parameter">
+               <Item>'obj'</Item>
+               <Item>'ProteinState'</Item>
+               <Item>'ProteinState.Equals(object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetNextName(Hydra.Core.Domain.Experiment)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2010-12-15 06:02:45Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'ProteinState.GetNextName(Experiment)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2010-12-15 06:02:45Z">
+              <Issue>
+               <Item>'string.ToLower()'</Item>
+               <Item>'ProteinState.GetNextName(Experiment)'</Item>
+               <Item>'string.ToLower(CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.ToLower()'</Item>
+               <Item>'ProteinState.GetNextName(Experiment)'</Item>
+               <Item>'string.ToLower(CultureInfo)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2010-12-15 06:02:45Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'ProteinState.GetNextName(Experiment)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Result">
+          <Members>
+           <Member Name="#.ctor(System.String,Hydra.Core.Domain.Experiment)">
+            <Messages>
+             <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-02-13 08:02:41Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'DateTime.ToString(string)'</Item>
+               <Item>'Result.Result(string, Experiment)'</Item>
+               <Item>'DateTime.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Clone(System.String)">
+            <Messages>
+             <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-03-21 20:42:25Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'DateTime.ToString(string)'</Item>
+               <Item>'Result.Clone(string)'</Item>
+               <Item>'DateTime.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Run">
+          <Members>
+           <Member Name="#.ctor(System.String,System.String,Hydra.Core.Domain.ProteinState,Hydra.Core.Domain.Labeling,Hydra.Core.Domain.Experiment,MassSpecStudio.Core.IDataProvider)">
+            <Messages>
+             <Message Id="filename" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-02-13 08:02:41Z">
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'Run.Run(string, string, ProteinState, Labeling, Experiment, IDataProvider)'</Item>
+               <Item>filename</Item>
+               <Item>'filename'</Item>
+               <Item>fileName</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RunResult">
+          <Members>
+           <Member Name="#CachedMSPeakList">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'RunResult.CachedMSPeakList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CachedXicPeakList">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'RunResult.CachedXicPeakList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsotopicPeakList">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'RunResult.IsotopicPeakList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TheoreticalIsotopicPeakList">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-02-13 08:02:41Z">
+              <Issue>
+               <Item>'RunResult.TheoreticalIsotopicPeakList'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Hydra.Core.Provider">
+        <Types>
+         <Type Name="IResultProvider">
+          <Messages>
+           <Message TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040" Created="2010-09-14 05:46:12Z">
+            <Issue>
+             <Item>'IResultProvider'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Processing/DeconTools.MassSpecStudio.Processing.dll">
+    <Modules>
+     <Module Name="decontools.massspecstudio.processing.dll">
+      <Namespaces>
+       <Namespace Name="DeconTools.MassSpecStudio.Processing.Steps">
+        <Types>
+         <Type Name="PeakDetectionBase">
+          <Messages>
+           <Message TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012" Created="2011-05-25 00:55:58Z">
+            <Issue>
+             <Item>'PeakDetectionBase'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#ConvertDoubleArrayToFloat(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'PeakDetectionBase.ConvertDoubleArrayToFloat(IList&lt;double&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SavitzkyGolaySmoothing">
+          <Members>
+           <Member Name="#_eventAggregator">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'SavitzkyGolaySmoothing._eventAggregator'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ConvertDoubleArrayToFloat(System.Collections.Generic.IList`1&lt;System.Double&gt;)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'SavitzkyGolaySmoothing.ConvertDoubleArrayToFloat(IList&lt;double&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ConvertFloatArrayToDouble(System.Single[])">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'SavitzkyGolaySmoothing.ConvertFloatArrayToDouble(float[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LeftParam">
+            <Messages>
+             <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>Param</Item>
+               <Item>'SavitzkyGolaySmoothing.LeftParam'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OnViewXIC(MassSpecStudio.Core.Domain.IXYData)">
+            <Messages>
+             <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'string.ToLower()'</Item>
+               <Item>'SavitzkyGolaySmoothing.OnViewXIC(IXYData)'</Item>
+               <Item>'string.ToLower(CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RightParam">
+            <Messages>
+             <Message Id="Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>Param</Item>
+               <Item>'SavitzkyGolaySmoothing.RightParam'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Processing/Hydra.Processing.Algorithm.dll">
+    <Modules>
+     <Module Name="hydra.processing.algorithm.dll">
+      <Namespaces>
+       <Namespace Name="Hydra.Processing.Algorithm">
+        <Types>
+         <Type Name="AlgorithmBase">
+          <Messages>
+           <Message TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012" Created="2011-05-20 02:28:44Z">
+            <Issue>
+             <Item>'AlgorithmBase'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Execute(System.ComponentModel.BackgroundWorker,MassSpecStudio.Core.Domain.ExperimentBase)">
+            <Messages>
+             <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2011-05-20 02:28:44Z">
+              <Issue>
+               <Item>'AlgorithmBase.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'experimentBase'</Item>
+               <Item>'experiment'</Item>
+               <Item>'IAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetParameters(MassSpecStudio.Core.Domain.Algorithm)">
+            <Messages>
+             <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2011-05-20 02:28:44Z">
+              <Issue>
+               <Item>'AlgorithmBase.SetParameters(Algorithm)'</Item>
+               <Item>'algorithm'</Item>
+               <Item>'algorithmParameters'</Item>
+               <Item>'IAlgorithm.SetParameters(Algorithm)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Convert.ChangeType(System.Object,System.Type)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-20 02:28:44Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ChangeType(object, Type)'</Item>
+               <Item>'AlgorithmBase.SetParameters(Algorithm)'</Item>
+               <Item>'Convert.ChangeType(object, Type, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DeuterationDistributionCalculator">
+          <Members>
+           <Member Name="#BuildMatrix(System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;,System.Int32,System.Int32)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'DeuterationDistributionCalculator.BuildMatrix(IList&lt;MSPeak&gt;, int, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CalculateDeuterationDistribution(System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;,System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Double,System.Int32,System.Double,System.Int32,System.Double[]&amp;,System.Double[]&amp;)">
+            <Messages>
+             <Message Id="10#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'solvedxvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="11#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2011-05-22 23:53:16Z">
+              <Issue>
+               <Item>'solvedyvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Peaklist" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Peaklist</Item>
+               <Item>'msPeaklistThreshold'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Peaklist</Item>
+               <Item>'theoreticalPeaklistAbsoluteNumberOfPeaks'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Peaklist</Item>
+               <Item>'theoreticalPeaklistThreshold'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Peaklist</Item>
+               <Item>'truncateMSPeaklistBasedOnRelIntensity'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Rel" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Rel</Item>
+               <Item>'truncateMSPeaklistBasedOnRelIntensity'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>Rel</Item>
+               <Item>'truncateTheoreticalMSPeakListBasedOnRelIntensity'</Item>
+              </Issue>
+             </Message>
+             <Message Id="solvedxvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>solvedxvals</Item>
+               <Item>'solvedxvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="solvedyvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuterationDistribution(IList&lt;MSPeak&gt;, IList&lt;MSPeak&gt;, bool, bool, int, int, double, int, double, int, out double[], out double[])'</Item>
+               <Item>solvedyvals</Item>
+               <Item>'solvedyvals'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CalculateDeuteriumIncorporationFromDistribution(System.Double[],System.Double[])">
+            <Messages>
+             <Message Id="xvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuteriumIncorporationFromDistribution(double[], double[])'</Item>
+               <Item>xvals</Item>
+               <Item>'xvals'</Item>
+              </Issue>
+             </Message>
+             <Message Id="yvals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameter">
+               <Item>'DeuterationDistributionCalculator.CalculateDeuteriumIncorporationFromDistribution(double[], double[])'</Item>
+               <Item>yvals</Item>
+               <Item>'yvals'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'DeuterationDistributionCalculator.CalculateDeuteriumIncorporationFromDistribution(double[], double[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayMatrix(System.String,Mapack.Matrix)">
+            <Messages>
+             <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-22 23:53:16Z">
+              <Issue Name="MemberParameterMoreMeaningfulName">
+               <Item>'DeuterationDistributionCalculator.DisplayMatrix(string, Matrix)'</Item>
+               <Item>'d'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'DeuterationDistributionCalculator.DisplayMatrix(string, Matrix)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TruncateMSPeakList(System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;,System.Boolean,System.Double,System.Int32)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'DeuterationDistributionCalculator.TruncateMSPeakList(IList&lt;MSPeak&gt;, bool, double, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LabelAmountAlgorithm">
+          <Members>
+           <Member Name="#Execute(System.ComponentModel.BackgroundWorker,MassSpecStudio.Core.Domain.ExperimentBase)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-13 08:02:41Z">
+              <Issue Name="Parameter">
+               <Item>'experimentBase'</Item>
+               <Item>'Experiment'</Item>
+               <Item>'LabelAmountAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2010-12-15 06:02:45Z">
+              <Issue>
+               <Item>'LabelAmountAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReExecute(System.ComponentModel.BackgroundWorker,Hydra.Core.Domain.RunResult)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-03-21 20:42:25Z">
+              <Issue>
+               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, RunResult)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="Re" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-03-21 20:42:25Z">
+              <Issue Name="Member">
+               <Item>Re</Item>
+               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, RunResult)'</Item>
+               <Item>RE</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReportProgress(System.ComponentModel.BackgroundWorker,System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-05-20 02:28:44Z">
+              <Issue>
+               <Item>'LabelAmountAlgorithm.ReportProgress(BackgroundWorker, string)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MathUtility">
+          <Members>
+           <Member Name="#GetTValueForTwoMeansAssumingEqualVarianceAndUnequalSampleSize(System.Double[],System.Double[],System.Int32&amp;)">
+            <Messages>
+             <Message Id="2#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-09-14 05:32:50Z">
+              <Issue>
+               <Item>'degreesFreedom'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MsMsFragmentAlgorithm">
+          <Members>
+           <Member Name="#.ctor(Microsoft.Practices.Prism.Events.IEventAggregator,MassSpecStudio.Core.Processing.IMsMsSpectrumSelection,MassSpecStudio.Core.Processing.ISmoothing,Hydra.Processing.Algorithm.Steps.MsMsFragmentAnalyzer,Hydra.Processing.Algorithm.Steps.DeuterationResultGenerator,Microsoft.Practices.ServiceLocation.IServiceLocator)">
+            <Messages>
+             <Message Id="msms" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-02-16 00:07:33Z">
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'MsMsFragmentAlgorithm.MsMsFragmentAlgorithm(IEventAggregator, IMsMsSpectrumSelection, ISmoothing, MsMsFragmentAnalyzer, DeuterationResultGenerator, IServiceLocator)'</Item>
+               <Item>msms</Item>
+               <Item>'msmsFragmentAnalyzer'</Item>
+               <Item>msMs</Item>
+              </Issue>
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'MsMsFragmentAlgorithm.MsMsFragmentAlgorithm(IEventAggregator, IMsMsSpectrumSelection, ISmoothing, MsMsFragmentAnalyzer, DeuterationResultGenerator, IServiceLocator)'</Item>
+               <Item>msms</Item>
+               <Item>'msmsSpectrumSelection'</Item>
+               <Item>msMs</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Execute(System.ComponentModel.BackgroundWorker,MassSpecStudio.Core.Domain.ExperimentBase)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-16 00:07:33Z">
+              <Issue Name="Parameter">
+               <Item>'experimentBase'</Item>
+               <Item>'Experiment'</Item>
+               <Item>'MsMsFragmentAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-02-16 00:07:33Z">
+              <Issue>
+               <Item>'MsMsFragmentAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'MsMsFragmentAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="output" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-02-16 00:07:33Z">
+              <Issue>
+               <Item>'MsMsFragmentAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'output'</Item>
+               <Item>'OutputEvent'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MSUtility">
+          <Members>
+           <Member Name="#GetBestMSPeak(System.Double,System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;,System.Int32,System.Double,System.Double,System.Double,System.Double,Hydra.Core.MSPeakSelectionOption,System.Int32&amp;)">
+            <Messages>
+             <Message Id="8#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-09-14 05:32:50Z">
+              <Issue>
+               <Item>'stopIndex'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PeptideUtility">
+          <Members>
+           <Member Name="#CalculateMR(System.Double,System.Int32)">
+            <Messages>
+             <Message Id="z" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-09-14 05:46:12Z">
+              <Issue Name="MemberParameterMoreMeaningfulName">
+               <Item>'PeptideUtility.CalculateMR(double, int)'</Item>
+               <Item>'z'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIsotopicProfile(Hydra.Core.Domain.RunResult,System.Boolean,System.Int32,System.Boolean,System.Boolean)">
+            <Messages>
+             <Message Id="Body" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2010-09-14 05:32:50Z">
+              <Issue Name="Body">
+               <Item>'PeptideUtility.GetIsotopicProfile(RunResult, bool, int, bool, bool)'</Item>
+               <Item>'double[,]'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIsotopicProfile(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.String)">
+            <Messages>
+             <Message Id="Body" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2010-09-14 02:07:24Z">
+              <Issue Name="Body">
+               <Item>'PeptideUtility.GetIsotopicProfile(string, int, bool, int, bool, bool, string)'</Item>
+               <Item>'double[,]'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetIsotopicProfileForFragmentIon(Hydra.Core.Domain.RunResult,System.Int32)">
+            <Messages>
+             <Message Id="Body" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2010-09-14 05:32:50Z">
+              <Issue Name="Body">
+               <Item>'PeptideUtility.GetIsotopicProfileForFragmentIon(RunResult, int)'</Item>
+               <Item>'double[,]'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RecentAlgorithms">
+          <Members>
+           <Member Name="#ConvertListToString(System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.Algorithm&gt;)">
+            <Messages>
+             <Message Id="System.IO.StringWriter.#ctor(System.Text.StringBuilder)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-20 02:28:44Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'StringWriter.StringWriter(StringBuilder)'</Item>
+               <Item>'RecentAlgorithms.ConvertListToString(IList&lt;Algorithm&gt;)'</Item>
+               <Item>'StringWriter.StringWriter(StringBuilder, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Read()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-05-25 01:49:24Z">
+              <Issue>
+               <Item>'RecentAlgorithms.Read()'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Hydra.Processing.Algorithm.Steps">
+        <Types>
+         <Type Name="IsotopicProfileFinder">
+          <Members>
+           <Member Name="#Execute(Hydra.Core.Domain.RunResult,System.Collections.Generic.IList`1&lt;MassSpecStudio.Core.Domain.MSPeak&gt;)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2010-09-14 05:46:12Z">
+              <Issue>
+               <Item>'IsotopicProfileFinder.Execute(RunResult, IList&lt;MSPeak&gt;)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'IsotopicProfileFinder.Execute(RunResult, IList&lt;MSPeak&gt;)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Double.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2010-12-15 06:02:45Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString()'</Item>
+               <Item>'IsotopicProfileFinder.Execute(RunResult, IList&lt;MSPeak&gt;)'</Item>
+               <Item>'double.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LabelAmountCalculator">
+          <Members>
+           <Member Name="#Execute(Hydra.Core.Domain.RunResult)">
+            <Messages>
+             <Message Id="relTheoreticalIsotopicPeakList" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2010-09-14 05:46:12Z">
+              <Issue>
+               <Item>'LabelAmountCalculator.Execute(RunResult)'</Item>
+               <Item>'relTheoreticalIsotopicPeakList'</Item>
+               <Item>'IList&lt;MSPeak&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MsMsFragmentAnalyzer">
+          <Members>
+           <Member Name="#Execute(Hydra.Core.Domain.RunResult,MassSpecStudio.Core.Domain.IXYData)">
+            <Messages>
+             <Message Id="msms" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-05-20 02:28:44Z">
+              <Issue Name="MemberParameterShouldBeCompoundWord">
+               <Item>'MsMsFragmentAnalyzer.Execute(RunResult, IXYData)'</Item>
+               <Item>msms</Item>
+               <Item>'msmsSpectrum'</Item>
+               <Item>msMs</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Created="2011-05-20 02:28:44Z">
+              <Issue>
+               <Item>'MsMsFragmentAnalyzer.Execute(RunResult, IXYData)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../Output/bin/Processing/MassSpecStudio.Processing.dll">
+    <Modules>
+     <Module Name="massspecstudio.processing.dll">
+      <Namespaces>
+       <Namespace Name="MassSpecStudio.Processing.Steps">
+        <Types>
+         <Type Name="MsMsSpectrumSelection">
+          <Members>
+           <Member Name="#eventAggregator">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'MsMsSpectrumSelection.eventAggregator'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Execute(MassSpecStudio.Core.Domain.Sample,System.Double,System.Double)">
+            <Messages>
+             <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'MsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+               <Item>'rt'</Item>
+               <Item>'precursorMass'</Item>
+               <Item>'IMsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Double.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-25 00:55:58Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'MsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'MsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'MsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'MsMsSpectrumSelection.Execute(Sample, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MZVariablility">
+            <Messages>
+             <Message Id="Variablility" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-05-25 00:55:58Z">
+              <Issue Name="Member">
+               <Item>Variablility</Item>
+               <Item>'MsMsSpectrumSelection.MZVariablility'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#regionManager">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-05-25 00:55:58Z">
+              <Issue>
+               <Item>'MsMsSpectrumSelection.regionManager'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SpectrumSelection">
+          <Members>
+           <Member Name="#Execute(MassSpecStudio.Core.Domain.Sample,System.Double,System.Double,System.Double)">
+            <Messages>
+             <Message Id="System.Double.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-25 00:55:58Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'SpectrumSelection.Execute(Sample, double, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'SpectrumSelection.Execute(Sample, double, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'SpectrumSelection.Execute(Sample, double, double, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="XicSelection">
+          <Members>
+           <Member Name="#Execute(MassSpecStudio.Core.Domain.Sample,System.Double)">
+            <Messages>
+             <Message Id="System.Double.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-05-25 00:55:58Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'double.ToString(string)'</Item>
+               <Item>'XicSelection.Execute(Sample, double)'</Item>
+               <Item>'double.ToString(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="Administrator">
+    <Note Id="0" Modified="2010-09-13 23:56:20Z">This is just the properties namespace</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012">
+    <Resolution Name="Default">Change the accessibility of all public constructors in {0} to protected.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040">
+    <Resolution Name="Default">Define a custom attribute to replace {0}.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
+    <Resolution Name="Default">Consider a design that does not require that {0} be an out parameter.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+    <Resolution Name="Default">Change {0} to be read-only by removing the property setter.</Resolution>
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Resolution Name="MemberParameterShouldBeCompoundWord">In member {0}, the discrete term '{1}' in parameter name {2} should be expressed as a compound word, '{3}'.</Resolution>
+    <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   </Rule>
+   <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+    <Resolution Name="Default">Consider changing the type of parameter {0} in {1} from {2} to its base type {3}. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104">
+    <Resolution Name="Default">Remove the read-only designation from {0} or change the field to one that is an immutable reference type. If the reference type {1} is, in fact, immutable, exclude this message.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+    <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+    <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+    <Resolution Name="PropertyGetter">{0} creates an exception of type {1}, an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201">
+    <Resolution Name="TooGeneric">{0} creates an exception of type {1}, an exception type that is not sufficiently specific and should never be raised by user code. If this exception instance might be thrown, use a different exception type.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+    <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="MemberParameterMoreMeaningfulName">In method {0}, consider providing a more meaningful name than parameter name {1}.</Resolution>
+    <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+    <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716">
+    <Resolution Name="Member">Rename virtual/interface member {0} so that it no longer conflicts with the reserved language keyword '{1}'. Using a reserved keyword as the name of a virtual/interface member makes it harder for consumers in other languages to override/implement the member.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
+    <Resolution Name="MissingConstructor">Add the following constructor to {0}: {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208">
+    <Resolution Name="IncorrectParameterName">Method {0} passes '{1}' as the {2} argument to a {3} constructor. Replace this argument with one of the method's parameter names. Note that the provided parameter name should have the exact casing as declared on the method.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+    <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+    <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+    <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
+    <Resolution Name="Default">Do not nest type {0}. Alternatively, change its accessibility so that it is not externally visible.</Resolution>
+   </Rule>
+   <Rule TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717">
+    <Resolution Name="Default">If the name {0} is plural, change it to its singular form.</Resolution>
+   </Rule>
+   <Rule TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725">
+    <Resolution Name="Default">In member {0}, change parameter name {1} to {2} in order to match the identifier as it has been declared in {3}.</Resolution>
+   </Rule>
+   <Rule TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814">
+    <Resolution Name="Body">{0} uses a multidimensional array of {1}. Replace it with a jagged array if possible.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721">
+    <Resolution Name="BaseType">The property name {0} is confusing given the existence of inherited method {1}. Rename or remove this property.</Resolution>
+   </Rule>
+   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+    <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+    <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+    <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+    <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
+   </Rule>
+   <Rule TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724">
+    <Resolution Name="Default">The type name {0} conflicts in whole or in part with the namespace name '{1}'. Change either name to eliminate the conflict.</Resolution>
+    <Resolution Name="System">The type name {0} conflicts in whole or in part with the namespace name '{1}' defined in the .NET Framework. Rename the type to eliminate the conflict.</Resolution>
+   </Rule>
+   <Rule TypeName="UseOrdinalStringComparison" Category="Microsoft.Globalization" CheckId="CA1309">
+    <Resolution Name="StringComparison">{0} passes '{1}' as the 'StringComparison' parameter to {2}. To perform a non-linguistic comparison, specify 'StringComparison.Ordinal' or 'StringComparison.OrdinalIgnoreCase' instead.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

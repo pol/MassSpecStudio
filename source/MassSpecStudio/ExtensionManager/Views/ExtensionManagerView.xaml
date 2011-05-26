@@ -1,0 +1,64 @@
+﻿<Window x:Class="MassSpecStudio.Modules.ExtensionManager.Views.ExtensionManagerView"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="Extension Manager" Height="400" Width="600"
+		WindowStyle="ToolWindow"
+		WindowStartupLocation="CenterOwner">
+	<Grid Background="{StaticResource DialogLightBackground}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="30" />
+		</Grid.RowDefinitions>
+		<TabControl HorizontalAlignment="Stretch" Name="tabControl1" VerticalAlignment="Stretch" >
+			<TabItem Header="Installed Modules" Name="modulesTab">
+				<Grid>
+					<ListView ItemsSource="{Binding Modules}">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn Header="Name" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
+								<GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"></GridViewColumn>
+								<GridViewColumn Header="Author" DisplayMemberBinding="{Binding Author}"></GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Installed Processing Algorithms" Name="algorithmTab">
+				<Grid>
+					<ListView ItemsSource="{Binding Processing}">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn Header="Name" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
+								<GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"></GridViewColumn>
+								<GridViewColumn Header="Author" DisplayMemberBinding="{Binding Author}"></GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Installed Data Providers" Name="dataProviderTab">
+				<Grid>
+					<ListView ItemsSource="{Binding DataProviders}">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn Header="Name" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
+								<GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"></GridViewColumn>
+								<GridViewColumn Header="Author" DisplayMemberBinding="{Binding Author}"></GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</Grid>
+			</TabItem>
+		</TabControl>
+		<Border Background="{StaticResource DialogDarkBackground}" Grid.Row="1" Padding="5">
+		<Grid HorizontalAlignment="Stretch" Margin="0" Name="grid1" VerticalAlignment="Stretch">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.5*" />
+				<ColumnDefinition Width="0.5*" />
+			</Grid.ColumnDefinitions>
+			<Button Content="Install" HorizontalAlignment="Left" Margin="5,0,0,0" Name="button1" VerticalAlignment="Center" Width="100" Click="OnInstall"/>
+			<Button Content="Close" HorizontalAlignment="Right" Margin="0,0,5,0" Name="button2" VerticalAlignment="Center" Width="100" Grid.Column="1" Click="OnClose"/>
+		</Grid>
+			</Border>
+	</Grid>
+</Window>

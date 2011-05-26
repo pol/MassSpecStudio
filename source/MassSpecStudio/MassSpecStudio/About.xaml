@@ -1,0 +1,32 @@
+﻿<Window x:Class="MassSpecStudio.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		WindowStartupLocation="CenterScreen"
+        Title="About Mass Spec Studio" Height="300" Width="300" >
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<TextBlock Text="Mass Spec Studio" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+		<TextBlock Text="{Binding Version}" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+		<TextBlock Grid.Row="2" Margin="0,35,0,0" Text="Mass Spec Studio uses:" FontSize="14" HorizontalAlignment="Center" FontStyle="Italic"></TextBlock>
+		<StackPanel Grid.Row="3" HorizontalAlignment="Center">
+			<StackPanel.Resources>
+				<Style TargetType="TextBlock">
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="Margin" Value="0,3,0,0"></Setter>
+				</Style>
+			</StackPanel.Resources>
+			<TextBlock Text="ProteoWizard"></TextBlock>
+			<TextBlock Text="DeconTools"></TextBlock>
+			<TextBlock Text="PRISM 4"></TextBlock>
+			<TextBlock Text="AvalonDock"></TextBlock>
+			<TextBlock Text="ZedGraph"></TextBlock>
+			<TextBlock Text="WPF Property Grid"></TextBlock>
+			
+		</StackPanel>
+	</Grid>
+</Window>

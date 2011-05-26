@@ -1,0 +1,75 @@
+﻿<AvalonDock:DocumentContent x:Class="Hydra.Modules.Results.Views.ResultsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+             mc:Ignorable="d" 
+							Title="{Binding Title}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		<ToolBar>
+			<Button Content="Export..." Click="OnExport"></Button>
+			<Button Content="Validation..." Command="{Binding ManualValidation}"></Button>
+		</ToolBar>
+		<TabControl Grid.Row="1" Margin="0,5,0,0">
+			<TabControl.Items>
+				<TabItem Header="Results">
+					<ListView ItemsSource="{Binding DeuterationResults}" Margin="0,0,0,3" SelectedItem="{Binding SelectedDeuterationResult, Mode=TwoWay}" Grid.Row="1">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn Header="Peptide" DisplayMemberBinding="{Binding Peptide.Sequence}"></GridViewColumn>
+								<GridViewColumn Header="Start" DisplayMemberBinding="{Binding Peptide.AminoAcidStart}"></GridViewColumn>
+								<GridViewColumn Header="Stop" DisplayMemberBinding="{Binding Peptide.AminoAcidStop}"></GridViewColumn>
+								<GridViewColumn Header="Protein State" DisplayMemberBinding="{Binding ProteinState.Name}"></GridViewColumn>
+								<GridViewColumn Header="Labeling" DisplayMemberBinding="{Binding Labeling.Name}"></GridViewColumn>
+								<GridViewColumn Header="Amount Deut" DisplayMemberBinding="{Binding AmountDeut}"></GridViewColumn>
+								<GridViewColumn Header="Amount Deut SD" DisplayMemberBinding="{Binding AmountDeuterationStandardDeviation}"></GridViewColumn>
+								<GridViewColumn Header="N" DisplayMemberBinding="{Binding NValue}"></GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</TabItem>
+				<TabItem Header="Parameters Used">
+					<ScrollViewer>
+					<Grid Margin="5">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"></RowDefinition>
+							<RowDefinition Height="*"></RowDefinition>
+						</Grid.RowDefinitions>
+						<TextBlock Text="{Binding AlgorithmUsed.Name}" FontWeight="Bold"></TextBlock>
+						<ItemsControl ItemsSource="{Binding AlgorithmUsed.ProcessingSteps}" Grid.Row="1">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<StackPanel>
+										<TextBlock Text="{Binding Name}" FontStyle="Italic" Margin="0,10,0,0"></TextBlock>
+										<ItemsControl ItemsSource="{Binding Parameters}">
+											<ItemsControl.ItemTemplate>
+												<DataTemplate>
+													<Grid Margin="10,2,0,0">
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition Width="200"></ColumnDefinition>
+															<ColumnDefinition></ColumnDefinition>
+														</Grid.ColumnDefinitions>
+														<TextBlock Text="{Binding Name}"></TextBlock>
+														<TextBlock Text="{Binding Value}" Grid.Column="1"></TextBlock>
+													</Grid>
+												</DataTemplate>
+											</ItemsControl.ItemTemplate>
+										</ItemsControl>
+									</StackPanel>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</Grid>
+					</ScrollViewer>
+				</TabItem>
+			</TabControl.Items>
+		</TabControl>
+
+	</Grid>
+</AvalonDock:DocumentContent>

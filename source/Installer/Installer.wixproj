@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>ca019bdd-3d27-4745-a962-7611abf54723</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>Mass Spec Studio</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IncludeSearchPaths>
+    </IncludeSearchPaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\Output\Installer\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+    <CompilerAdditionalOptions>
+    </CompilerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProviders\ProteoWizard\ProteoWizard.MassSpecStudio.DataProvider.csproj">
+      <Name>ProteoWizard.MassSpecStudio.DataProvider</Name>
+      <Project>{90dae4fc-f636-4fbe-98f9-62a88aa1fa46}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Algorithm\Hydra.Processing.Algorithm.csproj">
+      <Name>Hydra.Processing.Algorithm</Name>
+      <Project>{4c5127a4-d354-4016-bd63-226c3957a813}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Core\Hydra.Core.csproj">
+      <Name>Hydra.Core</Name>
+      <Project>{ecd46a02-ce79-4bd8-8b94-d4105c3f53b9}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\DataProvider\Hydra.DataProvider.csproj">
+      <Name>Hydra.DataProvider</Name>
+      <Project>{7dd2f03d-31f4-4b60-99f8-874c0bfe8872}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Peptides\Hydra.Modules.Peptides.csproj">
+      <Name>Hydra.Modules.Peptides</Name>
+      <Project>{e5decf06-ad03-44d9-8d82-f86a6e6297a4}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Project\Hydra.Modules.Project.csproj">
+      <Name>Hydra.Modules.Project</Name>
+      <Project>{5c4cb866-22ba-4866-9dbc-b1aa4ecc8fbe}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Results\Hydra.Modules.Results.csproj">
+      <Name>Hydra.Modules.Results</Name>
+      <Project>{0dbcd443-e52c-4f09-80ba-76ae824f588b}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Run\Hydra.Modules.Run.csproj">
+      <Name>Hydra.Modules.Run</Name>
+      <Project>{4de8c3df-0707-488e-8486-07b01f98a194}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Hydra\Validation\Hydra.Modules.Validation.csproj">
+      <Name>Hydra.Modules.Validation</Name>
+      <Project>{81f0b490-cd0d-4b45-bb7a-4fde447b939d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Composition\MassSpecStudio.Composition.csproj">
+      <Name>MassSpecStudio.Composition</Name>
+      <Project>{390d86c2-5c3f-43f1-a409-261d2079098a}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Controls\MassSpecStudio.UI.Controls.csproj">
+      <Name>MassSpecStudio.UI.Controls</Name>
+      <Project>{7ade092a-d1d1-426a-90d3-c46c01e572e9}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Core\MassSpecStudio.Core.csproj">
+      <Name>MassSpecStudio.Core</Name>
+      <Project>{eae0c351-7c47-48e3-a4af-b8395293e171}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\ExtensionManager\MassSpecStudio.Modules.ExtensionManager.csproj">
+      <Name>MassSpecStudio.Modules.ExtensionManager</Name>
+      <Project>{099d2cb0-a232-431d-9f4b-2a901dbd7a10}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\MassSpecStudio\MassSpecStudio.csproj">
+      <Name>MassSpecStudio</Name>
+      <Project>{22634e60-d05d-494e-839f-8bb4f4439529}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Processing\MassSpecStudio.Processing.csproj">
+      <Name>MassSpecStudio.Processing</Name>
+      <Project>{55de94b6-f1f1-47d8-a324-8192e8ad5b8c}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Project\MassSpecStudio.Modules.Project.csproj">
+      <Name>MassSpecStudio.Modules.Project</Name>
+      <Project>{8257f620-2e35-4493-9f9c-7e2c4e440f28}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\Properties\MassSpecStudio.Modules.Properties.csproj">
+      <Name>MassSpecStudio.Modules.Properties</Name>
+      <Project>{d9579462-baab-4b92-870b-8fd6fc74b919}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\MassSpecStudio\StatusBar\MassSpecStudio.Modules.StatusBar.csproj">
+      <Name>MassSpecStudio.Modules.StatusBar</Name>
+      <Project>{76fd408c-f17e-41be-a75f-63eda0c3f2cf}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Processing\DeconTools\DeconTools.MassSpecStudio.Processing.csproj">
+      <Name>DeconTools.MassSpecStudio.Processing</Name>
+      <Project>{32d87440-24ed-4960-a91f-039872b3cb5c}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperFile Include=".NETFramework,Version=v4.0">
+      <ProductName>.NET Framework 4.0</ProductName>
+    </BootstrapperFile>
+    <BootstrapperFile Include="Microsoft.Windows.Installer.3.1">
+      <ProductName>Windows Installer 3.1</ProductName>
+    </BootstrapperFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>C:\Program Files\Windows Installer XML v3.6\bin\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>-->
+  <Target Name="AfterBuild">
+    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" ApplicationName="Mass Spec Studio" BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative" CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper" />
+  </Target>
+</Project>

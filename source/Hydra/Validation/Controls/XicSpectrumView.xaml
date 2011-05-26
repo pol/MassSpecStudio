@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Hydra.Modules.Validation.Controls.XicSpectrumView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" 
+			 xmlns:ui="clr-namespace:MassSpecStudio.UI.Controls;assembly=MassSpecStudio.UI.Controls"
+             mc:Ignorable="d" 
+			 x:Name="userControl"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		<WindowsFormsHost Height="Auto" MinHeight="100"  Margin="3">
+			<ui:Graph x:Name="xic"/>
+		</WindowsFormsHost>
+		<WindowsFormsHost Grid.Column="1" Height="Auto" MinHeight="100"  Margin="3">
+			<ui:Graph x:Name="spectrum"/>
+		</WindowsFormsHost>
+		<ListView Name="xicController" Grid.Row="1" SelectionChanged="XicPeakSelected" Margin="3">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="RT" DisplayMemberBinding="{Binding Rt, StringFormat=F3}"></GridViewColumn>
+					<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding PeakHeight, StringFormat=F5}"></GridViewColumn>
+					<GridViewColumn Header="Area" DisplayMemberBinding="{Binding PeakArea, StringFormat=F5}"></GridViewColumn>
+					<GridViewColumn Header="Width" DisplayMemberBinding="{Binding PeakWidth, StringFormat=F5}"></GridViewColumn>
+				</GridView>
+			</ListView.View>
+		</ListView>
+		<ListView Name="msController" Grid.Column="1" Grid.Row="1" Margin="3">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding MZ, StringFormat=F5}"></GridViewColumn>
+					<GridViewColumn Header="Width" DisplayMemberBinding="{Binding PeakWidth, StringFormat=F5}"></GridViewColumn>
+					<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding Intensity, StringFormat=F5}"></GridViewColumn>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</UserControl>

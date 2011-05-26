@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<project name="LabBoard" xmlns="http://nant.sf.net/schemas/nant-0.84.win32.net-1.0.xsd" >
+	<!-- http://nant.sourceforge.net/ -->
+	<description>Build script for the MassSpecStudio</description>
+
+	<property name="MSBuild" value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"/>
+	<property name="root.dir" value="${directory::get-parent-directory(directory::get-parent-directory(project::get-buildfile-path()))}" overwrite="false" />
+	<property name="source.dir" value="${root.dir}\source" overwrite="false" />
+	<property name="build.dir" value ="${root.dir}\build" overwrite="false" />
+	<property name="tools.dir" value="${root.dir}\tools" overwrite="false" />
+	<property name="library.dir" value="${root.dir}\library" overwrite="false" />
+	<property name="output.dir" value="${root.dir}\output" overwrite="false" />
+	<property name="publish.dir" value="c:\DeployLIMS\" overwrite="false" />
+	<property name="build.target" value="Debug" overwrite="false" />
+	<property name="MSTest" value="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\MSTest.exe" overwrite="false" />
+	<property name="FxCop" value="${tools.dir}\Microsoft FxCop 10.0\FxCopCmd.exe" overwrite="false" />
+
+	<property name="month" value="${datetime::get-month(datetime::now())}"/>
+	<property name="day" value="${datetime::get-day(datetime::now())}"/>
+	<property name="year" value="${datetime::get-year(datetime::now())}"/>
+	<property name="hour" value="${datetime::get-hour(datetime::now())}"/>
+	<property name="minute" value="${datetime::get-minute(datetime::now())}"/>
+	<property name="second" value="${datetime::get-second(datetime::now())}"/>
+	<property name="currentTime" value="${month}-${day}-${year}T${hour}:${minute}:${second}Z"/>
+
+	<target name="compileAndTest"
+	depends="versioning, compile, unittest.and.coverage, metrics, documentation, installer"></target>
+
+	<target name="buildAndDeploy"
+	depends="versioning, compile, unittest.and.coverage, metrics, documentation, installer, deploy"></target>
+
+	<target name="test"
+	depends="unittest"></target>
+
+	<target name="deploy"
+	depends="publish"></target>
+	
+	<target name="compile"
+			description="Build project binaries">
+		<property name="build.cmd" value="${MSBuild} &quot;${source.dir}\MassSpecStudio-HDX.sln&quot; /t:Rebuild /p:Configuration=${build.target} " />
+
+		<echo message="${target::get-current-target()} Started: ${datetime::now()}" />
+		<exec program="cmd.exe" commandline="@echo on /c ${build.cmd}" />
+		<echo message="${target::get-current-target()} Finished: ${datetime::now()}" />
+	</target>
+
+	<target name="unittest"
+	depends="compile">
+		<delete dir="${output.dir}\Tests" />
+		<mkdir dir="${output.dir}\Tests" />
+
+		<exec program="${MSTest}"
+		commandline="/nologo /testmetadata:&quot;${source.dir}\MassSpecStudio-HDX.vsmdi&quot; /testlist:&quot;UnitTests&quot; /resultsfile:&quot;${output.dir}\Tests\UnitTestResults.trx&quot;"
+		workingdir="${root.dir}"/>
+
+	</target>
+
+	<target name="unittest.and.coverage" description="Generate code coverage using PartCover">
+		<delete dir="${output.dir}\Tests" />
+		<mkdir dir="${output.dir}\Tests" />
+		
+		<exec program="${tools.dir}\PartCover .NET 4.0\PartCover.exe">
+			<arg value="--target &quot;${MSTest}&quot;" />
+			<arg value="--target-work-dir &quot;${output.dir}\bin&quot;"/>
+			<arg value="--target-args &quot;/noisolation /testmetadata:${source.dir}\MassSpecStudio-HDX.vsmdi /testlist:UnitTests /resultsfile:${output.dir}\Tests\UnitTestResults.trx&quot;" />
+			<arg value="--output &quot;${output.dir}\Tests\coverage.xml&quot;" />
+			<arg value="--include &quot;[MassSpecStudio*]*&quot;" />
+		</exec>
+		
+		<echo message="##teamcity[importData id='mstest' file='${output.dir}\Tests\UnitTestResults.trx']" />
+		<echo message="##teamcity[dotNetCoverage partcover_report_xslts='${tools.dir}\PartCover .NET 4.0\xslt\Report By Assembly.xslt=>${output.dir}\Tests\CoverageReport.html']" />
+		<echo message="##teamcity[importData type='dotNetCoverage' tool='partcover' path='${output.dir}\Tests\coverage.xml']" />
+	</target>
+
+	<target name="metrics">
+		<exec program="${FxCop}"
+				commandline="/p:&quot;${source.dir}\MassSpecStudio-HDX.FxCop&quot; /o:&quot;${output.dir}\Tests\FxCopResults.xml&quot;"
+				workingdir="${source.dir}"/>
+
+		<echo message="##teamcity[importData type='FxCop' path='${output.dir}\Tests\FxCopResults.xml']" />
+	</target>
+
+	<target name="documentation">
+		
+		
+	</target>
+
+	<target name="installer">
+	
+		
+	</target>
+	
+	<target name="publish">
+		<zip zipfile="${output.dir}\MassSpecStudio-1.0.0.${build.number}.zip">
+			<fileset basedir="${output.dir}\Installer">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="versioning">
+		<asminfo output="${source.dir}\CommonAssemblyInfo.cs" language="CSharp">
+			<imports>
+				<import namespace="System.Reflection"/>
+			</imports>
+			<attributes>
+				<attribute type="AssemblyVersionAttribute" value="1.0.0.${build.number}" />
+				<attribute type="AssemblyFileVersionAttribute" value="1.0.0.${build.number}" />
+				<attribute type="AssemblyProductAttribute" value="Mass Spec Studio" />
+				<attribute type="AssemblyCopyrightAttribute" value="Copyright (c) 2010."/>
+				<attribute type="AssemblyCompanyAttribute" value="" />
+				<attribute type="AssemblyTrademarkAttribute" value="" />
+			</attributes>
+		</asminfo>
+	</target>
+</project>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="MassSpecStudio.Core.Processing.IProcessingStep">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processing\IProcessingStep.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MassSpecStudio.Core.Processing.ISmoothing">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processing\ISmoothing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MassSpecStudio.Core.Processing.IAlgorithm">
+    <Position X="8.25" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAQAAAEAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Processing\IAlgorithm.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MassSpecStudio.Core.IDataProvider">
+    <Position X="3.25" Y="1.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAQgIAAAAAAAAAQQAAIAAAAgAAABAACCAAA=</HashCode>
+      <FileName>IDataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

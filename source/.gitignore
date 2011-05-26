@@ -1,0 +1,15 @@
+# Compiled source #
+###################
+*.dll
+*.exe
+*.user
+*.Cache
+*.suo
+*.docstates
+
+# OS generated files #
+######################
+bin/
+obj/
+!Output/
+TestResults/

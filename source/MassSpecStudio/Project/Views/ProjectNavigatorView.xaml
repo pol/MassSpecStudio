@@ -1,0 +1,14 @@
+﻿<AvalonDock:DockableContent  x:Class="MSStudio.Module.Project.Views.ProjectNavigatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+             Title="Project Navigator"
+             mc:Ignorable="d" 
+			x:Name="projectNavigationPane"
+             d:DesignHeight="600" d:DesignWidth="200">
+    <Grid Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<TextBlock Text="Project View"></TextBlock>
+    </Grid>
+</AvalonDock:DockableContent>

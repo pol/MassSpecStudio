@@ -1,0 +1,90 @@
+﻿<Window x:Class="MassSpecStudio.Shell"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+		xmlns:cal="http://www.codeplex.com/CompositeWPF"
+		Closing="WindowClosing"
+		WindowState="Maximized"
+		Name="shell"
+		DataContext="{Binding ElementName=shell}"
+		Title="Mass Spec Studio" Height="600" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>     
+		<Menu cal:RegionManager.RegionName="MainMenuRegion">
+			<MenuItem Header="File" Style="{DynamicResource RootMenuItem}">
+					<MenuItem Header="New Experiment..." Command="{Binding DocumentManager.New}">
+						<MenuItem.Icon>
+							<Image Source="Images/add-item.png" Height="20"></Image>
+						</MenuItem.Icon>
+					</MenuItem>
+				<MenuItem Header="Open Project..." Click="OpenProject"></MenuItem>
+					<Separator></Separator>
+					<MenuItem Header="Close Project" Click="CloseProject"></MenuItem>
+					<Separator></Separator>
+				<MenuItem Header="Save" Command="{Binding DocumentManager.Save}">
+						<MenuItem.Icon>
+							<Image Source="Images/save.png" Height="20"></Image>
+						</MenuItem.Icon>
+					</MenuItem>
+					<Separator></Separator>
+				<MenuItem Header="Recent Projects" ItemsSource="{Binding ViewModel.RecentProjects}" Click="OpenRecentProject">
+						<MenuItem.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding}"/>
+							</DataTemplate>
+						</MenuItem.ItemTemplate>
+				</MenuItem>
+					<Separator></Separator>
+					<MenuItem Header="Exit" Click="Exit"></MenuItem>
+				</MenuItem>
+			
+				<MenuItem Header="View"
+						   Style="{DynamicResource RootMenuItem}"
+						  ItemsSource="{Binding DockableContents, ElementName=_dockingManager}" 
+						  Click="OnShowDockableContent">
+					<MenuItem.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Title}"/>
+						</DataTemplate>
+					</MenuItem.ItemTemplate>
+				</MenuItem>
+			<MenuItem Header="Process" Style="{DynamicResource RootMenuItem}">
+				<MenuItem Header="Process" Command="{Binding ViewModel.Process}">
+					<MenuItem.Icon>
+						<Image Source="Images/processing-02.png" Height="20"></Image>
+					</MenuItem.Icon>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem Header="Tools" Style="{DynamicResource RootMenuItem}">
+			<MenuItem Header="Themes">
+				<MenuItem Header="Default" Tag="Generic" Click="ChangeCustomTheme"/>
+				<MenuItem Header="Dark" Tag="Black" Click="ChangeCustomTheme"/>
+			</MenuItem>
+				<Separator></Separator>
+				<MenuItem Header="Extension Manager..." Click="ClickExtensionManager"></MenuItem>
+			</MenuItem>
+			
+			<MenuItem Header="Help" Style="{DynamicResource RootMenuItem}">
+				<MenuItem Header="About" Click="OnAbout"></MenuItem>
+			</MenuItem>
+		</Menu>
+		<AvalonDock:DockingManager Name="_dockingManager" Grid.Row="2">
+			
+			<AvalonDock:ResizingPanel Orientation="Horizontal">
+				<AvalonDock:DockablePane Name="_leftDockablePane" cal:RegionManager.RegionName="LeftRegion" AvalonDock:ResizingPanel.ResizeWidth="200" />
+				<AvalonDock:ResizingPanel Orientation="Vertical">
+					<AvalonDock:DocumentPane Name="_documentPane" cal:RegionManager.RegionName="DocumentRegion" />
+					<AvalonDock:DockablePane Name="_bottomDockablePane" cal:RegionManager.RegionName="BottomRegion" AvalonDock:ResizingPanel.ResizeHeight="180" />
+				</AvalonDock:ResizingPanel>
+				<AvalonDock:DockablePane Name="_rightDockablePane" cal:RegionManager.RegionName="RightRegion" AvalonDock:ResizingPanel.ResizeWidth="200" /> 
+			</AvalonDock:ResizingPanel>
+			
+		</AvalonDock:DockingManager>
+		<ContentControl Name="_statusBarPane" cal:RegionManager.RegionName="StatusRegion" Grid.Row="3"></ContentControl>
+	</Grid>
+</Window>

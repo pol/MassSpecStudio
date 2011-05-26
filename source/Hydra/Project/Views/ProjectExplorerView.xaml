@@ -1,0 +1,141 @@
+﻿<AvalonDock:DockableContent x:Class="Hydra.Modules.Project.Views.ProjectExplorerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+							xmlns:src="clr-namespace:Hydra.Modules.Project.Views"
+			              Title="Project"
+			 x:Name="projectPane"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<Grid Background="White">
+		<TreeView x:Name="projectTreeView" ItemsSource="{Binding Project}" Width="Auto" Height="Auto" SelectedItemChanged="OnSelectionChanged" MouseDoubleClick="OnDoubleClick" KeyUp="OnKeyUp">
+			<TreeView.ItemContainerStyle>
+				<Style TargetType="{x:Type TreeViewItem}">
+					<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+					<Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+					<Setter Property="FontWeight" Value="Normal" />
+					<Style.Triggers>
+						<Trigger Property="IsSelected" Value="True">
+							<Setter Property="FontWeight" Value="Bold" />
+						</Trigger>
+					</Style.Triggers>
+				</Style>
+			</TreeView.ItemContainerStyle>
+			<TreeView.Resources>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:ProteinStateViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/proteinState.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" VerticalAlignment="Center" />
+						<StackPanel.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Add Labeling" Command="{Binding Parent.AddLabeling}"></MenuItem>
+								<MenuItem Header="Delete" Command="{Binding Parent.RemoveProteinState}" CommandParameter="{Binding}"></MenuItem>
+							</ContextMenu>
+						</StackPanel.ContextMenu>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:RunViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/run.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" />
+						<StackPanel.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Delete" Command="{Binding Remove}" CommandParameter="{Binding}"></MenuItem>
+						</ContextMenu>
+							</StackPanel.ContextMenu>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:LabelingViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/labeling.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" />
+						<StackPanel.ContextMenu>
+						<ContextMenu>
+							<MenuItem Header="Add Run" Click="OnAddRun"></MenuItem>
+							<MenuItem Header="Delete" Command="{Binding Parent.Parent.RemoveLabeling}" CommandParameter="{Binding}"></MenuItem>
+						</ContextMenu>
+							</StackPanel.ContextMenu>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:ProjectViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/project.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" />
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:ExperimentViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/experiment.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" />
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:SamplesViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/run.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="Samples" Margin="0,0,5,0" FontSize="11"/>
+						<StackPanel.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Add Protein State" Command="{Binding AddProteinState}"></MenuItem>
+							</ContextMenu>
+						</StackPanel.ContextMenu>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:PeptidesViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<StackPanel.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Add Peptide" Command="{Binding AddPeptide}"></MenuItem>
+								<MenuItem Header="Add from file..." Command="{Binding AddFromFile}" CommandParameter="{Binding}"></MenuItem>
+							</ContextMenu>
+						</StackPanel.ContextMenu>
+						<Image Source="/Hydra.Core;component/Images/peptide.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="Peptides" Margin="0,0,5,0" FontSize="11"/>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:PeptideViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<StackPanel.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Delete" Command="{Binding Parent.Remove}" CommandParameter="{Binding}"></MenuItem>
+								<!--<MenuItem Header="Add Fragment Ion" Command="{Binding AddFragmentIon}" CommandParameter="{Binding}"></MenuItem>-->
+							</ContextMenu>
+						</StackPanel.ContextMenu>
+						<Image Source="/Hydra.Core;component/Images/peptide.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11">
+						</TextBlock>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:ResultsViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<Image Source="/Hydra.Core;component/Images/results.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="Results" Margin="0,0,5,0" FontSize="11"/>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+				<HierarchicalDataTemplate DataType    = "{x:Type src:ResultViewModel}"
+                              ItemsSource = "{Binding Path=Children}">
+					<StackPanel Orientation="Horizontal" Margin="0,1,10,1">
+						<StackPanel.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Delete" Command="{Binding Parent.Remove}" CommandParameter="{Binding}"></MenuItem>
+							</ContextMenu>
+						</StackPanel.ContextMenu>
+						<Image Source="/Hydra.Core;component/Images/result.png" Height="16" Margin="0,0,2,0"></Image>
+						<TextBlock Text="{Binding Path=Name}" Margin="0" FontSize="11" />
+					</StackPanel>
+				</HierarchicalDataTemplate>
+			</TreeView.Resources>
+		</TreeView>
+	</Grid>
+</AvalonDock:DockableContent>

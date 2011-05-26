@@ -1,0 +1,68 @@
+﻿<AvalonDock:DocumentContent x:Class="MassSpecStudio.Modules.Project.Views.StartPageView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+							xmlns:Converter="clr-namespace:MassSpecStudio.Modules.Project.Converter"
+			 mc:Ignorable="d" 
+							Title="Start Page"
+							Name="userControl"
+			 d:DesignHeight="500" d:DesignWidth="700">
+	<AvalonDock:DocumentContent.Resources>
+		<Converter:FileNameConverter x:Key="fileNameConverter"></Converter:FileNameConverter>
+		<Style TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<TextBlock TextDecorations="Underline">
+							<ContentPresenter />
+						</TextBlock>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Foreground" Value="Blue" />
+			<Setter Property="Cursor" Value="Hand" />
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="true">
+					<Setter Property="Foreground" Value="LightBlue" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</AvalonDock:DocumentContent.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="55" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="18" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="1*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="210" />
+			<ColumnDefinition Width="1*" />
+		</Grid.ColumnDefinitions>
+		<TextBlock Text="Mass Spec Studio" Grid.ColumnSpan="2" FontSize="30" FontStyle="Italic" Margin="15,8,0,0" VerticalAlignment="Top"></TextBlock>
+		<Button Content="New Project..." Grid.Row="1" HorizontalAlignment="Stretch" Margin="20,15,10,0" Name="button1" VerticalAlignment="Top" Command="{Binding DocumentManager.New}" />
+		<Button Content="Open Project..." HorizontalAlignment="Stretch" Margin="20,45,10,15" Name="button2" VerticalAlignment="Top" Grid.Row="1" Click="OnOpen" />
+		<Border BorderBrush="Silver" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" Grid.RowSpan="1" HorizontalAlignment="Stretch" Margin="0" Name="border1" VerticalAlignment="Stretch" />
+		<TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="15,12,15,15" Name="textBlock1" Text="Getting Started" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+		<TextBlock Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Stretch" Margin="15,35,0,0" Name="textBlock2" Text="Help text will go here" VerticalAlignment="Stretch" />
+		<Border BorderBrush="Silver" BorderThickness="0,0,0,1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,0" Name="border2" VerticalAlignment="Stretch" Grid.RowSpan="2">
+			<TextBlock Name="textBlock3" Text="Recent Projects" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,0,2" />
+		</Border>
+		<ItemsControl Grid.Row="4" HorizontalAlignment="Stretch" Margin="10" Name="stackPanel1" VerticalAlignment="Stretch" ItemsSource="{Binding RecentProjects}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Button Tag="{Binding}" Content="{Binding Converter={StaticResource fileNameConverter}}" Margin="10,0,0,8" Click="OnOpenRecent"></Button>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		<Grid.Background>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFbcc7d8" Offset="1" />
+				<GradientStop Color="White" Offset="0" />
+			</LinearGradientBrush>
+		</Grid.Background>
+	</Grid>
+</AvalonDock:DocumentContent>

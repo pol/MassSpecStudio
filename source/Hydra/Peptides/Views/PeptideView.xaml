@@ -1,0 +1,70 @@
+﻿<AvalonDock:DocumentContent x:Class="Hydra.Modules.Peptides.Views.PeptideView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
+			 mc:Ignorable="d" 
+							Title="{Binding Sequence}"
+			 d:DesignHeight="500" d:DesignWidth="600">
+	<AvalonDock:DocumentContent.Resources>
+		<DataTemplate x:Key="IonTemplate">
+			<StackPanel Orientation="Horizontal">
+				<CheckBox Margin="5,0,5,0" Tag="{Binding}" IsChecked="{Binding IsChecked, Mode=TwoWay}"></CheckBox>
+				<TextBlock Text="{Binding Ion.MonoIsotopicMass}"></TextBlock>
+			</StackPanel>
+		</DataTemplate>
+	</AvalonDock:DocumentContent.Resources>
+	<Border Background="White" BorderThickness="0">
+	<Grid Background="White" Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="3*" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="2*" />
+		</Grid.RowDefinitions>
+		<Grid HorizontalAlignment="Stretch" Margin="0" Name="grid1" VerticalAlignment="Stretch">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="499*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock HorizontalAlignment="Right" Margin="5,8,0,0" Name="textBlock1" Text="Sequence:" VerticalAlignment="Top" />
+			<TextBox Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,5,5,5" Name="textBox1" VerticalAlignment="Stretch" Text="{Binding Sequence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+		</Grid>
+		<Grid Grid.Row="1" HorizontalAlignment="Stretch" Margin="0" Name="grid2" VerticalAlignment="Stretch">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="239*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="25*" />
+				<ColumnDefinition Width="25*" />
+				<ColumnDefinition Width="25*" />
+				<ColumnDefinition Width="25*" />
+			</Grid.ColumnDefinitions>
+			<ListBox Grid.Row="1" HorizontalAlignment="Stretch" Margin="5" Name="listBox1" VerticalAlignment="Stretch" ItemsSource="{Binding BIonSinglyCharged}" ItemTemplate="{StaticResource IonTemplate}"></ListBox>
+			<ListBox HorizontalAlignment="Stretch" Margin="5" Name="listBox2" VerticalAlignment="Stretch" Grid.Column="3" Grid.Row="1" ItemsSource="{Binding YIonDoublyCharged}" ItemTemplate="{StaticResource IonTemplate}"/>
+			<ListBox HorizontalAlignment="Stretch" Margin="5" Name="listBox3" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" ItemsSource="{Binding YIonSinglyCharged}" ItemTemplate="{StaticResource IonTemplate}"/>
+			<ListBox HorizontalAlignment="Stretch" Margin="5" Name="listBox4" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding BIonDoublyCharged}" ItemTemplate="{StaticResource IonTemplate}"/>
+			<TextBlock Grid.RowSpan="1" HorizontalAlignment="Center" Margin="0" Name="textBlock2" Text="b+ ions" VerticalAlignment="Top" />
+			<TextBlock HorizontalAlignment="Center" Margin="0" Name="textBlock3" Text="b++ ions" VerticalAlignment="Top" Grid.Column="1" />
+			<TextBlock HorizontalAlignment="Center" Margin="0" Name="textBlock4" Text="y+ ions" VerticalAlignment="Top" Grid.Column="2" />
+			<TextBlock HorizontalAlignment="Center" Margin="0" Name="textBlock5" Text="y++ ions" VerticalAlignment="Top" Grid.Column="3" />
+		</Grid>
+			<ListView Grid.Row="3" HorizontalAlignment="Stretch" Margin="5" Name="listView1" VerticalAlignment="Stretch" ItemsSource="{Binding FragmentIons}" SelectedItem="{Binding SelectedFragmentIon, Mode=TwoWay}">
+				<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Sequence" DisplayMemberBinding="{Binding Sequence}"></GridViewColumn>
+					<GridViewColumn Header="Charge State" DisplayMemberBinding="{Binding ChargeState}"></GridViewColumn>
+					<GridViewColumn Header="Ion Series Number" DisplayMemberBinding="{Binding IonSeriesNumber}"></GridViewColumn>
+					<GridViewColumn Header="Type" DisplayMemberBinding="{Binding FragmentIonType}"></GridViewColumn>
+					<GridViewColumn Header="MZ" DisplayMemberBinding="{Binding MZ}"></GridViewColumn>
+					<GridViewColumn Header="Peaks In Calculation" DisplayMemberBinding="{Binding PeaksInCalculation}"></GridViewColumn>
+				</GridView>
+				</ListView.View>
+			</ListView>
+			<TextBlock Grid.Row="2" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlock6" Text="Fragments:" VerticalAlignment="Bottom" />
+		<CheckBox Content="Parent Ion" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="0,5,5,0" Name="checkBox1" VerticalAlignment="Top" Padding="5,0,0,0" />
+	</Grid>
+	</Border>
+</AvalonDock:DocumentContent>

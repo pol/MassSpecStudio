@@ -20,7 +20,7 @@ namespace Hydra.Test.Core.Domain
 		public void TestInitialize()
 		{
 			mockServiceLocator = new Mock<IServiceLocator>();
-			experiment = new Experiment("testExperiment1", new ProjectBase("testProject1", @"..\..\..\..\test\testProjects\"), new HydraExperimentType(mockServiceLocator.Object));
+			experiment = new Experiment("testExperiment1", new ProjectBase("testProject1", @"..\..\..\..\testData\testProjects\"), new HydraExperimentType(mockServiceLocator.Object));
 			DeleteTestResultFile();
 		}
 
@@ -111,7 +111,7 @@ namespace Hydra.Test.Core.Domain
 
 		private void DeleteTestResultFile()
 		{
-			string fullTestFilePath = Path.Combine(@"..\..\..\..\test\testProjects\testProject1\testExperiment1\Results", "testResult.xml");
+			string fullTestFilePath = Path.Combine(@"..\..\..\..\testData\testProjects\testProject1\testExperiment1\Results", "testResult.xml");
 			if (File.Exists(fullTestFilePath))
 			{
 				File.Delete(fullTestFilePath);

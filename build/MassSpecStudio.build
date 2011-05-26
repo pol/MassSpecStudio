@@ -27,7 +27,7 @@
 	depends="versioning, compile, metrics, documentation, installer"></target>
 
 	<target name="buildAndDeploy"
-	depends="versioning, compile, unittest.and.coverage, metrics, documentation, installer, deploy"></target>
+	depends="versioning, compile, metrics, documentation, installer, deploy"></target>
 
 	<target name="test"
 	depends="unittest"></target>

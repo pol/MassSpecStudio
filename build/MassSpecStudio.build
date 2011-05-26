@@ -24,10 +24,10 @@
 	<property name="currentTime" value="${month}-${day}-${year}T${hour}:${minute}:${second}Z"/>
 
 	<target name="compileAndTest"
-	depends="versioning, compile, metrics, documentation, installer"></target>
+	depends="versioning, compile, unittest.and.coverage, metrics, documentation, installer"></target>
 
 	<target name="buildAndDeploy"
-	depends="versioning, compile, metrics, documentation, installer, deploy"></target>
+	depends="versioning, compile, unittest.and.coverage, metrics, documentation, installer, deploy"></target>
 
 	<target name="test"
 	depends="unittest"></target>

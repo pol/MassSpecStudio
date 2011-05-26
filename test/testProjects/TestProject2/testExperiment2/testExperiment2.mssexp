@@ -1,0 +1,30 @@
+<Experiment xmlns="http://schemas.datacontract.org/2004/07/Hydra.Core.Domain" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<ExperimentType xmlns="http://schemas.datacontract.org/2004/07/MassSpecStudio.Core.Domain">daec1373-5354-4622-bdcd-8bab3bd5788b</ExperimentType>
+	<Name xmlns="http://schemas.datacontract.org/2004/07/MassSpecStudio.Core.Domain">testExperiment2</Name>
+	<DataProviderType>ea35cd69-b064-46c3-afef-5e99c1433932</DataProviderType>
+	<Labeling>
+		<Labeling>
+			<LabelingPercent>20</LabelingPercent>
+			<LabelingTime>1</LabelingTime>
+		</Labeling>
+	</Labeling>
+	<PeptidesFileLocation>Data\Peptides.xml</PeptidesFileLocation>
+	<ProteinStates>
+		<ProteinState>
+			<Name>Protein state 1</Name>
+		</ProteinState>
+	</ProteinStates>
+	<Results/>
+	<Runs>
+		<Run>
+			<FileName xmlns="http://schemas.datacontract.org/2004/07/MassSpecStudio.Core.Domain">Data\file25 - 20l apo trial1-s1 (MSMS).mzXML</FileName>
+			<Labeling>
+				<LabelingPercent>20</LabelingPercent>
+				<LabelingTime>1</LabelingTime>
+			</Labeling>
+			<ProteinState>
+				<Name>Protein state 1</Name>
+			</ProteinState>
+		</Run>
+	</Runs>
+</Experiment>

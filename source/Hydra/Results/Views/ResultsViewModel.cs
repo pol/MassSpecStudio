@@ -95,9 +95,24 @@ namespace Hydra.Modules.Results.Views
 		private string CreateReplicateResultHeader(string delimiter)
 		{
 			string result = string.Empty;
+			result += "ID" + delimiter;
+			result += "ProteinSource" + delimiter;
+			result += "AminoAcidStart" + delimiter;
+			result += "AminoAcidStop" + delimiter;
 			result += "Sequence" + delimiter;
-			result += "Start" + delimiter;
-			result += "Stop" + delimiter;
+			result += "MonoIsotopicMass" + delimiter;
+			result += "Z" + delimiter;
+			result += "Period" + delimiter;
+			result += "RT" + delimiter;
+			result += "RTvariance" + delimiter;
+			result += "XicMass1" + delimiter;
+			result += "XicMass2" + delimiter;
+			result += "XicAdjustment" + delimiter;
+			result += "XicSelectionWidth" + delimiter;
+			result += "XicPeakPickerOption" + delimiter;
+			result += "MsThreshold" + delimiter;
+			result += "PeaksInCalculation" + delimiter;
+			result += "Notes" + delimiter;
 			result += "Protein State" + delimiter;
 			result += "Labeling" + delimiter;
 			result += "AmountDeut" + delimiter;

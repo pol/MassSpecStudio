@@ -281,9 +281,24 @@ namespace Hydra.Core.Domain
 		{
 			string result = string.Empty;
 
-			result += Peptide.Sequence + delimiter;
+			result += Peptide.Id + delimiter;
+			result += Peptide.ProteinSource + delimiter;
 			result += Peptide.AminoAcidStart + delimiter;
 			result += Peptide.AminoAcidStop + delimiter;
+			result += Peptide.Sequence + delimiter;
+			result += Peptide.MonoIsotopicMass + delimiter;
+			result += Peptide.ChargeState + delimiter;
+			result += Peptide.Period + delimiter;
+			result += Peptide.RT + delimiter;
+			result += Peptide.RtVariance + delimiter;
+			result += Peptide.XicMass1 + delimiter;
+			result += Peptide.XicMass2 + delimiter;
+			result += Peptide.XicAdjustment + delimiter;
+			result += Peptide.XicSelectionWidth + delimiter;
+			result += Peptide.XicPeakPickerOption + delimiter;
+			result += Peptide.MsThreshold + delimiter;
+			result += Peptide.PeaksInCalculation + delimiter;
+			result += Peptide.Notes + delimiter;
 			result += Run.ProteinState.Name + delimiter;
 			result += Run.Labeling.Name + delimiter;
 			result += AmountDeut + delimiter;

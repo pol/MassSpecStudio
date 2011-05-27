@@ -169,7 +169,7 @@ namespace Hydra.Modules.Validation
 			get { return runResult.FragmentIon; }
 		}
 
-		[Category("XIC")]
+		[Category("Deuteration - XIC Control")]
 		[DisplayName("Actual XIC Adjustment")]
 		public double ActualXicAdjustment
 		{
@@ -186,7 +186,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("XIC")]
+		[Category("Deuteration - XIC Control")]
 		[DisplayName("Actual XIC Selection Width")]
 		public double ActualXicSelectionWidth
 		{
@@ -203,7 +203,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("XIC")]
+		[Category("Deuteration - XIC Control")]
 		[DisplayName("Actual Peaks In Calculation")]
 		public int ActualPeaksInCalculation
 		{
@@ -220,21 +220,21 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("XIC")]
+		[Category("Deuteration")]
 		[DisplayName("Amount Deuteration")]
 		public double AmountDeut
 		{
 			get { return Math.Round(runResult.AmountDeut, Constants.SignificantDigits); }
 		}
 
-		[Category("XIC")]
+		[Category("Deuteration")]
 		[DisplayName("Average Mass")]
 		public double AverageMass
 		{
 			get { return Math.Round(runResult.AverageMass, Constants.SignificantDigits); }
 		}
 
-		[Category("Graph")]
+		[Category("Common")]
 		[DisplayName("Show Theoretical Values")]
 		public bool ShowTheoreticalValues
 		{
@@ -251,7 +251,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("Deuterium Distribution")]
+		[Category("DeutDist")]
 		[DisplayName("Show Deuterium Distribution")]
 		public bool ShowDeuteriumDistribution
 		{
@@ -269,7 +269,7 @@ namespace Hydra.Modules.Validation
 		}
 
 		[ReadOnly(true)]
-		[Category("Deuterium Distribution")]
+		[Category("DeutDist")]
 		[DisplayName("Amount Deut (From DeutDist)")]
 		public double AmountDeutFromDeutDist
 		{
@@ -285,7 +285,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("Theoretical Peak List")]
+		[Category("DeutDist - Theoretical Peak List")]
 		[DisplayName("Use")]
 		public TheoreticalPeakListOptions DeutDistTheoreticalUse
 		{
@@ -302,7 +302,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("Theoretical Peak List")]
+		[Category("DeutDist - Theoretical Peak List")]
 		[DisplayName("Threshold")]
 		public double DeutDistTheoreticalThreshold
 		{
@@ -319,7 +319,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("Theoretical Peak List")]
+		[Category("DeutDist - Theoretical Peak List")]
 		[DisplayName("Peaks In Calculation")]
 		public int DeutDistTheoreticalPeaksInCalculation
 		{
@@ -336,7 +336,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("MS Peak List")]
+		[Category("DeutDist - Select Isotopic Envelope")]
 		[DisplayName("Use")]
 		public MSPeakListOptions DeutDistMSUse
 		{
@@ -353,7 +353,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("MS Peak List")]
+		[Category("DeutDist - Select Isotopic Envelope")]
 		[DisplayName("Right Padding")]
 		public int ActualDeutDistRightPadding
 		{
@@ -370,7 +370,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("MS Peak List")]
+		[Category("DeutDist - Select Isotopic Envelope")]
 		[DisplayName("Threshold")]
 		public double ActualDeutDistThreshold
 		{
@@ -387,7 +387,7 @@ namespace Hydra.Modules.Validation
 			}
 		}
 
-		[Category("MS Peak List")]
+		[Category("DeutDist - Select Isotopic Envelope")]
 		[DisplayName("Peaks In Calculation")]
 		public int DeutDistMSPeaksInCalculation
 		{

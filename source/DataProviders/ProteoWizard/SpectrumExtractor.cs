@@ -63,7 +63,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 
 					for (int i = 0; i < xVals.Count; i++)
 					{
-						if (xVals[i] >= mzLower || xVals[i] <= mzUpper)
+						if (xVals[i] >= mzLower && xVals[i] <= mzUpper)
 						{
 							xValues.Add(xVals[i]);
 							yValues.Add(yVals[i]);

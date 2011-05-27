@@ -16,6 +16,7 @@ namespace Hydra.Modules.Validation.Views
 		public ManualValidationView(ManualValidationViewModel viewModel)
 		{
 			SetViewModel(viewModel);
+			IsActiveContentChanged += new EventHandler(ManualValidationView_IsActiveContentChanged);
 
 			InitializeComponent();
 		}
@@ -26,6 +27,14 @@ namespace Hydra.Modules.Validation.Views
 			viewModel.UpdateGraphs += HandleUpdateGraphs;
 			viewModel.Reprocess += HandleReprocessing;
 			DataContext = viewModel;
+		}
+
+		private void ManualValidationView_IsActiveContentChanged(object sender, EventArgs e)
+		{
+			if (IsActiveDocument)
+			{
+				viewModel.RefreshPropertiesPanel();
+			}
 		}
 
 		private void HandleUpdateGraphs(object sender, EventArgs e)

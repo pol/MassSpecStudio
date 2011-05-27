@@ -102,12 +102,6 @@ namespace MassSpecStudio.UI.Controls
 
 		private void InitializeGraphSpecificSettings()
 		{
-			this.ZedGraphControl.IsZoomOnMouseCenter = false;
-			this.ZedGraphControl.IsEnableVZoom = false;
-			this.ZedGraphControl.IsEnableVPan = false;
-			this.ZedGraphControl.IsEnableHEdit = false;
-			this.ZedGraphControl.IsEnableVEdit = false;
-
 			this.ZedGraphControl.GraphPane.XAxis.Title.Text = "time";
 			this.ZedGraphControl.GraphPane.YAxis.Title.Text = "Intensity";
 			this.ZedGraphControl.PointValueFormat = "0.00";

@@ -80,6 +80,23 @@ namespace Hydra.Modules.Project.Views
 						peptides.Children[index - 1].IsSelected = true;
 					}
 			}
+			else if (e.Key == System.Windows.Input.Key.Delete && ViewModel.SelectedItem is ResultViewModel)
+			{
+				ResultViewModel selectedResult = (ResultViewModel)ViewModel.SelectedItem;
+				ResultsViewModel results = selectedResult.Parent as ResultsViewModel;
+				int index = results.Children.IndexOf(selectedResult);
+				results.Remove.Execute(selectedResult);
+
+				if (index < results.Children.Count)
+				{
+					results.Children[index].IsSelected = true;
+				}
+				else
+					if ((index - 1) < results.Children.Count && (index - 1) >= 0 && results.Children.Count > 0)
+					{
+						results.Children[index - 1].IsSelected = true;
+					}
+			}
 		}
 	}
 }

@@ -69,6 +69,11 @@ namespace Hydra.Modules.Validation.Views
 			}
 		}
 
+		public void RefreshPropertiesPanel()
+		{
+			eventAggregator.GetEvent<ObjectSelectionEvent>().Publish(SelectedRunResult);
+		}
+
 		public void ReprocessSelectedResult(BackgroundWorker worker)
 		{
 			labelAmountAlgorithm.ReExecute(worker, selectedRunResult.RunResult);

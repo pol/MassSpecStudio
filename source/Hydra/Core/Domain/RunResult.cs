@@ -215,8 +215,22 @@ namespace Hydra.Core.Domain
 		[DataMember]
 		public int ActualPeaksInCalculation
 		{
-			get { return actualPeaksInCalculation; }
-			set { actualPeaksInCalculation = value; }
+			get 
+			{
+				return actualPeaksInCalculation; 
+			}
+
+			set
+			{
+				if (value < 1)
+				{
+					actualPeaksInCalculation = 1;
+				}
+				else
+				{
+					actualPeaksInCalculation = value;
+				}
+			}
 		}
 
 		[DataMember]

@@ -228,7 +228,7 @@ namespace Hydra.Modules.Validation
 		}
 
 		[Category("Deuteration")]
-		[DisplayName("Average Mass")]
+		[DisplayName("Average M/Z")]
 		public double AverageMass
 		{
 			get { return Math.Round(runResult.AverageMass, Constants.SignificantDigits); }

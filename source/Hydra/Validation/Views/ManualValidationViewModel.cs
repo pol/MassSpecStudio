@@ -76,7 +76,7 @@ namespace Hydra.Modules.Validation.Views
 
 		public void ReprocessSelectedResult(BackgroundWorker worker)
 		{
-			labelAmountAlgorithm.ReExecute(worker, selectedRunResult.RunResult);
+			labelAmountAlgorithm.ReExecute(worker, result, selectedRunResult.RunResult);
 		}
 
 		private void OnPeptideSelected(Peptide peptide)

@@ -59,7 +59,7 @@ namespace Hydra.Core.Domain
 		public IList<DeuterationResult> DeuterationResults
 		{
 			get { return _deuterationResults; }
-			internal set { _deuterationResults = value; }
+			set { _deuterationResults = value; }
 		}
 
 		[DataMember]

@@ -187,7 +187,7 @@ namespace Hydra.Processing.Algorithm
 			_eventAggregator.GetEvent<StatusUpdateEvent>().Publish("Processing Succeeded");
 		}
 
-		public RunResult ReExecute(BackgroundWorker worker, RunResult runResult)
+		public RunResult ReExecute(BackgroundWorker worker, Result result, RunResult runResult)
 		{
 			_eventAggregator.GetEvent<ClearOutputEvent>().Publish(null);
 			_eventAggregator.GetEvent<OutputEvent>().Publish("------ Reprocessing Started (" + DateTime.Now.ToString() + ") ------ " + DateTime.Now);
@@ -217,6 +217,9 @@ namespace Hydra.Processing.Algorithm
 				_labelAmountCalculator.PeaksInCalcMode = Core.PeaksInLabelCalculationMode.Manual;
 				ReportStepProgress(worker, " 5: Label Amount Calculation", "Label Amount Calculation");
 				_labelAmountCalculator.Execute(runResult);
+
+				ReportProgress(worker, "Generating Deuteration Results");
+				_deuterationResultGenerator.Execute(runResult.Run.Experiment, result);
 
 				_eventAggregator.GetEvent<StatusUpdateEvent>().Publish("Processing Succeeded");
 			}

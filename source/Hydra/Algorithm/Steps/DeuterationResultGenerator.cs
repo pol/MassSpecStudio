@@ -30,6 +30,7 @@ namespace Hydra.Processing.Algorithm.Steps
 		public void Execute(Experiment experiment, Result result)
 		{
 			_output.Publish("- Calculating Deuteration Results");
+			result.DeuterationResults = new List<DeuterationResult>();
 			foreach (Peptide peptide in experiment.Peptides.PeptideCollection)
 			{
 				foreach (ProteinState proteinState in experiment.ProteinStates)
@@ -59,19 +60,19 @@ namespace Hydra.Processing.Algorithm.Steps
 				}
 			}
 
-			DeuterationResult deuterationResult2 = new DeuterationResult(peptide, proteinState, labeling, replicates);
-			deuterationResult2.AmountDeut = Math.Round(MathUtility.GetAverage(deuterationResult2.DeuterationValues), 5);
-			deuterationResult2.AmountDeuterationStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult2.DeuterationValues), 5);
-			deuterationResult2.AmountDeuterationFromDeuterationDistribution = Math.Round(MathUtility.GetAverage(deuterationResult2.DeuterationDistributedDeuterationValues), 5);
-			deuterationResult2.AmountDeuterationFromDeuterationDistributionStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult2.DeuterationDistributedDeuterationValues), 5);
-			deuterationResult2.CentroidMass = Math.Round(MathUtility.GetAverage(deuterationResult2.CentroidMassValues), 5);
-			deuterationResult2.CentroidMassStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult2.CentroidMassValues), 5);
+			DeuterationResult deuterationResult = new DeuterationResult(peptide, proteinState, labeling, replicates);
+			deuterationResult.AmountDeut = Math.Round(MathUtility.GetAverage(deuterationResult.DeuterationValues), 5);
+			deuterationResult.AmountDeuterationStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult.DeuterationValues), 5);
+			deuterationResult.AmountDeuterationFromDeuterationDistribution = Math.Round(MathUtility.GetAverage(deuterationResult.DeuterationDistributedDeuterationValues), 5);
+			deuterationResult.AmountDeuterationFromDeuterationDistributionStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult.DeuterationDistributedDeuterationValues), 5);
+			deuterationResult.CentroidMass = Math.Round(MathUtility.GetAverage(deuterationResult.CentroidMassValues), 5);
+			deuterationResult.CentroidMassStandardDeviation = Math.Round(MathUtility.GetStandardDeviation(deuterationResult.CentroidMassValues), 5);
 			if (replicates.Count > 0)
 			{
-				deuterationResult2.TheoreticalCentroidMass = Math.Round(replicates.Average(item => item.TheoreticalAverageMass), 5);
+				deuterationResult.TheoreticalCentroidMass = Math.Round(replicates.Average(item => item.TheoreticalAverageMass), 5);
 			}
 
-			return deuterationResult2;
+			return deuterationResult;
 		}
 	}
 }

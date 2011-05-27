@@ -47,6 +47,11 @@ namespace Hydra.Modules.Results.Views
 			get { return _result.AlgorithmUsed; }
 		}
 
+		public void Refresh()
+		{
+			NotifyPropertyChanged(() => DeuterationResults);
+		}
+
 		public void SaveExcel(string filename)
 		{
 			SaveReplicatesExcel(filename);

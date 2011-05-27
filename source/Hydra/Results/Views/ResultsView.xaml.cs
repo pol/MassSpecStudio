@@ -18,6 +18,16 @@ namespace Hydra.Modules.Results.Views
 			DataContext = viewModel;
 			this.viewModel = viewModel;
 			InitializeComponent();
+
+			IsActiveContentChanged += new System.EventHandler(ResultsView_IsActiveContentChanged);
+		}
+
+		private void ResultsView_IsActiveContentChanged(object sender, System.EventArgs e)
+		{
+			if (IsActiveDocument)
+			{
+				viewModel.Refresh();
+			}
 		}
 
 		private void OnExport(object sender, System.Windows.RoutedEventArgs e)

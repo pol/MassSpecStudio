@@ -97,7 +97,16 @@ namespace Hydra.Processing.Algorithm.Steps
 				IList<MSPeak> relIsotopicPeakList = MSUtility.ConvertToRelativeMassIsotopicPeakList(result.IsotopicPeakList, result.Peptide.ChargeState, 0);
 				IList<MSPeak> relTheoreticalIsotopicPeakList = MSUtility.ConvertToRelativeMassIsotopicPeakList(result.TheoreticalIsotopicPeakList, result.Peptide.ChargeState, 0);
 
-				result.AverageMass = result.TheoreticalIsotopicPeakList[0].MZ + MSUtility.GetAverageMassFromPeakList(relIsotopicPeakList, result.ActualPeaksInCalculation);
+				double averageMass;
+				if (result.TheoreticalIsotopicPeakList.Count > 0)
+				{
+					averageMass = result.TheoreticalIsotopicPeakList[0].MZ;
+				}
+				else
+				{
+					averageMass = result.Peptide.MonoIsotopicMass;
+				}
+				result.AverageMass = averageMass + MSUtility.GetAverageMassFromPeakList(relIsotopicPeakList, result.ActualPeaksInCalculation);
 				result.TheoreticalAverageMass = MSUtility.GetAverageMassFromPeakList(result.TheoreticalIsotopicPeakList, result.ActualPeaksInCalculation);
 			}
 			else

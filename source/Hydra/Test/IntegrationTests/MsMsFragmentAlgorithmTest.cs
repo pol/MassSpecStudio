@@ -43,9 +43,9 @@ namespace Hydra.Test.IntegrationTests
 
 			Assert.AreEqual(1, experiment.Results.Count);
 			Assert.AreEqual(3, experiment.Results.Last().DeuterationResults.Count);
-			AssertResult(experiment.Results.Last().DeuterationResults[0].ReplicateResults, -1.14279);
-			AssertResult(experiment.Results.Last().DeuterationResults[1].ReplicateResults, -1.33839);
-			AssertResult(experiment.Results.Last().DeuterationResults[2].ReplicateResults, -1.18787);
+			AssertResult(experiment.Results.Last().DeuterationResults[0].ReplicateResults, -0.13584);
+			AssertResult(experiment.Results.Last().DeuterationResults[1].ReplicateResults, -0.33102);
+			AssertResult(experiment.Results.Last().DeuterationResults[2].ReplicateResults, -0.18049);
 		}
 
 		private void AssertResult(IList<RunResult> results, double amountDeut)

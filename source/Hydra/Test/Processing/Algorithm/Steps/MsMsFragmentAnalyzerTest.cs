@@ -40,9 +40,9 @@ namespace Hydra.Test.Processing.Algorithm.Steps
 			AssertPeptide(peptide);
 
 			Assert.AreEqual(0, runResult.IsotopicPeakList.Count);
-			Assert.AreEqual(151.58971, Math.Round(runResult.AverageMass, 5));
+			Assert.AreEqual(152.09318, Math.Round(runResult.AverageMass, 5));
 			Assert.AreEqual(152.1611, Math.Round(runResult.TheoreticalAverageMass, 5));
-			Assert.AreEqual(-1.14279, Math.Round(runResult.AmountDeut, 5));
+			Assert.AreEqual(-0.13584, Math.Round(runResult.AmountDeut, 5));
 			Assert.AreEqual(true, runResult.IsUsedInCalculations);
 			Assert.AreEqual(0, Math.Round(runResult.AmountDeutFromDeutDist, 5));
 			Assert.AreEqual(true, publishCalled);
@@ -62,9 +62,9 @@ namespace Hydra.Test.Processing.Algorithm.Steps
 			AssertPeptide(peptide);
 
 			Assert.AreEqual(0, runResult.IsotopicPeakList.Count);
-			Assert.AreEqual(151.58971, Math.Round(runResult.AverageMass, 5));
+			Assert.AreEqual(152.09318, Math.Round(runResult.AverageMass, 5));
 			Assert.AreEqual(850.9536, Math.Round(runResult.TheoreticalAverageMass, 5));
-			Assert.AreEqual(-1.14279, Math.Round(runResult.AmountDeut, 5));
+			Assert.AreEqual(-0.13584, Math.Round(runResult.AmountDeut, 5));
 			Assert.AreEqual(true, runResult.IsUsedInCalculations);
 			Assert.AreEqual(0, Math.Round(runResult.AmountDeutFromDeutDist, 5));
 			Assert.AreEqual(true, publishCalled);

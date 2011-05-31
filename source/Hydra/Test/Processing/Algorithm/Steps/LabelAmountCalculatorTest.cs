@@ -148,11 +148,11 @@ namespace Hydra.Test.Processing.Algorithm.Steps
 			labelAmountCalculator.Execute(runResult);
 
 			Assert.AreEqual(500, Math.Round(runResult.AverageMass, 5));
-			Assert.AreEqual(0, Math.Round(runResult.TheoreticalAverageMass, 5));
+			Assert.AreEqual(500, Math.Round(runResult.TheoreticalAverageMass, 5));
 			Assert.AreEqual(498.99206, Math.Round(runResult.CentroidMR, 5));
-			Assert.AreEqual(-1.00794, Math.Round(runResult.TheoreticalCentroidMR, 5));
+			Assert.AreEqual(498.99206, Math.Round(runResult.TheoreticalCentroidMR, 5));
 			Assert.AreEqual(5, runResult.AmideHydrogenTotal);
-			Assert.AreEqual(500, Math.Round(runResult.AmountDeut, 5));
+			Assert.AreEqual(0, Math.Round(runResult.AmountDeut, 5));
 			Assert.AreEqual(true, runResult.IsUsedInCalculations);
 			Assert.AreEqual(true, publishCalled);
 			Assert.AreEqual(8, messageCount);
@@ -345,25 +345,25 @@ namespace Hydra.Test.Processing.Algorithm.Steps
 					Assert.AreEqual("     Label Amount Calculator Started (Mode=CalculatedMassAndExperimentalIntensity, PeaksInCalcMode=Automatic)", actualValue);
 					break;
 				case 1:
-					Assert.AreEqual("     Number of Peaks In Label Calculation: 0 (Automatic)", actualValue);
+					Assert.AreEqual("     Number of Peaks In Label Calculation: 1 (Automatic)", actualValue);
 					break;
 				case 2:
 					Assert.AreEqual("     Calculated Average Mass=500", actualValue);
 					break;
 				case 3:
-					Assert.AreEqual("     Calculated Theoretical Average Mass=0", actualValue);
+					Assert.AreEqual("     Calculated Theoretical Average Mass=500", actualValue);
 					break;
 				case 4:
 					Assert.AreEqual("     Calculated Centroid MR=498.99206", actualValue);
 					break;
 				case 5:
-					Assert.AreEqual("     Calculated Theoretical Centroid MR=-1.00794", actualValue);
+					Assert.AreEqual("     Calculated Theoretical Centroid MR=498.99206", actualValue);
 					break;
 				case 6:
 					Assert.AreEqual("     Calculated Amide Hydrogen Total=5", actualValue);
 					break;
 				case 7:
-					Assert.AreEqual("     Calculated Amount Deuteration=500 [AvgMass(500) - TheoAvgMass(0] * ChargeState(1)", actualValue);
+					Assert.AreEqual("     Calculated Amount Deuteration=0 [AvgMass(500) - TheoAvgMass(500] * ChargeState(1)", actualValue);
 					break;
 			}
 		}
@@ -411,7 +411,7 @@ namespace Hydra.Test.Processing.Algorithm.Steps
 					Assert.AreEqual("     Label Amount Calculator Started (Mode=CalculatedMassAndExperimentalIntensity, PeaksInCalcMode=Automatic)", actualValue);
 					break;
 				case 1:
-					Assert.AreEqual("     Number of Peaks In Label Calculation: 0 (Automatic)", actualValue);
+					Assert.AreEqual("     Number of Peaks In Label Calculation: 1 (Automatic)", actualValue);
 					break;
 				case 2:
 					Assert.AreEqual("     Calculated Average Mass=500", actualValue);

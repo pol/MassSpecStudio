@@ -6,7 +6,9 @@ using System.Linq;
 using Hydra.Core.Domain;
 using Hydra.Core.Events;
 using Hydra.Processing.Algorithm;
+using MassSpecStudio.Core;
 using MassSpecStudio.Core.Events;
+using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.ViewModel;
 
@@ -21,13 +23,15 @@ namespace Hydra.Modules.Validation.Views
 		private Run selectedRun;
 		private IEventAggregator eventAggregator;
 		private LabelAmountAlgorithm labelAmountAlgorithm;
+		private IDocumentManager documentManager;
 
-		public ManualValidationViewModel(Result result, IEventAggregator eventAggregator, LabelAmountAlgorithm labelAmountAlgorithm)
+		public ManualValidationViewModel(Result result, IDocumentManager documentManager, IEventAggregator eventAggregator, LabelAmountAlgorithm labelAmountAlgorithm)
 		{
 			this.eventAggregator = eventAggregator;
 			this.result = CloneResultIfNecessary(result);
 			this.result = result;
 			this.labelAmountAlgorithm = labelAmountAlgorithm;
+			this.documentManager = documentManager;
 
 			currentRunResults = new ObservableCollection<ValidationWrapper>();
 			allRunResults = (from data in result.RunResults
@@ -39,7 +43,11 @@ namespace Hydra.Modules.Validation.Views
 			}
 
 			eventAggregator.GetEvent<PeptideSelectedEvent>().Subscribe(OnPeptideSelected);
+
+			ApplyChanges = new DelegateCommand(OnApplyChanges);
 		}
+
+		public DelegateCommand ApplyChanges { get; set; }
 
 		public EventHandler UpdateGraphs { get; set; }
 
@@ -69,6 +77,11 @@ namespace Hydra.Modules.Validation.Views
 			}
 		}
 
+		public void Unsubscribe()
+		{
+			eventAggregator.GetEvent<PeptideSelectedEvent>().Unsubscribe(OnPeptideSelected);
+		}
+
 		public void RefreshPropertiesPanel()
 		{
 			eventAggregator.GetEvent<ObjectSelectionEvent>().Publish(SelectedRunResult);
@@ -76,30 +89,53 @@ namespace Hydra.Modules.Validation.Views
 
 		public void ReprocessSelectedResult(BackgroundWorker worker)
 		{
+			labelAmountAlgorithm.SetParameters(result.AlgorithmUsed);
 			labelAmountAlgorithm.ReExecute(worker, result, selectedRunResult.RunResult);
+		}
+
+		private void OnApplyChanges()
+		{
+			eventAggregator.GetEvent<StatusUpdateEvent>().Publish("Peptide list updated.");
+			Experiment experiment = (Experiment)documentManager.Experiments.FirstOrDefault();
+			if (experiment != null)
+			{
+				foreach (ValidationWrapper validation in allRunResults)
+				{
+					Peptide peptide = experiment.Peptides.PeptideCollection.Where(item => item.MonoIsotopicMass == validation.Peptide.MonoIsotopicMass && item.ChargeState == validation.Peptide.ChargeState).FirstOrDefault();
+					peptide.PeaksInCalculation = validation.ActualPeaksInCalculation;
+					peptide.DeuteriumDistributionThreshold = validation.ActualDeutDistThreshold;
+					peptide.DeuteriumDistributionRightPadding = validation.ActualDeutDistRightPadding;
+
+					peptide.XicAdjustment = validation.ActualXicAdjustment;
+					peptide.XicSelectionWidth = validation.ActualXicSelectionWidth;
+				}
+			}
 		}
 
 		private void OnPeptideSelected(Peptide peptide)
 		{
-			CurrentRunResults.Clear();
-			var runResults = (from data in allRunResults
-							  where data.Peptide.MonoIsotopicMass == peptide.MonoIsotopicMass && data.Peptide.RT == peptide.RT
-							  select data).ToList();
-
-			foreach (ValidationWrapper runResult in runResults)
+			if (peptide != null)
 			{
-				CurrentRunResults.Add(runResult);
-			}
+				CurrentRunResults.Clear();
+				var runResults = (from data in allRunResults
+								  where data.Peptide.MonoIsotopicMass == peptide.MonoIsotopicMass && data.Peptide.RT == peptide.RT
+								  select data).ToList();
 
-			if (CurrentRunResults.Count > 0)
-			{
-				if (selectedRun == null)
+				foreach (ValidationWrapper runResult in runResults)
 				{
-					SelectedRunResult = CurrentRunResults.First();
+					CurrentRunResults.Add(runResult);
 				}
-				else
+
+				if (CurrentRunResults.Count > 0)
 				{
-					SelectedRunResult = CurrentRunResults.FirstOrDefault(item => item.RunResult.Run.FileName == selectedRun.FileName);
+					if (selectedRun == null)
+					{
+						SelectedRunResult = CurrentRunResults.First();
+					}
+					else
+					{
+						SelectedRunResult = CurrentRunResults.FirstOrDefault(item => item.RunResult.Run.FileName == selectedRun.FileName);
+					}
 				}
 			}
 		}

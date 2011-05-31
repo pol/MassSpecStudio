@@ -53,7 +53,7 @@ namespace Hydra.Modules.Peptides
 			ManagedContent peptidesView = _regionManager.FindExistingView("BottomRegion", typeof(PeptidesView));
 			if (peptidesView == null)
 			{
-				peptidesView = new PeptidesView(new PeptidesViewModel(value as Core.Domain.Run));
+				peptidesView = new PeptidesView(new PeptidesViewModel(value as Core.Domain.Run), _eventAggregator);
 				_regionManager.AddToRegion("BottomRegion", peptidesView);
 			}
 			peptidesView.Show();
@@ -62,14 +62,15 @@ namespace Hydra.Modules.Peptides
 
 		public void OnShowPeptidesForValidation(Result value)
 		{
-			ManagedContent peptidesView = _regionManager.FindExistingView("BottomRegion", typeof(PeptidesView));
+			PeptidesView peptidesView = (PeptidesView)_regionManager.FindExistingView("BottomRegion", typeof(PeptidesView));
 			if (peptidesView == null)
 			{
-				peptidesView = new PeptidesView(new PeptidesViewModel(value, _eventAggregator));
+				peptidesView = new PeptidesView(new PeptidesViewModel(value, _eventAggregator), _eventAggregator);
 				_regionManager.AddToRegion("BottomRegion", peptidesView);
 			}
 			peptidesView.Show();
 			peptidesView.Activate();
+			peptidesView.Refresh(value);
 		}
 
 		public void OnDisplayPeptidesWindow(object value)

@@ -12,17 +12,17 @@ namespace MassSpecStudio.Modules.Properties
 	[ExportMetadata("Description", "This module provides a display and the ability to edit any selected element within the project or experiment.")]
 	public class PropertiesModule : IModule
 	{
-		private readonly IRegionManager _regionManager;
+		private readonly IRegionManager regionManager;
 
 		[ImportingConstructor]
 		public PropertiesModule(IRegionManager regionManager)
 		{
-			_regionManager = regionManager;
+			this.regionManager = regionManager;
 		}
 
 		public void Initialize()
 		{
-			_regionManager.RegisterViewWithRegion("RightRegion", typeof(Views.PropertiesView));
+			regionManager.RegisterViewWithRegion("RightRegion", typeof(Views.PropertiesView));
 		}
 	}
 }

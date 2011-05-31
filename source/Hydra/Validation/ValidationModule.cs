@@ -22,12 +22,14 @@ namespace Hydra.Modules.Validation
 		private readonly IRegionManager _regionManager;
 		private readonly IEventAggregator _eventAggregator;
 		private readonly LabelAmountAlgorithm labelAmountAlgorithm;
+		private readonly IDocumentManager documentManager;
 
 		[ImportingConstructor]
-		public ValidationModule(IRegionManager regionManager, IEventAggregator eventAggregator, LabelAmountAlgorithm labelAmountAlgorithm)
+		public ValidationModule(IRegionManager regionManager, IDocumentManager documentManager, IEventAggregator eventAggregator, LabelAmountAlgorithm labelAmountAlgorithm)
 		{
 			_regionManager = regionManager;
 			_eventAggregator = eventAggregator;
+			this.documentManager = documentManager;
 			this.labelAmountAlgorithm = labelAmountAlgorithm;
 
 			_eventAggregator.GetEvent<LoadManualValidationEvent>().Subscribe(OnView);
@@ -39,8 +41,8 @@ namespace Hydra.Modules.Validation
 
 		public void OnView(Result value)
 		{
-			ManualValidationViewModel viewModel = new ManualValidationViewModel(value, _eventAggregator, labelAmountAlgorithm);
-			ManagedContent view = _regionManager.FindExistingView(Regions.DocumentRegion.ToString(), typeof(ManualValidationView), "Manual Results Validation (TODO:)");
+			ManualValidationViewModel viewModel = new ManualValidationViewModel(value, documentManager, _eventAggregator, labelAmountAlgorithm);
+			ManagedContent view = _regionManager.FindExistingView(Regions.DocumentRegion.ToString(), typeof(ManualValidationView), "Validation Viewer");
 			if (view == null)
 			{
 				view = new ManualValidationView(viewModel);

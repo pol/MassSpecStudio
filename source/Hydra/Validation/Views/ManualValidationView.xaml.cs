@@ -23,10 +23,20 @@ namespace Hydra.Modules.Validation.Views
 
 		public void SetViewModel(ManualValidationViewModel newViewModel)
 		{
+			if (viewModel != null)
+			{
+				viewModel.UpdateGraphs -= HandleUpdateGraphs;
+				viewModel.Reprocess -= HandleReprocessing;
+				viewModel.Unsubscribe();
+			}
+
 			viewModel = newViewModel;
 			viewModel.UpdateGraphs += HandleUpdateGraphs;
 			viewModel.Reprocess += HandleReprocessing;
+
 			DataContext = viewModel;
+
+			viewModel.RefreshPropertiesPanel();
 		}
 
 		private void ManualValidationView_IsActiveContentChanged(object sender, EventArgs e)

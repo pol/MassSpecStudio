@@ -10,10 +10,14 @@
 							d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="White">
 		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
 			<RowDefinition Height="170"></RowDefinition>
 			<RowDefinition Height="*"></RowDefinition>
 		</Grid.RowDefinitions>
-			<ListView Name="replicates" ItemsSource="{Binding CurrentRunResults}" SelectedItem="{Binding SelectedRunResult, Mode=TwoWay}" Margin="0,0,0,3">
+		<ToolBar>
+			<Button Content="Apply Changes to Peptide List" Command="{Binding ApplyChanges}"></Button>
+		</ToolBar>
+		<ListView Grid.Row="1" Name="replicates" ItemsSource="{Binding CurrentRunResults}" SelectedItem="{Binding SelectedRunResult, Mode=TwoWay}" Margin="0,0,0,3">
 			<ListView.View>
 				<GridView>
 					<GridViewColumn Header="Run" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
@@ -24,7 +28,7 @@
 				</GridView>
 			</ListView.View>			
 		</ListView>
-		<GridSplitter Grid.Row="0" VerticalAlignment="Bottom" Height="3" HorizontalAlignment="Stretch"></GridSplitter>
-		<ui:XicSpectrumView x:Name="xicSpectrumView" Grid.Row="1" Margin="10" Result="{Binding SelectedItem, ElementName=replicates}"></ui:XicSpectrumView>
+		<GridSplitter Grid.Row="1" VerticalAlignment="Bottom" Height="3" HorizontalAlignment="Stretch"></GridSplitter>
+		<ui:XicSpectrumView x:Name="xicSpectrumView" Grid.Row="2" Margin="10" Result="{Binding SelectedItem, ElementName=replicates}"></ui:XicSpectrumView>
     </Grid>
 </AvalonDock:DocumentContent>

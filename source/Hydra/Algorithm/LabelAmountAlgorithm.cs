@@ -124,6 +124,11 @@ namespace Hydra.Processing.Algorithm
 							ReportStepProgress(worker, " 4: XIC Peak Picking", "XIC Peak Picking");
 							ChromatographicPeak xicPeak = _xicPeakPicker.Execute(xicPeakList, peptide);
 
+							RunResult runResult = new RunResult(peptide, run);
+							runResult.CachedXicPeak = xicPeak;
+							runResult.CachedXicPeakList = xicPeakList;
+							runResult.CachedXic = xicData;
+
 							if (xicPeak != null)
 							{
 								double rt1 = xicPeak.Rt + peptide.XicAdjustment - (peptide.XicSelectionWidth / 2);
@@ -139,10 +144,6 @@ namespace Hydra.Processing.Algorithm
 								ReportStepProgress(worker, " 7: Spectral Peak Detection", "Spectral Peak Detection");
 								IList<MSPeak> msPeakList = _spectralPeakDetection.Execute(spectralData);
 
-								RunResult runResult = new RunResult(peptide, run);
-								runResult.CachedXicPeak = xicPeak;
-								runResult.CachedXicPeakList = xicPeakList;
-								runResult.CachedXic = xicData;
 								runResult.CachedSpectrum = spectralData;
 								runResult.CachedMSPeakList = msPeakList;
 
@@ -151,9 +152,9 @@ namespace Hydra.Processing.Algorithm
 
 								ReportStepProgress(worker, " 9: Label Amount Calculation", "Label Amount Calculation");
 								_labelAmountCalculator.Execute(runResult);
-
-								result.RunResults.Add(runResult);
 							}
+
+							result.RunResults.Add(runResult);
 							currentProgress++;
 						}
 

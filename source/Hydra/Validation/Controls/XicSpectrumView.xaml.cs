@@ -104,8 +104,8 @@ namespace Hydra.Modules.Validation.Controls
 
 			this.spectrum.ZedGraphControl.GraphPane.CurveList.Clear();
 
-			IList<double> xvals = result.CachedSpectrum.XValues;
-			IList<double> yvals = result.CachedSpectrum.YValues;
+			IList<double> xvals = result.CachedSpectrum != null ? result.CachedSpectrum.XValues : null;
+			IList<double> yvals = result.CachedSpectrum != null ? result.CachedSpectrum.YValues : null;
 
 			if (!result.IsResultBasedOnFragment /*&& !IsMSDataStoredInResult()*/ && result.CachedSpectrum == null)
 			{

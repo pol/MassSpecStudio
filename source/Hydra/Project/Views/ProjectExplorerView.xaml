@@ -95,7 +95,8 @@
 						<StackPanel.ContextMenu>
 							<ContextMenu>
 								<MenuItem Header="Add Peptide" Command="{Binding AddPeptide}"></MenuItem>
-								<MenuItem Header="Add from file..." Command="{Binding AddFromFile}" CommandParameter="{Binding}"></MenuItem>
+								<MenuItem Header="Import from CSV..." Command="{Binding AddFromFile}" CommandParameter="{Binding}"></MenuItem>
+								<MenuItem Header="Export to CSV..." Command="{Binding Export}" CommandParameter="{Binding}"></MenuItem>
 							</ContextMenu>
 						</StackPanel.ContextMenu>
 						<Image Source="/Hydra.Core;component/Images/peptide.png" Height="16" Margin="0,0,2,0"></Image>

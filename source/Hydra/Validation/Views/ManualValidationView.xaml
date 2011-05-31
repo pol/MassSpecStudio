@@ -6,7 +6,7 @@
 			 xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock"
 			xmlns:ui="clr-namespace:Hydra.Modules.Validation.Controls"
              mc:Ignorable="d" 
-							Title="Manual Validation"
+							Title="Validation Viewer"
 							d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="White">
 		<Grid.RowDefinitions>

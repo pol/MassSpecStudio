@@ -37,6 +37,7 @@ namespace Hydra.Modules.Project.Views
 			AddFromFile = new DelegateCommand<PeptidesViewModel>(OnAddFromFile);
 			AddPeptide = new DelegateCommand<PeptidesViewModel>(OnAddPeptide);
 			Remove = new DelegateCommand<PeptideViewModel>(OnRemove);
+			Export = new DelegateCommand<PeptidesViewModel>(OnExport);
 		}
 
 		public PeptidesViewModel(Experiment experiment, IServiceLocator serviceLocator)
@@ -60,6 +61,9 @@ namespace Hydra.Modules.Project.Views
 
 		[Browsable(false)]
 		public DelegateCommand<PeptideViewModel> Remove { get; set; }
+
+		[Browsable(false)]
+		public DelegateCommand<PeptidesViewModel> Export { get; set; }
 
 		public override string Name
 		{
@@ -91,10 +95,23 @@ namespace Hydra.Modules.Project.Views
 		private void OnAddFromFile(PeptidesViewModel viewModel)
 		{
 			System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
+			dialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
 
 			if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
 				AddPeptides(dialog.FileName);
+			}
+		}
+
+		private void OnExport(PeptidesViewModel viewModel)
+		{
+			System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
+			dialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+
+			if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				IPeptideDataProvider dataProvider = serviceLocator.GetInstance<IPeptideDataProvider>();
+				dataProvider.Write(experiment.Peptides.PeptideCollection, dialog.FileName);
 			}
 		}
 

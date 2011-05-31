@@ -14,7 +14,7 @@
 		</Grid.RowDefinitions>
 		<ToolBar>
 			<Button Content="Export..." Click="OnExport"></Button>
-			<Button Content="Validation..." Command="{Binding ManualValidation}"></Button>
+			<Button Content="Manual Validation..." Command="{Binding ManualValidation}"></Button>
 		</ToolBar>
 		<TabControl Grid.Row="1" Margin="0,5,0,0">
 			<TabControl.Items>

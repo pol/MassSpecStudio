@@ -14,7 +14,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 	[ExportMetadata("Title", "ProteoWizard Data Provider")]
 	[ExportMetadata("Type", "Data Provider")]
 	[ExportMetadata("Author", "Mass Spec Studio")]
-	[ExportMetadata("Description", "This module provides access to .mzxml and .mzml file formats via the ProteoWizard library.")]
+	[ExportMetadata("Description", "This module provides access to .mzxml, .mzml, Thermo RAW, Waters RAW, Bruker Analysis, Mascot Generic, Agilent MassHunter and Bruker Data Exchange file formats via the ProteoWizard library.")]
 	public sealed class ProteoWizardDataProvider : IDataProvider, IDisposable
 	{
 		private readonly IEventAggregator _eventAggregator;

@@ -46,8 +46,9 @@
 		<Button Content="New Project..." Grid.Row="1" HorizontalAlignment="Stretch" Margin="20,15,10,0" Name="button1" VerticalAlignment="Top" Command="{Binding DocumentManager.New}" />
 		<Button Content="Open Project..." HorizontalAlignment="Stretch" Margin="20,45,10,15" Name="button2" VerticalAlignment="Top" Grid.Row="1" Click="OnOpen" />
 		<Border BorderBrush="Silver" BorderThickness="0,0,0,1" Grid.ColumnSpan="2" Grid.RowSpan="1" HorizontalAlignment="Stretch" Margin="0" Name="border1" VerticalAlignment="Stretch" />
-		<TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="15,12,15,15" Name="textBlock1" Text="Getting Started" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
-		<TextBlock Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Stretch" Margin="15,35,0,0" Name="textBlock2" Text="Help text will go here" VerticalAlignment="Stretch" />
+		<TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="15,12,15,15" Name="textBlock1" Text="Documentation" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+		<TextBlock Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Stretch" Margin="15,35,0,0" Name="textBlock2" Text="Technical documentation can be found online here: " VerticalAlignment="Stretch" />
+		<Button Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="15,55,0,0" Content="https://github.com/dschriem/MassSpecStudio/wiki" Click="OnDocumentation"></Button>
 		<Border BorderBrush="Silver" BorderThickness="0,0,0,1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,0" Name="border2" VerticalAlignment="Stretch" Grid.RowSpan="2">
 			<TextBlock Name="textBlock3" Text="Recent Projects" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,0,2" />
 		</Border>

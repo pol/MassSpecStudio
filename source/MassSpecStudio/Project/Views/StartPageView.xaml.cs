@@ -43,5 +43,10 @@ namespace MassSpecStudio.Modules.Project.Views
 		{
 			_viewModel.Open(((System.Windows.Controls.Button)sender).Tag.ToString());
 		}
+
+		private void OnDocumentation(object sender, System.Windows.RoutedEventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/dschriem/MassSpecStudio/wiki");
+		}
 	}
 }

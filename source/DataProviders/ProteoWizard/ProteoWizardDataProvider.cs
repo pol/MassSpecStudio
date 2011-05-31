@@ -49,7 +49,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 
 		public string Description
 		{
-			get { return "Provides data access for .mzxml and .mzml files."; }
+			get { return "This module provides access to .mzxml, .mzml, Thermo RAW, Waters RAW, Bruker Analysis, Mascot Generic, Agilent MassHunter and Bruker Data Exchange file formats via the ProteoWizard library."; }
 		}
 
 		public string[] FileTypes

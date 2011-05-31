@@ -19,7 +19,6 @@
   <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
   <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
   <IgnoreGeneratedCode>True</IgnoreGeneratedCode>
-  <TargetFrameworkVersion>0.0</TargetFrameworkVersion>
  </ProjectOptions>
  <Targets>
   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -315,15 +314,6 @@
      <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2010-12-15 06:02:45Z">
       <Issue>
        <Item>Microsoft.Practices.Prism.Regions</Item>
-      </Issue>
-     </Message>
-    </Messages>
-   </Namespace>
-   <Namespace Name="XamlGeneratedNamespace">
-    <Messages>
-     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-05-26 22:27:45Z">
-      <Issue>
-       <Item>XamlGeneratedNamespace</Item>
       </Issue>
      </Message>
     </Messages>
@@ -1832,11 +1822,6 @@
           <Members>
            <Member Name="#CreateReplicateResultHeader(System.String)">
             <Messages>
-             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-05-22 23:53:16Z">
-              <Issue>
-               <Item>'ResultsViewModel.CreateReplicateResultHeader(string)'</Item>
-              </Issue>
-             </Message>
              <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-22 23:53:16Z" FixCategory="NonBreaking">
               <Issue>
                <Item>'ResultsViewModel.CreateReplicateResultHeader(string)'</Item>
@@ -2085,6 +2070,15 @@
                <Item>'DateTime.ToString(string, IFormatProvider)'</Item>
                <Item>'CultureInfo.CurrentCulture'</Item>
                <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DeuterationResults">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2011-05-31 18:11:44Z">
+              <Issue>
+               <Item>'Result.DeuterationResults'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -2452,18 +2446,18 @@
              </Message>
             </Messages>
            </Member>
-           <Member Name="#ReExecute(System.ComponentModel.BackgroundWorker,Hydra.Core.Domain.RunResult)">
+           <Member Name="#ReExecute(System.ComponentModel.BackgroundWorker,Hydra.Core.Domain.Result,Hydra.Core.Domain.RunResult)">
             <Messages>
-             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-03-21 20:42:25Z">
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2011-05-31 18:11:44Z">
               <Issue>
-               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, RunResult)'</Item>
+               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, Result, RunResult)'</Item>
                <Item>'Exception'</Item>
               </Issue>
              </Message>
-             <Message Id="Re" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-03-21 20:42:25Z">
+             <Message Id="Re" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-05-31 18:11:44Z">
               <Issue Name="Member">
                <Item>Re</Item>
-               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, RunResult)'</Item>
+               <Item>'LabelAmountAlgorithm.ReExecute(BackgroundWorker, Result, RunResult)'</Item>
                <Item>RE</Item>
               </Issue>
              </Message>

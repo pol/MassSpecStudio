@@ -60,7 +60,7 @@ namespace Hydra.Modules.Results.Views
 
 		private void SaveReplicatesExcel(string filename)
 		{
-			string csvExportText = CreateSummaryResultHeader(",");
+			string csvExportText = CreateReplicateResultHeader(",");
 			foreach (RunResult runResult in _result.RunResults)
 			{
 				csvExportText += runResult.ToString(",");

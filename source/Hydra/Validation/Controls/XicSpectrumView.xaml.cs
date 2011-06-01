@@ -103,6 +103,7 @@ namespace Hydra.Modules.Validation.Controls
 			msController.ItemsSource = result.MSPeaks;
 
 			this.spectrum.ZedGraphControl.GraphPane.CurveList.Clear();
+			this.spectrum.ZedGraphControl.GraphPane.XAxis.Title.Text = "m/z";
 
 			IList<double> xvals = result.CachedSpectrum != null ? result.CachedSpectrum.XValues : null;
 			IList<double> yvals = result.CachedSpectrum != null ? result.CachedSpectrum.YValues : null;

@@ -105,6 +105,7 @@ namespace Hydra.Modules.Validation.Views
 					peptide.PeaksInCalculation = validation.ActualPeaksInCalculation;
 					peptide.DeuteriumDistributionThreshold = validation.ActualDeutDistThreshold;
 					peptide.DeuteriumDistributionRightPadding = validation.ActualDeutDistRightPadding;
+					peptide.RT = validation.SelectedXicPeak.Rt;
 
 					peptide.XicAdjustment = validation.ActualXicAdjustment;
 					peptide.XicSelectionWidth = validation.ActualXicSelectionWidth;

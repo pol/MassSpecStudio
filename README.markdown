@@ -8,7 +8,7 @@ As an example, Mass Spec Studio currently includes the analysis package named Hy
 * [Installation](https://github.com/dschriem/MassSpecStudio/wiki/Installation)
 
 ## Technical Documentation
-* [Architecture](https://github.com/dschriem/MassSpecStudio/wiki/Installation)
+* [Architecture](https://github.com/dschriem/MassSpecStudio/wiki/Architecture)
 * Extensibility Points
    * [Experiment Types](https://github.com/dschriem/MassSpecStudio/wiki/Experiment-Types)
    * [Modules](https://github.com/dschriem/MassSpecStudio/wiki/Modules)

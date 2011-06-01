@@ -5,13 +5,13 @@ As an example, Mass Spec Studio currently includes the analysis package named Hy
 
 
 ## Getting Started
-* [[Installation]]
+* [Installation](https://github.com/dschriem/MassSpecStudio/wiki/Installation)
 
 ## Technical Documentation
-* [[Architecture]]
+* [Architecture](https://github.com/dschriem/MassSpecStudio/wiki/Installation)
 * Extensibility Points
-   * [[Experiment Types]]
-   * [[Modules]]
-   * [[Algorithms]]
-   * [[Data Providers]]
-* [[Controls]] 
+   * [Experiment Types](https://github.com/dschriem/MassSpecStudio/wiki/Experiment-Types)
+   * [Modules](https://github.com/dschriem/MassSpecStudio/wiki/Modules)
+   * [Algorithms](https://github.com/dschriem/MassSpecStudio/wiki/Algorithms)
+   * [Data Providers](https://github.com/dschriem/MassSpecStudio/wiki/Data-Providers)
+* [Controls](https://github.com/dschriem/MassSpecStudio/wiki/Controls)

@@ -85,11 +85,12 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 					BinaryDataArray intensityArray = spectrumFromFile.getIntensityArray();
 					BinaryData mzData = mzArray.data;
 					BinaryData intensityData = intensityArray.data;
+					int totalDataPoints = mzData.Count;
 
 					FilterMassList(mzData, intensityData, mzLower, mzUpper);
 
 					BinarySpectrum spectrum = new BinarySpectrum(rt, mzData, intensityData);
-					if (spectrum.Count == mzData.Count)
+					if (spectrum.Count == totalDataPoints)
 					{
 						AddSpectrumToCacheIfNotPresent(timePoint, spectrum);
 					}

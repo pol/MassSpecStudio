@@ -46,6 +46,35 @@ namespace Hydra.Modules.Project
 			}
 		}
 
+		public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+		{
+			if (source.FullName.ToLower() == target.FullName.ToLower())
+			{
+				return;
+			}
+
+			// Check if the target directory exists, if not, create it.
+			if (Directory.Exists(target.FullName) == false)
+			{
+				Directory.CreateDirectory(target.FullName);
+			}
+
+			// Copy each file into it's new directory.
+			foreach (FileInfo fi in source.GetFiles())
+			{
+				Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);
+				fi.CopyTo(Path.Combine(target.ToString(), fi.Name), true);
+			}
+
+			// Copy each subdirectory using recursion.
+			foreach (DirectoryInfo sourceSubDir in source.GetDirectories())
+			{
+				DirectoryInfo nextTargetSubDir =
+					target.CreateSubdirectory(sourceSubDir.Name);
+				CopyAll(sourceSubDir, nextTargetSubDir);
+			}
+		}
+
 		public void CreateProjectDirectoryStructure()
 		{
 			project.CreateDirectoryStructure();
@@ -65,11 +94,18 @@ namespace Hydra.Modules.Project
 				int progress = Convert.ToInt32(((double)index / (double)experiment.Runs.Count) * 100.0);
 				progress = progress == 0 ? 1 : progress;
 
-				if (!File.Exists(expectedFileLocation))
+				if (!File.Exists(expectedFileLocation) && !Directory.Exists(expectedFileLocation))
 				{
 					worker.ReportProgress(progress, "Copying " + fileName);
 
-					File.Copy(run.FileName, expectedFileLocation);
+					if (Directory.Exists(run.FileName))
+					{
+						CopyAll(new DirectoryInfo(run.FileName), new DirectoryInfo(expectedFileLocation));
+					}
+					else
+					{
+						File.Copy(run.FileName, expectedFileLocation);
+					}
 					run.FileName = DirectoryHelper.GetRelativePath(expectedFileLocation, experimentDirectory);
 					run.FullPath = expectedFileLocation;
 				}

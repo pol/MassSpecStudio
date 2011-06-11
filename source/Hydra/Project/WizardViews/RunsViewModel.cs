@@ -167,6 +167,14 @@ namespace Hydra.Modules.Project.WizardViews
 							files.Add(file);
 						}
 					}
+					string[] allFolders = Directory.GetDirectories(SelectedDataPath);
+					foreach (string folder in allFolders)
+					{
+						if (_dataProvider.IsCorrectFileType(folder, SelectedFileType))
+						{
+							files.Add(folder);
+						}
+					}
 
 					Properties.Settings.Default.LastBrowseDataPath = SelectedDataPath;
 					Properties.Settings.Default.RecentBrowseDataPaths = RecentListHelper.AddToRecentList(Properties.Settings.Default.RecentBrowseDataPaths, _selectedDataPath);
@@ -188,7 +196,7 @@ namespace Hydra.Modules.Project.WizardViews
 					if (((Experiment)_experimentViewModel.Data).Runs.Where(run => run.FileName == value).FirstOrDefault() == null)
 					{
 						string file = Path.Combine(SelectedDataPath, value);
-						if (File.Exists(file))
+						if (File.Exists(file) || Directory.Exists(file))
 						{
 							((LabelingViewModel)SelectedItem).AddRunData(file);
 						}

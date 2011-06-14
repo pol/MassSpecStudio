@@ -171,7 +171,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 		private TimeUnit GetTimeUnits()
 		{
 			string fileType = GetFileType(_currentFileName);
-			if (fileType == "Thermo RAW")
+			if (fileType == "Thermo RAW" || fileType == "Agilent MassHunter")
 			{
 				return TimeUnit.Minutes;
 			}

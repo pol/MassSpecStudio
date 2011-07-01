@@ -109,49 +109,60 @@ namespace Hydra.Processing.Algorithm
 						// TODO: crashed here when I closed the progress bar; seems to be a threading issue
 						foreach (Peptide peptide in experiment.Peptides.PeptideCollection)
 						{
-							OutputText("-PEPTIDE '" + peptide.Sequence + "'");
-							ReportProgress(worker, "Processing " + Path.GetFileName(run.FileName) + " (" + proteinState.Name + ")");
-
-							ReportStepProgress(worker, " 1: XIC Selection", "XIC Selection");
-							IXYData xicData = _xicSelection.Execute(run, peptide.XicMass1);
-
-							ReportStepProgress(worker, " 2: XIC Smoothing", "XIC Smoothing");
-							xicData = _xicSmoothing.Execute(xicData);
-
-							ReportStepProgress(worker, " 3: Chromatographic Peak Detection", "Chromatographic Peak Detection");
-							IList<ChromatographicPeak> xicPeakList = _chromatographicPeakDetection.Execute(xicData);
-
-							ReportStepProgress(worker, " 4: XIC Peak Picking", "XIC Peak Picking");
-							ChromatographicPeak xicPeak = _xicPeakPicker.Execute(xicPeakList, peptide);
-
 							RunResult runResult = new RunResult(peptide, run);
-							runResult.CachedXicPeak = xicPeak;
-							runResult.CachedXicPeakList = xicPeakList;
-							runResult.CachedXic = xicData;
 
-							if (xicPeak != null)
+							try
 							{
-								double rt1 = xicPeak.Rt + peptide.XicAdjustment - (peptide.XicSelectionWidth / 2);
-								double rt2 = xicPeak.Rt + peptide.XicAdjustment + (peptide.XicSelectionWidth / 2);
-								OutputText("     Calculated retention time window for spectrum selection is " + rt1 + "-" + rt2 + "(Peptide=" + peptide.Sequence + ", XicAdjustment=" + peptide.XicAdjustment + ", XicSelectionWidth=" + peptide.XicSelectionWidth + ")");
+								OutputText("-PEPTIDE '" + peptide.Sequence + "'");
+								ReportProgress(worker, "Processing " + Path.GetFileName(run.FileName) + " (" + proteinState.Name + ")");
 
-								ReportStepProgress(worker, " 5: Spectrum Selection", "Spectrum Selection");
-								IXYData spectralData = _spectrumSelection.Execute(run, rt1, rt2, peptide.MonoIsotopicMass);
+								ReportStepProgress(worker, " 1: XIC Selection", "XIC Selection");
+								IXYData xicData = _xicSelection.Execute(run, peptide.XicMass1);
 
-								ReportStepProgress(worker, " 6: MS Smoothing", "MS Smoothing");
-								spectralData = _spectrumSmoothing.Execute(spectralData);
+								ReportStepProgress(worker, " 2: XIC Smoothing", "XIC Smoothing");
+								xicData = _xicSmoothing.Execute(xicData);
 
-								ReportStepProgress(worker, " 7: Spectral Peak Detection", "Spectral Peak Detection");
-								IList<MSPeak> msPeakList = _spectralPeakDetection.Execute(spectralData);
+								ReportStepProgress(worker, " 3: Chromatographic Peak Detection", "Chromatographic Peak Detection");
+								IList<ChromatographicPeak> xicPeakList = _chromatographicPeakDetection.Execute(xicData);
 
-								runResult.CachedSpectrum = spectralData;
-								runResult.CachedMSPeakList = msPeakList;
+								ReportStepProgress(worker, " 4: XIC Peak Picking", "XIC Peak Picking");
+								ChromatographicPeak xicPeak = _xicPeakPicker.Execute(xicPeakList, peptide);
 
-								ReportStepProgress(worker, " 8: Isotopic Profile Finder", "Isotopic Profile Finder");
-								_isotopicProfileFinder.Execute(runResult, msPeakList);
+								runResult.CachedXicPeak = xicPeak;
+								runResult.CachedXicPeakList = xicPeakList;
+								runResult.CachedXic = xicData;
 
-								ReportStepProgress(worker, " 9: Label Amount Calculation", "Label Amount Calculation");
-								_labelAmountCalculator.Execute(runResult);
+								if (xicPeak != null)
+								{
+									double rt1 = xicPeak.Rt + peptide.XicAdjustment - (peptide.XicSelectionWidth / 2);
+									double rt2 = xicPeak.Rt + peptide.XicAdjustment + (peptide.XicSelectionWidth / 2);
+									OutputText("     Calculated retention time window for spectrum selection is " + rt1 + "-" + rt2 + "(Peptide=" + peptide.Sequence + ", XicAdjustment=" + peptide.XicAdjustment + ", XicSelectionWidth=" + peptide.XicSelectionWidth + ")");
+
+									ReportStepProgress(worker, " 5: Spectrum Selection", "Spectrum Selection");
+									IXYData spectralData = _spectrumSelection.Execute(run, rt1, rt2, peptide.MonoIsotopicMass);
+
+									ReportStepProgress(worker, " 6: MS Smoothing", "MS Smoothing");
+									spectralData = _spectrumSmoothing.Execute(spectralData);
+
+									ReportStepProgress(worker, " 7: Spectral Peak Detection", "Spectral Peak Detection");
+									IList<MSPeak> msPeakList = _spectralPeakDetection.Execute(spectralData);
+
+									runResult.CachedSpectrum = spectralData;
+									runResult.CachedMSPeakList = msPeakList;
+
+									ReportStepProgress(worker, " 8: Isotopic Profile Finder", "Isotopic Profile Finder");
+									_isotopicProfileFinder.Execute(runResult, msPeakList);
+
+									ReportStepProgress(worker, " 9: Label Amount Calculation", "Label Amount Calculation");
+									_labelAmountCalculator.Execute(runResult);
+								}
+							}
+							catch (Exception ex)
+							{
+								runResult.Note = ex.Message;
+								OutputText("ERROR:");
+								OutputText(ex.Message);
+								OutputText(ex.StackTrace);
 							}
 
 							result.RunResults.Add(runResult);

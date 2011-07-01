@@ -160,6 +160,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 			{
 				_dataFile.Dispose();
 				_dataFile = null;
+				GC.SuppressFinalize(this);
 			}
 		}
 

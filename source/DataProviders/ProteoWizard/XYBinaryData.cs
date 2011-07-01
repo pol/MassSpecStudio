@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using MassSpecStudio.Core;
@@ -7,7 +7,7 @@ using pwiz.CLI.msdata;
 
 namespace ProteoWizard.MassSpecStudio.DataProvider
 {
-	public class XYBinaryData : IXYData
+	public class XYBinaryData : IXYData, IDisposable
 	{
 		private BinaryData _xValues;
 		private BinaryData _yValues;
@@ -66,6 +66,13 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 				}
 			}
 			return 0.0;
+		}
+
+		public void Dispose()
+		{
+			_xValues.Dispose();
+			_yValues.Dispose();
+			GC.SuppressFinalize(this);
 		}
 	}
 }

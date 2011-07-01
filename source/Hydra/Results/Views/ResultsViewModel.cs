@@ -125,6 +125,7 @@ namespace Hydra.Modules.Results.Views
 			result += "Theoretical Average Mass" + delimiter;
 			result += "Centroid Mass" + delimiter;
 			result += "Theoretical Centroid Mass" + delimiter;
+			result += "Note" + delimiter;
 			result += Environment.NewLine;
 
 			return result;

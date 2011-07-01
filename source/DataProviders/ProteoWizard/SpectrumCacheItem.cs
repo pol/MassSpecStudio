@@ -1,7 +1,8 @@
-﻿
+﻿using System;
+
 namespace ProteoWizard.MassSpecStudio.DataProvider
 {
-	public class SpectrumCacheItem
+	public class SpectrumCacheItem : IDisposable
 	{
 		public SpectrumCacheItem(BinarySpectrum spectrum)
 		{
@@ -9,5 +10,11 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 		}
 
 		public BinarySpectrum Spectrum { get; set; }
+
+		public void Dispose()
+		{
+			Spectrum.Dispose();
+			GC.SuppressFinalize(this);
+		}
 	}
 }

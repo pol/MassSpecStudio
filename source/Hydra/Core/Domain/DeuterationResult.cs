@@ -97,13 +97,13 @@ namespace Hydra.Core.Domain
 
 		public IList<RunResult> ReplicateResults
 		{
-			get 
+			get
 			{
 				if (_replicateResults == null)
 				{
 					_replicateResults = new List<RunResult>();
 				}
-				return _replicateResults; 
+				return _replicateResults;
 			}
 		}
 

@@ -40,6 +40,10 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 
 		public void Clear()
 		{
+			foreach (int key in cache.Keys)
+			{
+				cache[key].Dispose();
+			}
 			cache.Clear();
 		}
 	}

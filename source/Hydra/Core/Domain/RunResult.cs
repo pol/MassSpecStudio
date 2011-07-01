@@ -215,9 +215,9 @@ namespace Hydra.Core.Domain
 		[DataMember]
 		public int ActualPeaksInCalculation
 		{
-			get 
+			get
 			{
-				return actualPeaksInCalculation; 
+				return actualPeaksInCalculation;
 			}
 
 			set
@@ -285,6 +285,9 @@ namespace Hydra.Core.Domain
 		[DataMember]
 		public bool IsUsedInCalculations { get; set; }
 
+		[DataMember]
+		public string Note { get; set; }
+
 		public void InitializePeakLists()
 		{
 			isotopticPeakList = new List<MSPeak>();
@@ -320,6 +323,7 @@ namespace Hydra.Core.Domain
 			result += TheoreticalAverageMass + delimiter;
 			result += CentroidMR + delimiter;
 			result += TheoreticalCentroidMR + delimiter;
+			result += Note + delimiter;
 
 			result += Environment.NewLine;
 			return result;
@@ -351,6 +355,7 @@ namespace Hydra.Core.Domain
 			clonedRunResult.AmideHydrogenTotal = AmideHydrogenTotal;
 			clonedRunResult.AmountDeut = AmountDeut;
 			clonedRunResult.IsUsedInCalculations = IsUsedInCalculations;
+			clonedRunResult.Note = Note;
 			return clonedRunResult;
 		}
 	}

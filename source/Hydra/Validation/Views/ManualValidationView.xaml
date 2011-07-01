@@ -24,7 +24,8 @@
 					<GridViewColumn Header="Sequence" DisplayMemberBinding="{Binding Peptide.Sequence}"></GridViewColumn>
 					<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding Peptide.MonoIsotopicMass, StringFormat=F5}"></GridViewColumn>
 					<GridViewColumn Header="Charge" DisplayMemberBinding="{Binding Peptide.ChargeState}"></GridViewColumn>
-					<GridViewColumn Header="RT" DisplayMemberBinding="{Binding RunResult.CachedXicPeak.Rt, StringFormat=F3}"></GridViewColumn>
+					<GridViewColumn Header="RT" DisplayMemberBinding="{Binding RunResult.CachedXicPeak.Rt, StringFormat=F3}" Width="40"></GridViewColumn>
+					<GridViewColumn Header="Note" DisplayMemberBinding="{Binding RunResult.Note}" Width="150"></GridViewColumn>
 				</GridView>
 			</ListView.View>			
 		</ListView>

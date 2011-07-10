@@ -3,7 +3,6 @@ using System.Linq;
 using Hydra.Core.Domain;
 using Hydra.Core.Events;
 using MassSpecStudio.Core;
-using MassSpecStudio.Core.Extensions;
 using Microsoft.Practices.Prism.Events;
 
 namespace Hydra.Modules.Peptides.Views
@@ -55,8 +54,17 @@ namespace Hydra.Modules.Peptides.Views
 
 		public void Load(Core.Domain.Result run)
 		{
-			Peptides = (from data in run.RunResults
-						select data.Peptide).DistinctBy(item => item.Sequence).ToList();
+			IList<Peptide> allPeptides = (from data in run.RunResults
+										  select data.Peptide).ToList();
+
+			Peptides = new List<Peptide>();
+			foreach (Peptide peptide in allPeptides)
+			{
+				if (!Peptides.Any(item => item.RT == peptide.RT && item.MonoIsotopicMass == peptide.MonoIsotopicMass && item.ChargeState == peptide.ChargeState))
+				{
+					Peptides.Add(peptide);
+				}
+			}
 		}
 	}
 }

@@ -87,35 +87,35 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 					BinaryData intensityData = intensityArray.data;
 					int totalDataPoints = mzData.Count;
 
-					FilterMassList(mzData, intensityData, mzLower, mzUpper);
+					AddSpectrumToCacheIfNotPresent(timePoint, new BinarySpectrum(rt, mzData, intensityData));
 
-					BinarySpectrum spectrum = new BinarySpectrum(rt, mzData, intensityData);
-					if (spectrum.Count == totalDataPoints)
-					{
-						AddSpectrumToCacheIfNotPresent(timePoint, spectrum);
-					}
-
-					return spectrum;
+					return FilterMassList(rt, mzData, intensityData, mzLower, mzUpper);
 				}
 			}
 
 			return new Domain.Spectrum(0, new List<XYPoint>());
 		}
 
-		private void FilterMassList(IList<double> mzData, IList<double> intensityData, double mzLower, double mzUpper)
+		private BinarySpectrum FilterMassList(double rt, IList<double> mzData, IList<double> intensityData, double mzLower, double mzUpper)
 		{
+			BinaryData filteredMzData = new BinaryData();
+			BinaryData filteredIntensityData = new BinaryData();
 			if (mzLower != 0 && mzUpper != double.MaxValue)
 			{
 				for (int i = 0; i < mzData.Count; i++)
 				{
-					if (mzData[i] < mzLower || mzData[i] > mzUpper)
+					if (mzData[i] >= mzLower && mzData[i] <= mzUpper)
 					{
-						mzData.RemoveAt(i);
-						intensityData.RemoveAt(i);
-						i--;
+						filteredMzData.Add(mzData[i]);
+						filteredIntensityData.Add(intensityData[i]);
 					}
 				}
 			}
+			else
+			{
+				return new BinarySpectrum(rt, mzData as BinaryData, intensityData as BinaryData);
+			}
+			return new BinarySpectrum(rt, filteredMzData, filteredIntensityData);
 		}
 
 		private void AddSpectrumToCacheIfNotPresent(int timePoint, BinarySpectrum spectrum)

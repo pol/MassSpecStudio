@@ -19,6 +19,7 @@
   <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
   <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
   <IgnoreGeneratedCode>True</IgnoreGeneratedCode>
+  <TargetFrameworkVersion>0.0</TargetFrameworkVersion>
  </ProjectOptions>
  <Targets>
   <Target Name="$(ProjectDir)/../Output/bin/DataProviders/ProteoWizard.MassSpecStudio.DataProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -512,13 +513,44 @@
            </Member>
           </Members>
          </Type>
+         <Type Name="SpectrumCacheItem">
+          <Messages>
+           <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2011-07-29 04:02:33Z">
+            <Issue Name="ProvideDisposeBool">
+             <Item>'SpectrumCacheItem'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Dispose()">
+            <Messages>
+             <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2011-07-29 04:02:33Z">
+              <Issue Name="DisposeImplementation">
+               <Item>'SpectrumCacheItem.Dispose()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="SpectrumExtractor">
           <Members>
-           <Member Name="#FilterMassList(System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Double,System.Double)">
+           <Member Name="#FilterMassList(System.Double,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Collections.Generic.IList`1&lt;System.Double&gt;,System.Double,System.Double)">
             <Messages>
-             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-05-25 00:55:58Z" FixCategory="NonBreaking">
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-07-29 04:02:33Z" FixCategory="NonBreaking">
               <Issue>
-               <Item>'SpectrumExtractor.FilterMassList(IList&lt;double&gt;, IList&lt;double&gt;, double, double)'</Item>
+               <Item>'SpectrumExtractor.FilterMassList(double, IList&lt;double&gt;, IList&lt;double&gt;, double, double)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetSpectrum(System.Int32,MassSpecStudio.Core.TimeUnit,System.Double,System.Double)">
+            <Messages>
+             <Message Id="totalDataPoints" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-07-29 04:02:33Z">
+              <Issue>
+               <Item>'SpectrumExtractor.GetSpectrum(int, TimeUnit, double, double)'</Item>
+               <Item>'totalDataPoints'</Item>
+               <Item>'int'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -562,6 +594,13 @@
           </Members>
          </Type>
          <Type Name="XYBinaryData">
+          <Messages>
+           <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2011-07-29 04:02:33Z">
+            <Issue Name="ProvideDisposeBool">
+             <Item>'XYBinaryData'</Item>
+            </Issue>
+           </Message>
+          </Messages>
           <Members>
            <Member Name="#.ctor(pwiz.CLI.msdata.BinaryData,pwiz.CLI.msdata.BinaryData)">
             <Messages>
@@ -577,6 +616,15 @@
                <Item>'XYBinaryData.XYBinaryData(BinaryData, BinaryData)'</Item>
                <Item>y</Item>
                <Item>'yValues'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Dispose()">
+            <Messages>
+             <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2011-07-29 04:02:33Z">
+              <Issue Name="DisposeImplementation">
+               <Item>'XYBinaryData.Dispose()'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -1489,6 +1537,26 @@
       <Namespaces>
        <Namespace Name="Hydra.Modules.Project">
         <Types>
+         <Type Name="CreateProjectHelper">
+          <Members>
+           <Member Name="#CopyAll(System.IO.DirectoryInfo,System.IO.DirectoryInfo)">
+            <Messages>
+             <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Created="2011-07-29 04:02:33Z">
+              <Issue>
+               <Item>'string.ToLower()'</Item>
+               <Item>'CreateProjectHelper.CopyAll(DirectoryInfo, DirectoryInfo)'</Item>
+               <Item>'string.ToLower(CultureInfo)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.ToLower()'</Item>
+               <Item>'CreateProjectHelper.CopyAll(DirectoryInfo, DirectoryInfo)'</Item>
+               <Item>'string.ToLower(CultureInfo)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="HydraExperimentType">
           <Members>
            <Member Name="#CreateDirectory(System.String,System.String)">
@@ -2443,6 +2511,10 @@
                <Item>'LabelAmountAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
                <Item>'Exception'</Item>
               </Issue>
+              <Issue>
+               <Item>'LabelAmountAlgorithm.Execute(BackgroundWorker, ExperimentBase)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
              </Message>
             </Messages>
            </Member>
@@ -2898,6 +2970,10 @@
    </Rule>
    <Rule TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716">
     <Resolution Name="Member">Rename virtual/interface member {0} so that it no longer conflicts with the reserved language keyword '{1}'. Using a reserved keyword as the name of a virtual/interface member makes it harder for consumers in other languages to override/implement the member.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+    <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
+    <Resolution Name="ProvideDisposeBool">Provide an overridable implementation of Dispose(bool) on {0} or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Resolution>
    </Rule>
    <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
     <Resolution Name="MissingConstructor">Add the following constructor to {0}: {1}.</Resolution>

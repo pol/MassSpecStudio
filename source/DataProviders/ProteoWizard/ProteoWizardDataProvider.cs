@@ -115,6 +115,7 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 			_currentFileName = null;
 			_currentSampleIndex = -1;
 			Dispose();
+			GC.Collect();
 		}
 
 		public IList<string> GetSampleNames()

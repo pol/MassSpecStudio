@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Domain = MassSpecStudio.Core.Domain;
 
 namespace ProteoWizard.MassSpecStudio.DataProvider
@@ -40,11 +41,13 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 
 		public void Clear()
 		{
-			foreach (int key in cache.Keys)
+			while (cache.Keys.Count > 0)
 			{
-				cache[key].Dispose();
+				SpectrumCacheItem spectrumCacheItem = cache[cache.Keys.First()];
+				cache.Remove(cache.Keys.First());
+				spectrumCacheItem.Dispose();
+				spectrumCacheItem = null;
 			}
-			cache.Clear();
 		}
 	}
 }

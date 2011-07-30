@@ -70,8 +70,13 @@ namespace ProteoWizard.MassSpecStudio.DataProvider
 
 		public void Dispose()
 		{
+			_xValues.Clear();
 			_xValues.Dispose();
+			_xValues = null;
+			_yValues.Clear();
 			_yValues.Dispose();
+			_yValues = null;
+
 			GC.SuppressFinalize(this);
 		}
 	}

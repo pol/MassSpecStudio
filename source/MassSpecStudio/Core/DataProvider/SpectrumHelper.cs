@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using MassSpecStudio.Core.Domain;
 
@@ -28,51 +30,40 @@ namespace MassSpecStudio.Core.DataProvider
 
 		private static List<XYPoint> SumIntensities(List<Domain.ISpectrum> spectraToBeAveraged)
 		{
-			IList<double> xValues = spectraToBeAveraged[0].XValues;
-			IList<double> sumedYValues = new List<double>(spectraToBeAveraged[0].Count);
-			IList<int> numberOfDuplicates = new List<int>(spectraToBeAveraged[0].Count);
-			IList<int> currentSearchIndexes = new List<int>(spectraToBeAveraged.Count);
+			Dictionary<double, XYPoint> all = new Dictionary<double, XYPoint>();
 
-			for (int i = 0; i < xValues.Count; i++)
+			for (int j = 0; j < spectraToBeAveraged.Count; j++)
 			{
-				for (int j = 0; j < spectraToBeAveraged.Count; j++)
+				for (int k = 0; k < spectraToBeAveraged[j].Count; k++)
 				{
-					currentSearchIndexes.Add(0);
-					for (int k = currentSearchIndexes[j]; k < spectraToBeAveraged[j].Count; k++)
+					XYPoint point = spectraToBeAveraged[j].GetXYPair(k);
+
+					if (all.Keys.Contains(point.XValue))
 					{
-						currentSearchIndexes[j] = k;
-						double difference = spectraToBeAveraged[j].XValues[k] - xValues[i];
-						if (difference == 0)
-						{
-							if (i >= sumedYValues.Count)
-							{
-								sumedYValues.Add(0);
-							}
-							sumedYValues[i] += spectraToBeAveraged[j].YValues[k];
-							if (i >= numberOfDuplicates.Count)
-							{
-								numberOfDuplicates.Add(0);
-							}
-							numberOfDuplicates[i]++;
-							break;
-						}
-						else if (difference > 0)
-						{
-							break;
-						}
+						all[point.XValue].YValue += point.YValue;
+						all[point.XValue].NumberOfDuplicates++;
+					}
+					else
+					{
+						point.NumberOfDuplicates = 1;
+						all.Add(point.XValue, point);
 					}
 				}
 			}
 
 			List<XYPoint> sumedPoints = new List<XYPoint>();
-			for (int i = 0; i < xValues.Count; i++)
+			IList<double> keys = all.Keys.ToList();
+			for (int i = 0; i < keys.Count; i++)
 			{
-				XYPoint point = new XYPoint(xValues[i], sumedYValues[i]);
-				point.NumberOfDuplicates = numberOfDuplicates[i];
-				sumedPoints.Add(point);
+				sumedPoints.Add(all[keys[i]]);
 			}
 
 			return sumedPoints;
+		}
+
+		private static void ApplyThreshold(XYPoint point)
+		{
+			point.XValue = Math.Round(point.XValue, 2);
 		}
 
 		private static bool IsOnlyOneSpectrumToBeAveraged(List<Domain.ISpectrum> spectraToBeAveraged)

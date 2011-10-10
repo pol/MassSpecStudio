@@ -54,14 +54,14 @@ namespace Hydra.Test.IntegrationTests
 			Assert.AreEqual(2, experiment.Results.Count);
 			Assert.AreEqual(10, experiment.Results.Last().DeuterationResults.Count);
 			AssertResult(experiment.Results.Last().DeuterationResults[0].ReplicateResults, 3.01873, 4.90016);
-			AssertResult(experiment.Results.Last().DeuterationResults[1].ReplicateResults, 3.3903, 4.06535);
-			AssertResult(experiment.Results.Last().DeuterationResults[2].ReplicateResults, 0.5198, 0.46388);
-			AssertResult(experiment.Results.Last().DeuterationResults[3].ReplicateResults, 0.46793, 0.4789);
-			AssertResult(experiment.Results.Last().DeuterationResults[4].ReplicateResults, 3.7488, 3.70322);
-			AssertResult(experiment.Results.Last().DeuterationResults[5].ReplicateResults, 3.66874, 3.67322);
-			AssertResult(experiment.Results.Last().DeuterationResults[6].ReplicateResults, 0.94693, 1.08501);
-			AssertResult(experiment.Results.Last().DeuterationResults[7].ReplicateResults, 1.32979, 0.60901);
-			AssertResult(experiment.Results.Last().DeuterationResults[9].ReplicateResults, 1.09356, -579.66293);
+			AssertResult(experiment.Results.Last().DeuterationResults[1].ReplicateResults, 2.56587, 2.65458);
+			AssertResult(experiment.Results.Last().DeuterationResults[2].ReplicateResults, 0.51980, 0.46388);
+			AssertResult(experiment.Results.Last().DeuterationResults[3].ReplicateResults, 0.46793, 0.47890);
+			AssertResult(experiment.Results.Last().DeuterationResults[4].ReplicateResults, 3.63934, 3.58075);
+			AssertResult(experiment.Results.Last().DeuterationResults[5].ReplicateResults, 3.54433, 3.51606);
+			AssertResult(experiment.Results.Last().DeuterationResults[6].ReplicateResults, 1.09250, 1.22891);
+			AssertResult(experiment.Results.Last().DeuterationResults[7].ReplicateResults, 1.32979, 0.85082);
+			AssertResult(experiment.Results.Last().DeuterationResults[9].ReplicateResults, 1.09356, 0.63198);
 		}
 
 		[TestMethod]

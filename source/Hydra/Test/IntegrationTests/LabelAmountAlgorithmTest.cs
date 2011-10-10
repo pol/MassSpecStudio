@@ -53,7 +53,7 @@ namespace Hydra.Test.IntegrationTests
 
 			Assert.AreEqual(2, experiment.Results.Count);
 			Assert.AreEqual(10, experiment.Results.Last().DeuterationResults.Count);
-			AssertResult(experiment.Results.Last().DeuterationResults[0].ReplicateResults, 2.65814, 4.574);
+			AssertResult(experiment.Results.Last().DeuterationResults[0].ReplicateResults, 3.01873, 4.90016);
 			AssertResult(experiment.Results.Last().DeuterationResults[1].ReplicateResults, 3.3903, 4.06535);
 			AssertResult(experiment.Results.Last().DeuterationResults[2].ReplicateResults, 0.5198, 0.46388);
 			AssertResult(experiment.Results.Last().DeuterationResults[3].ReplicateResults, 0.46793, 0.4789);

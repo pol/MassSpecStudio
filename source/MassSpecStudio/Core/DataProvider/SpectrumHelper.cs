@@ -38,6 +38,8 @@ namespace MassSpecStudio.Core.DataProvider
 				{
 					XYPoint point = spectraToBeAveraged[j].GetXYPair(k);
 
+					ApplyThreshold(point);
+
 					if (all.Keys.Contains(point.XValue))
 					{
 						all[point.XValue].YValue += point.YValue;
@@ -63,7 +65,7 @@ namespace MassSpecStudio.Core.DataProvider
 
 		private static void ApplyThreshold(XYPoint point)
 		{
-			point.XValue = Math.Round(point.XValue, 2);
+			point.XValue = Math.Round(point.XValue, 3);
 		}
 
 		private static bool IsOnlyOneSpectrumToBeAveraged(List<Domain.ISpectrum> spectraToBeAveraged)

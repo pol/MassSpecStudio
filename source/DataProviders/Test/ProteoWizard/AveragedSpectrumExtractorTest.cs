@@ -46,7 +46,7 @@ namespace MassSpecStudio.DataProvider.Test.ProteoWizard
 			timer.Stop();
 
 			XYDataHelper.AssertSpectrum(spectrum, 1.50005, 1.60005, 40383, timer, MinimumMillisecondsItShouldTakeToExtractSpectrum, MaximumMillisecondsItShouldTakeToExtractSpectrum);
-			XYDataHelper.AssertValue(spectrum, 300, 308.084, 2);
+			XYDataHelper.AssertValue(spectrum, 300, 308.08392, 2);
 		}
 
 		[TestMethod]
@@ -60,7 +60,7 @@ namespace MassSpecStudio.DataProvider.Test.ProteoWizard
 			timer.Stop();
 
 			XYDataHelper.AssertSpectrum(spectrum, 1.50005, 1.60005, 40383, timer, MinimumMillisecondsItShouldTakeToPullSpectrumFromCache, MaximumMillisecondsItShouldTakeToPullSpectrumFromCache);
-			XYDataHelper.AssertValue(spectrum, 300, 308.084, 2);
+			XYDataHelper.AssertValue(spectrum, 300, 308.08392, 2);
 		}
 
 		[TestMethod]
@@ -71,7 +71,7 @@ namespace MassSpecStudio.DataProvider.Test.ProteoWizard
 			timer.Stop();
 
 			XYDataHelper.AssertSpectrum(spectrum, 1.50005, 1.60005, 24526, timer, MinimumMillisecondsItShouldTakeToExtractSpectrum, MaximumMillisecondsItShouldTakeToExtractSpectrum);
-			XYDataHelper.AssertValue(spectrum, 300, 308.084, 2);
+			XYDataHelper.AssertValue(spectrum, 300, 308.08392, 2);
 		}
 
 		[TestMethod]
@@ -84,7 +84,7 @@ namespace MassSpecStudio.DataProvider.Test.ProteoWizard
 			timer.Stop();
 
 			XYDataHelper.AssertSpectrum(spectrum, 1.50005, 1.60005, 24526, timer, MinimumMillisecondsItShouldTakeToPullSpectrumFromCache, MaximumMillisecondsItShouldTakeToPullSpectrumFromCache);
-			XYDataHelper.AssertValue(spectrum, 300, 308.084, 2);
+			XYDataHelper.AssertValue(spectrum, 300, 308.08392, 2);
 		}
 
 		[TestMethod]
@@ -96,7 +96,7 @@ namespace MassSpecStudio.DataProvider.Test.ProteoWizard
 			Domain.ISpectrum msmsSpectrum = averagedSpectrumExtractor.GetMSMSSpectrum(7.8, 1, 592.3, 0.5);
 
 			Assert.AreEqual(42279, msmsSpectrum.Count);
-			Assert.AreEqual(2.3125, Math.Round(msmsSpectrum.GetXYPair(63).YValue, 5));
+			Assert.AreEqual(37, Math.Round(msmsSpectrum.GetXYPair(63).YValue, 5));
 		}
 	}
 }

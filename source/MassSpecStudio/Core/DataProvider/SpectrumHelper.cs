@@ -22,7 +22,7 @@ namespace MassSpecStudio.Core.DataProvider
 				return new Domain.Spectrum(
 					spectraToBeAveraged.First().StartRT,
 					spectraToBeAveraged.Last().StartRT,
-					CalculateAverageIntensities(sumedXYData));
+					sumedXYData);
 			}
 
 			return new Domain.Spectrum(0, new List<XYPoint>());
@@ -65,7 +65,7 @@ namespace MassSpecStudio.Core.DataProvider
 
 		private static void ApplyThreshold(XYPoint point)
 		{
-			point.XValue = Math.Round(point.XValue, 3);
+			point.XValue = Math.Truncate(point.XValue * 100000) / 100000;
 		}
 
 		private static bool IsOnlyOneSpectrumToBeAveraged(List<Domain.ISpectrum> spectraToBeAveraged)

@@ -65,7 +65,7 @@ namespace MassSpecStudio.Core.DataProvider
 
 		private static void ApplyThreshold(XYPoint point)
 		{
-			point.XValue = Math.Truncate(point.XValue * 100000) / 100000;
+			point.XValue = Math.Truncate(point.XValue * 1000000) / 1000000;
 		}
 
 		private static bool IsOnlyOneSpectrumToBeAveraged(List<Domain.ISpectrum> spectraToBeAveraged)
@@ -82,15 +82,12 @@ namespace MassSpecStudio.Core.DataProvider
 						});
 		}
 
-		private static List<XYPoint> CalculateAverageIntensities(List<XYPoint> sumedXYData)
+		private static List<XYPoint> CalculateAverageIntensities(List<XYPoint> sumedXYData, int numberOfSpectra)
 		{
 			List<XYPoint> averagedXYData = sumedXYData;
 			for (int i = 0; i < sumedXYData.Count; i++)
 			{
-				if (sumedXYData[i].NumberOfDuplicates > 0)
-				{
-					averagedXYData[i].YValue = sumedXYData[i].YValue / ((double)sumedXYData[i].NumberOfDuplicates);
-				}
+				averagedXYData[i].YValue = sumedXYData[i].YValue / (double)numberOfSpectra;
 			}
 			return averagedXYData;
 		}

@@ -10,9 +10,9 @@ namespace Hydra.Modules.Run.Views
 			MZUpperOffset = 5;
 		}
 
-		public double StartMass { get; set; }
+		public double StartTime { get; set; }
 
-		public double StopMass { get; set; }
+		public double StopTime { get; set; }
 
 		public double MonoisotopicMass { get; set; }
 

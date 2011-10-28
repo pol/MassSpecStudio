@@ -27,14 +27,14 @@ namespace Hydra.Test.Modules.Runs.Views
 			viewModel.MonoisotopicMass = 1;
 			viewModel.MZLowerOffset = 2;
 			viewModel.MZUpperOffset = 3;
-			viewModel.StartMass = 4;
-			viewModel.StopMass = 5;
+			viewModel.StartTime = 4;
+			viewModel.StopTime = 5;
 
 			Assert.AreEqual(1, viewModel.MonoisotopicMass);
 			Assert.AreEqual(2, viewModel.MZLowerOffset);
 			Assert.AreEqual(3, viewModel.MZUpperOffset);
-			Assert.AreEqual(4, viewModel.StartMass);
-			Assert.AreEqual(5, viewModel.StopMass);
+			Assert.AreEqual(4, viewModel.StartTime);
+			Assert.AreEqual(5, viewModel.StopTime);
 		}
 	}
 }

@@ -15,8 +15,8 @@
 				<ListView Name="listView">
 					<ListView.View>
 						<GridView>
-							<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding XValue, StringFormat=F5}"></GridViewColumn>
-							<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding YValue, StringFormat=F5}"></GridViewColumn>
+							<GridViewColumn Header="M/Z" DisplayMemberBinding="{Binding XValue, StringFormat=F6}"></GridViewColumn>
+							<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding YValue, StringFormat=F6}"></GridViewColumn>
 							<GridViewColumn Header="N" DisplayMemberBinding="{Binding NumberOfDuplicates}"></GridViewColumn>
 						</GridView>
 					</ListView.View>

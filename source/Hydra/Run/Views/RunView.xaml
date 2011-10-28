@@ -27,7 +27,7 @@
 				<ListView Name="listView">
 					<ListView.View>
 						<GridView>
-							<GridViewColumn Header="RT" DisplayMemberBinding="{Binding XValue, StringFormat=F3}"></GridViewColumn>
+							<GridViewColumn Header="RT" DisplayMemberBinding="{Binding XValue, StringFormat=F6}"></GridViewColumn>
 							<GridViewColumn Header="Intensity" DisplayMemberBinding="{Binding YValue}"></GridViewColumn>
 						</GridView>
 					</ListView.View>

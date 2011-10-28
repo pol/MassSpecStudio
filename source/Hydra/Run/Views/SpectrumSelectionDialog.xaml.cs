@@ -28,7 +28,7 @@ namespace Hydra.Modules.Run.Views
 
 		private void OnRetrieve(object sender, RoutedEventArgs e)
 		{
-			RunViewModel viewModel = new RunViewModel(_run, _viewModel.StartMass, _viewModel.StopMass, _viewModel.MonoisotopicMass, _viewModel.MZLowerOffset, _viewModel.MZUpperOffset);
+			RunViewModel viewModel = new RunViewModel(_run, _viewModel.StartTime, _viewModel.StopTime, 0, 0, 1000000);
 			ManagedContent view = _regionManager.FindExistingView("DocumentRegion", typeof(RunView), viewModel.XYData.Title);
 			if (view == null)
 			{

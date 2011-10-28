@@ -105,17 +105,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Events\Images\results.png" />
-    <Resource Include="Events\Images\peptide.png" />
-    <Resource Include="Events\Images\run.png" />
-    <Resource Include="Events\Images\experiment.png" />
-    <Resource Include="Events\Images\proteinState.png" />
-    <Resource Include="Events\Images\network.png" />
-    <Resource Include="Events\Images\labeling.png" />
-    <Resource Include="Events\Images\project.png" />
+    <Resource Include="Images\results.png" />
+    <Resource Include="Images\peptide.png" />
+    <Resource Include="Images\run.png" />
+    <Resource Include="Images\experiment.png" />
+    <Resource Include="Images\proteinState.png" />
+    <Resource Include="Images\network.png" />
+    <Resource Include="Images\labeling.png" />
+    <Resource Include="Images\project.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Events\Images\result.png" />
+    <Resource Include="Images\result.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\tools\Microsoft StyleCop 4.4.0.14\Microsoft.StyleCop.targets" />

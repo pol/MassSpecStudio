@@ -107,7 +107,7 @@
     <Compile Include="Core\Domain\RunTest.cs" />
     <Compile Include="DataProvider\CsvPeptideDataProviderTest.cs" />
     <Compile Include="IntegrationTests\AlgorithmTestBase.cs" />
-    <Compile Include="Modules\MsMsFragmentAlgorithmTest.cs" />
+    <Compile Include="IntegrationTests\MsMsFragmentAlgorithmTest.cs" />
     <Compile Include="Modules\Peptides\Views\IonViewModelTest.cs" />
     <Compile Include="Modules\Peptides\Views\PeptidesViewModelTest.cs" />
     <Compile Include="Modules\Peptides\Views\PeptideViewModelTest.cs" />
